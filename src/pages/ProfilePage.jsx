@@ -1,30 +1,30 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import MyNavbar from "../components/MyNavbar";
-import MainProfileInfo from "../components/MainProfileInfo";
-import ProfileInfo from "../components/ProfileInfo";
-import Activity from "../components/Activity";
-import Resource from "../components/Resource";
 import Footer from "../components/Footer";
+import Activity from "../components/Activity";
+import MainProfileInfo from "../components/MainProfileInfo";
+import MyNavbar from "../components/MyNavbar";
+import ProfileInfo from "../components/ProfileInfo";
+import { Col, Container, Row } from "react-bootstrap";
+import Analytics from "../components/Analytics";
 
 const ProfilePage = () => {
   return (
-    <div style={{ color: "grey" }}>
+    <>
       <MyNavbar />
-      <Container className="mt-4">
-        <Row>
+      <Container>
+        <Row className="mt-5">
           <Col md={8}>
             <MainProfileInfo />
+            <Analytics />
             <Activity />
-            <Resource />
+            <Footer />
           </Col>
+
           <Col md={4}>
             <ProfileInfo />
           </Col>
-          <Footer />
         </Row>
       </Container>
-    </div>
+    </>
   );
 };
 
