@@ -1,0 +1,12 @@
+footer ul {
+  padding-left: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
