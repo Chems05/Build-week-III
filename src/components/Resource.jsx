@@ -1,7 +1,7 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
-import { FaEye, FaUserFriends } from "react-icons/fa";
+import { FaEye, FaUserFriends, FaPen } from "react-icons/fa";
 import { MdOutlineFavorite } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -18,8 +18,8 @@ const Resource = () => {
           <br />
         </Col>
         <Col md={4} className="text-end">
-          <Button variant="outline-light" size="sm">
-            Crea un post
+          <Button variant="outline-primary" size="sm">
+            Crea un post <FaPen />
           </Button>
         </Col>
         <Col md={4}>

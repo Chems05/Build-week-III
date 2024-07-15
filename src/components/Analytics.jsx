@@ -42,7 +42,9 @@ const Analytics = () => {
 
             <Col xs={10}>
               <a>
-                <strong className="d-inline-block">100 Visualizzazioni del profilo</strong>
+                <strong className="d-inline-block">
+                  100 Visualizzazioni del profilo
+                </strong>
                 <span>Scopri chi ha visualizzato il tuo profilo</span>
               </a>
             </Col>
@@ -67,7 +69,9 @@ const Analytics = () => {
 
             <Col xs={10}>
               <a>
-                <strong className="d-inline-block">500 Impressioni del post</strong>
+                <strong className="d-inline-block">
+                  500 Impressioni del post
+                </strong>
                 <span>Scopri chi sta interagendo con il tuo post</span>
               </a>
             </Col>
@@ -92,14 +96,19 @@ const Analytics = () => {
 
             <Col xs={10}>
               <a>
-                <strong className="d-inline-block">35 Comparse nei motori di ricerca</strong>
+                <strong className="d-inline-block">
+                  35 Comparse nei motori di ricerca
+                </strong>
                 <span>Vedi quante volte compari nei risultati di ricerca</span>
               </a>
             </Col>
           </Row>
         </Col>
         <hr className="mb-0" />
-        <div style={{ cursor: "pointer" }} className="d-flex align-items-center justify-content-center p-2">
+        <div
+          style={{ cursor: "pointer" }}
+          className="d-flex align-items-center justify-content-center p-2"
+        >
           <span className="me-2">Mostra Tutte le analisi</span>
           <ArrowRight />
         </div>

@@ -2,7 +2,7 @@ import { Card, Col, Container, Row, Button } from "react-bootstrap";
 import { useState } from "react";
 import { ArrowRight, Pencil } from "react-bootstrap-icons";
 import { BsPlusLg } from "react-icons/bs";
-import '../assets/competenze.css'
+import "../assets/competenze.css";
 
 const Competenze = () => {
   const [showFullText, setShowFullText] = useState(false);
@@ -44,70 +44,45 @@ const Competenze = () => {
               <Card.Text style={{ fontSize: "15px" }}>
                 {showFullText ? (
                   <>
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
+                    <a href="#" className="competence-link">
                       Full Stack Developer
                     </a>
                     <hr />
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
+                    <a href="#" className="competence-link">
                       Esperto in React.js e Node.js
                     </a>
                     <hr />
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
+                    <a href="#" className="competence-link">
                       Sviluppo di interfacce utente intuitive
                     </a>
                     <hr />
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
-                      Gestione efficace di database relazionali (MySQL, PostgreSQL)
+                    <a href="#" className="competence-link">
+                      Gestione efficace di database relazionali (MySQL,
+                      PostgreSQL)
                     </a>
                     <hr />
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
+                    <a href="#" className="competence-link">
                       Conoscenza di database NoSQL come MongoDB
                     </a>
                     <hr />
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
+                    <a href="#" className="competence-link">
                       Implementazione di API RESTful
                     </a>
                     <hr />
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
+                    <a href="#" className="competence-link">
                       Lavoro in team agili con metodologie come Scrum
                     </a>
                     <hr />
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
-                      Apprendimento continuo delle ultime tecnologie nel settore dello sviluppo software
+                    <a href="#" className="competence-link">
+                      Apprendimento continuo delle ultime tecnologie nel settore
+                      dello sviluppo software
                     </a>
                     <hr />
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
+                    <a href="#" className="competence-link">
                       Contributo a progetti innovativi e stimolanti
                     </a>{" "}
                     <Button
-                    className="center-back"
+                      className="center-back"
                       variant="link"
                       style={{
                         textDecoration: "none",
@@ -121,17 +96,11 @@ const Competenze = () => {
                   </>
                 ) : (
                   <>
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
+                    <a href="#" className="competence-link">
                       Capacità di problem solving
                     </a>
                     <hr />
-                    <a
-                      href="#"
-                      className="competence-link"
-                    >
+                    <a href="#" className="competence-link">
                       Conoscenza di strumenti di controllo di versione come Git
                     </a>
                     <hr />
@@ -142,11 +111,11 @@ const Competenze = () => {
                         textDecoration: "none",
                         color: "grey",
                         fontSize: "15px",
-                        
                       }}
                       onClick={toggleShowFullText}
                     >
-                      Mostra tutte le competenze (11) <ArrowRight className="ms-1" />
+                      Mostra tutte le competenze (11){" "}
+                      <ArrowRight className="ms-1" />
                     </Button>
                   </>
                 )}
