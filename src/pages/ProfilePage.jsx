@@ -1,13 +1,16 @@
 import Footer from "../components/Footer";
 import Activity from "../components/Activity";
-import MyNavbar from "../components/MyNavbar";
 import MainProfileInfo from "../components/MainProfileInfo";
+import MyNavbar from "../components/MyNavbar";
+import ProfileInfo from "../components/ProfileInfo";
 
 const ProfilePage = () => {
   return (
     <div style={{ color: "grey" }}>
       <MyNavbar />
       <MainProfileInfo />
+      <ProfileInfo />
+      <Footer />
       <Activity />
       <Footer />
     </div>

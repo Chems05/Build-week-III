@@ -9,7 +9,7 @@ const MyNavbar = () => {
     <Navbar bg="light" variant="light" expand="lg" className="px-3 shadow-sm">
       <Container>
         <Navbar.Brand href="#home">
-          <BsLinkedin size={33} className="ms-5 " color="#0077b5" />
+          <BsLinkedin size={33} className="ms-2 " color="#0077b5" />
         </Navbar.Brand>
         <Form className="d-flex mx-2 search-form">
           <div className="search-container ">

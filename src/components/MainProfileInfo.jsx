@@ -48,7 +48,7 @@ const MainProfileInfo = () => {
             <ShieldCheck className="me-1" fill="currentColor" /> Verifica ora
           </div>
           <Card.Text>
-            Some quick example text to build on the card title and make up the bulk of the card's content.
+            Some quick example text to build on the card title and make up the bulk of the cards content.
           </Card.Text>
           <Card.Text className="lead d-inline-block">Citta, Regione, Nazione</Card.Text>
           <span className="light-blue ms-3">informazioni di contatto</span>

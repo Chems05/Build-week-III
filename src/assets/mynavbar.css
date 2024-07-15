@@ -16,6 +16,7 @@
     width: 280px;
     display: flex;
     align-items: center;
+    
    
     
   }
@@ -24,6 +25,7 @@
     position: relative;
     width: 100%;
     margin-right: 20px;
+    
    
   }
   
@@ -42,11 +44,12 @@
     padding-left: 30px;
     font-size: 12px;
     
+    
   }
   
   .navbar .nav-link {
     color: #4d4d4d ; 
-    margin-left: 20px;
+    margin-left: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,3 +113,4 @@
   #nav-dropdown-aziende::after{
     display: none;
   }
+ 
