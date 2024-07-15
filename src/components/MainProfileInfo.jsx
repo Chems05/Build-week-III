@@ -3,7 +3,7 @@ import { CameraFill, Pencil, ShieldCheck } from "react-bootstrap-icons";
 
 const MainProfileInfo = () => {
   return (
-    <Container className="mt-5">
+    <>
       <Card>
         <div className="position-relative">
           <Card.Img
@@ -59,7 +59,7 @@ const MainProfileInfo = () => {
           <div className="black-button d-inline-block rounded-pill ms-2">Altro</div>
         </Card.Body>
       </Card>
-    </Container>
+    </>
   );
 };
 
