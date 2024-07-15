@@ -1,5 +1,5 @@
 import { Card, Container, Image } from "react-bootstrap";
-import { Pencil, ShieldCheck } from "react-bootstrap-icons";
+import { CameraFill, Pencil, ShieldCheck } from "react-bootstrap-icons";
 
 const MainProfileInfo = () => {
   return (
@@ -22,9 +22,25 @@ const MainProfileInfo = () => {
               left: "20px",
             }}
           />
+
+          <div
+            className="p-3 d-flex justify-content-center align-items-center"
+            style={{
+              width: "30px",
+              height: "30px",
+              backgroundColor: "white",
+              borderRadius: "50%",
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              cursor: "pointer",
+            }}
+          >
+            <CameraFill className="z-1 position-absolute light-blue" />
+          </div>
         </div>
 
-        <Pencil className="ms-auto me-2 mt-3" fill="currentColor" />
+        <Pencil style={{ cursor: "pointer" }} className="ms-auto me-4 mt-3" fill="currentColor" />
         <Card.Body className="mt-3 ms-2">
           <Card.Title className="d-inline-block">Nome Cognome</Card.Title>
 
