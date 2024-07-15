@@ -8,6 +8,7 @@ const ProfilePage = () => {
       <MainProfileInfo />
       <Footer />
       <Activity />
+      <Footer />
     </div>
   );
 };
