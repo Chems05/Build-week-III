@@ -1,6 +1,7 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { FaPen, FaRegThumbsUp, FaRegComment } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
 
 const Activity = () => {
   const posts = [
@@ -25,10 +26,10 @@ const Activity = () => {
   ];
 
   return (
-    <Container className="bg-dark text-white p-4 mt-5">
+    <Container className="border-secondary rounded text-dark p-4 mt-5">
       <Row className="mb-3">
         <Col md={8}>
-          <h5>Attività</h5>
+          <h4>Attività</h4>
           <p>13 follower</p>
         </Col>
         <Col md={4} className="text-end">
@@ -38,7 +39,7 @@ const Activity = () => {
         </Col>
       </Row>
       {posts.map((post) => (
-        <Card key={post.id} className="mb-3 bg-secondary text-white">
+        <Card key={post.id} className="mb-3 bg- text-dark">
           <Card.Body>
             <Card.Text>
               <strong>{post.user}</strong> ha pubblicato questo post - 1m

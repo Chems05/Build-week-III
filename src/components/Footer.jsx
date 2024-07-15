@@ -1,5 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { IoMdSettings } from "react-icons/io";
+import { HiQuestionMarkCircle } from "react-icons/hi";
+import { IoShieldHalf } from "react-icons/io5";
 
 const Footer = () => {
   return (
@@ -73,11 +76,21 @@ const Footer = () => {
             </ul>
           </Col>
           <Col md={3}>
-            <h6>Domande?</h6>
+            <h5>
+              {" "}
+              <HiQuestionMarkCircle /> Domande?
+            </h5>
             <p>Visita il nostro Centro assistenza.</p>
-            <h6>Gestisci il tuo account e la tua privacy</h6>
+            <h5>
+              {" "}
+              <IoMdSettings /> Gestisci il tuo account e la tua privacy
+            </h5>
             <p>Vai alle impostazioni</p>
-            <h6>Trasparenza sui contenuti consigliati</h6>
+            <h5>
+              {" "}
+              <IoShieldHalf />
+              Trasparenza sui contenuti consigliati
+            </h5>
             <p>Scopri di più sui contenuti consigliati.</p>
           </Col>
         </Row>

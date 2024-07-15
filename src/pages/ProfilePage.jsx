@@ -5,7 +5,7 @@ import MainProfileInfo from "../components/MainProfileInfo";
 
 const ProfilePage = () => {
   return (
-    <div>
+    <div style={{ color: "grey" }}>
       <MyNavbar />
       <MainProfileInfo />
       <Activity />
