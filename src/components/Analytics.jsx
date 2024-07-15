@@ -3,7 +3,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 
 const Analytics = () => {
   return (
-    <Container className="border rounded mt-3 p-3 pb-0">
+    <Container className="bg-white border rounded mt-3 p-3 pb-0">
       <h2>Analisi</h2>
 
       <div className="d-flex align-items-center mb-2">
