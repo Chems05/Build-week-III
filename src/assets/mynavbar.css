@@ -1,0 +1,112 @@
+.navbar {
+    background-color: #ffffff ;
+    color: #000000 ;
+    font-size: 12px;
+    height: 62px;
+  }
+  
+  .navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 0;
+}
+  
+  .navbar .search-form {
+    position: relative;
+    width: 280px;
+    display: flex;
+    align-items: center;
+   
+    
+  }
+  
+  .navbar .search-container {
+    position: relative;
+    width: 100%;
+    margin-right: 20px;
+   
+  }
+  
+  .navbar .bi-search {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #999;
+  }
+  
+  .navbar .search-input {
+    background-color: #EDF3F8;
+    border: 1px solid #d1d1d1;
+    padding-left: 30px;
+    font-size: 12px;
+    
+  }
+  
+  .navbar .nav-link {
+    color: #4d4d4d ; 
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .navbar .nav-link:hover {
+    color: #000000 ; 
+  }
+  
+  .navbar .prova-premium {
+    color: #b37d00;
+    border-color: #b37d00;
+  }
+  
+  .navbar .prova-premium:hover {
+    color: #b37d00;
+  }
+  .nav-divider {
+    width: 1px;
+    height: 70px;
+    background-color: #d1d1d1;
+    margin: 0 10px;
+    align-self: center;
+  }
+  .dropdown-toggle {
+    
+   
+    color: #4d4d4d; 
+    font-size: 12px;
+  }
+  
+  .dropdown-toggle:hover {
+    color: #000000; 
+  }
+  
+  .dropdown-toggle .mb-1 {
+    color: #4d4d4d; 
+  }
+  
+  .dropdown-toggle:hover .mb-1 {
+    color: #000000; 
+  }
+  
+  .dropdown-menu {
+    color: #4d4d4d;
+    font-size: 12px;
+  }
+  
+  .dropdown-item:hover {
+    color: #000000 ;
+  }
+  .prova-premium{
+    text-decoration: underline;
+    
+  }
+ #nav-dropdown-tu::after {
+    display: none;
+  }
+ 
+  #nav-dropdown-aziende::after{
+    display: none;
+  }
