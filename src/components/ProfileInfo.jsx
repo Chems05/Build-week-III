@@ -28,7 +28,7 @@ const ProfileInfo = () => {
           className="m-0 p-0"
         />
       </Row>
-      <Row className="d-flex  border border-dark-subtle rounded-3 mt-2">
+      <Row className="d-flex border border-dark-subtle rounded-3 mt-2 justify-content-start">
         <Col xs="12">
           <p className="fs-6 text-center">
             <strong>Persone che potresti conoscere</strong>
@@ -38,19 +38,19 @@ const ProfileInfo = () => {
           <ListGroup>
             <ListGroupItem className="border border-0">
               <Row className="">
-                <Col>
+                <Col md="3">
                   <img
                     className="rounded-circle imgProfileInfo"
                     src="https://media.licdn.com/dms/image/D5603AQHtmaSyfliXzQ/profile-displayphoto-shrink_100_100/0/1714389091023?e=1726704000&v=beta&t=Lx7IPkUanWzlX-2b967cjx1P-6DrU043cbBzdO-lzPY"
                     alt=""
                   />
                 </Col>
-                <Col className="d-flex row">
+                <Col className="col-9 d-flex row">
                   <Col className="col-12">
                     <p>Veronica Gerani</p>
                   </Col>
-                  <Button className="btnPeaples p-3 mb-2 bg-transparent text-body d-flex align-items-center">
-                    <BsFillPersonPlusFill />
+                  <Button className="btnPeaples bg-transparent text-body d-flex align-items-center">
+                    <BsFillPersonPlusFill className="me-2" />
                     <strong>Collegati</strong>
                   </Button>
                 </Col>

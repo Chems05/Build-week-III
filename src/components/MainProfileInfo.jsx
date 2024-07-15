@@ -1,4 +1,4 @@
-import { Card, Container, Image } from "react-bootstrap";
+import { Card, Image } from "react-bootstrap";
 import { CameraFill, Pencil, ShieldCheck } from "react-bootstrap-icons";
 
 const MainProfileInfo = () => {
