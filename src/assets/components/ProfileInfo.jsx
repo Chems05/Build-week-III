@@ -27,7 +27,16 @@ const ProfileInfo = () => {
           className="m-0 p-0"
         />
       </Row>
-      <Row></Row>
+      <Row className="d-flex justify-content-between border border-dark-subtle rounded-3 mt-2">
+        <Col xs="12">
+          <p className="fs-6">Persone che potresti conoscere</p>
+        </Col>
+        <Col>
+          <ul>
+            <li></li>
+          </ul>
+        </Col>
+      </Row>
     </Container>
   );
 };
