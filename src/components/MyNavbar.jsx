@@ -1,7 +1,15 @@
-import {Navbar,Nav,Form,FormControl,Container,NavDropdown,Image,} from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Container,
+  NavDropdown,
+  Image,
+} from "react-bootstrap";
 import { FaTh } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
-import '../assets/mynavbar.css'
+import "../assets/mynavbar.css";
 import { BiCaretDown } from "react-icons/bi";
 
 const MyNavbar = () => {

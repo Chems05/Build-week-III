@@ -33,7 +33,7 @@ const Activity = () => {
           <p>13 follower</p>
         </Col>
         <Col md={4} className="text-end">
-          <Button variant="outline-light" size="sm">
+          <Button variant="outline-primary" size="sm">
             Crea un post <FaPen />
           </Button>
         </Col>
