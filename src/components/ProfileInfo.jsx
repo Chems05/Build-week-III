@@ -4,7 +4,7 @@ import { BsFillPersonPlusFill } from "react-icons/bs";
 
 const ProfileInfo = () => {
   return (
-    <Container xs="4" md="4" className=" col-3 mb-4 ">
+    <Container xs="4" md="4" className="mb-4">
       <Row className="d-flex justify-content-between border border-dark-subtle rounded-3">
         <Col className="row ps-2 col-8">
           <span className="fs-5">Lingua del profilo </span>
