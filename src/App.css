@@ -1,0 +1,14 @@
+.svgSize {
+  width: 24px;
+  height: 24px;
+}
+
+.hrPrfileInfo {
+  display: block;
+  height: 1px;
+  width: 90%;
+  margin: 0;
+}
+.imgProfileInfo {
+  object-fit: cover;
+}
