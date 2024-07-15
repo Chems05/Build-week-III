@@ -5,6 +5,8 @@ import ProfileInfo from "../components/ProfileInfo";
 import Activity from "../components/Activity";
 import Resource from "../components/Resource";
 import Footer from "../components/Footer";
+import Informazioni from "../components/Informazioni";
+import Analytics from "../components/Analytics";
 
 const ProfilePage = () => {
   return (
@@ -16,6 +18,8 @@ const ProfilePage = () => {
             <MainProfileInfo />
             <Activity />
             <Resource />
+            <Analytics />
+            <Informazioni />
           </Col>
           <Col md={4}>
             <ProfileInfo />

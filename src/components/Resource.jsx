@@ -10,7 +10,7 @@ const Resource = () => {
     <Container className="border border-dark-subtle rounded-3 text-dark p-4 mt-5">
       <Row className="mb-3">
         <Col md={8}>
-          <h4>Attività</h4>
+          <h4> Risorse </h4>
           <h6>
             <FaEye />
             solo per te
