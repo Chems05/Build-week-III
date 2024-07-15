@@ -3,29 +3,29 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white mt-5 p-4">
+    <footer className="text-black  mt-5 p-4">
       <Container>
         <Row>
           <Col md={2}>
             <h6>Informazioni</h6>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Linee guida della community
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Privacy e condizioni
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Sales Solutions
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Centro sicurezza
                 </a>
               </li>
@@ -36,17 +36,17 @@ const Footer = () => {
             <h6>Accessibilità</h6>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Carriera
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Opzioni per gli annunci pubblicitari
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Mobile
                 </a>
               </li>
@@ -56,17 +56,17 @@ const Footer = () => {
             <h6>Talent Solutions</h6>
             <ul className="list-unstyled">
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Soluzioni di marketing
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Pubblicità
                 </a>
               </li>
               <li>
-                <a href="#" className="text-white">
+                <a href="#" className="text-black">
                   Piccole imprese
                 </a>
               </li>
