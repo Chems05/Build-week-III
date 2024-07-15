@@ -4,10 +4,10 @@ import { BsFillPersonPlusFill } from "react-icons/bs";
 
 const ProfileInfo = () => {
   return (
-    <Container xs="4" md="4" className="mb-4">
+    <Container xs="4" md="4" className="mb-4 bg-white">
       <Row className="d-flex justify-content-between border border-dark-subtle rounded-3">
         <Col className="row ps-2 col-8">
-          <span className="fs-5">Lingua del profilo </span>
+          <span className="fs-5 text-dark">Lingua del profilo </span>
           <p className="fw-lighter">Italiano</p>
         </Col>
         <Col className="text-end ">
@@ -15,7 +15,7 @@ const ProfileInfo = () => {
         </Col>
         <Col className="row ps-2 col-8">
           <hr className="hrPrfileInfo text-center ms-3 mb-2" />
-          <span className="fs-5">Profilo pubblico e URL </span>
+          <span className="fs-5 text-dark">Profilo pubblico e URL </span>
           <p className="fw-lighter">www.linkedin.com/in/todor-petrov-6ab7482b7</p>
         </Col>
         <Col className="text-end ">
@@ -37,7 +37,7 @@ const ProfileInfo = () => {
         <Col>
           <ListGroup>
             <ListGroupItem className="border border-0">
-              <Row className="">
+              <Row>
                 <Col md="3">
                   <img
                     className="rounded-circle imgProfileInfo"
@@ -47,12 +47,36 @@ const ProfileInfo = () => {
                 </Col>
                 <Col className="col-9 d-flex row">
                   <Col className="col-12">
-                    <p>Veronica Gerani</p>
+                    <p>
+                      <strong>Veronica Gerani</strong>
+                    </p>
                   </Col>
-                  <Button className="btnPeaples bg-transparent text-body d-flex align-items-center">
+                  <Button className="btnPeaples bg-transparent text-body d-flex align-items-center w-75">
                     <BsFillPersonPlusFill className="me-2" />
                     <strong>Collegati</strong>
                   </Button>
+                  <hr />
+                </Col>
+              </Row>
+              <Row>
+                <Col md="3">
+                  <img
+                    className="rounded-circle imgProfileInfo"
+                    src="https://media.licdn.com/dms/image/D5603AQHtmaSyfliXzQ/profile-displayphoto-shrink_100_100/0/1714389091023?e=1726704000&v=beta&t=Lx7IPkUanWzlX-2b967cjx1P-6DrU043cbBzdO-lzPY"
+                    alt=""
+                  />
+                </Col>
+                <Col className="col-9 d-flex row">
+                  <Col className="col-12">
+                    <p>
+                      <strong>Veronica Gerani</strong>
+                    </p>
+                  </Col>
+                  <Button className="btnPeaples bg-transparent text-body d-flex align-items-center w-75">
+                    <BsFillPersonPlusFill className="me-2" />
+                    <strong>Collegati</strong>
+                  </Button>
+                  <hr />
                 </Col>
               </Row>
             </ListGroupItem>
