@@ -1,7 +1,13 @@
-import MainProfileInfo from "../components/MainProfileInfo";
+import Footer from "../components/Footer";
+import Activity from "../components/Activity";
 
 const ProfilePage = () => {
-  return <MainProfileInfo />;
+  return (
+    <div>
+      <Footer />
+      <Activity />
+    </div>
+  );
 };
 
 export default ProfilePage;
