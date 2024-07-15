@@ -12,7 +12,7 @@ const Analytics = () => {
           viewBox="0 0 16 16"
           data-supported-dps="16x16"
           fill="currentColor"
-          class="mercado-match"
+          className="mercado-match"
           width="16"
           height="16"
           focusable="false"
