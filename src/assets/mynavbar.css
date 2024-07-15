@@ -121,4 +121,70 @@
   #nav-dropdown-aziende::after{
     display: none;
   }
- 
+  .dropdown-menu .dropdown-col {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .dropdown-menu .section-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+  
+  .dropdown-menu .dropdown-divider {
+    margin: 0.5rem 0;
+  }
+  
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .dropdown-item img,
+  .dropdown-item svg {
+    margin-right: 10px;
+  }
+  .dropdown-menu {
+    width: 800px; 
+    padding: 20px;
+    height:700px ;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+ .nav-dividers{
+    width: 1px;
+    height: 650px;
+    background-color: #d1d1d1;
+    margin: 0 10px;
+    align-self: center;
+ }
+ .dropdown2 .dropdown-menu {
+    width: 800px;
+    padding: 10px; 
+    height: auto;
+    font-size: 14px; 
+}
+
+.small-dropdown .dropdown-menu {
+    width: 264px !important;
+    height: 470px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.bottone:hover{
+    background-color: #004182;
+    border: 2px solid #004182;
+  }
+
+.bottone{
+    border-radius: 25px;
+   
+      
+   
+}
+.small-dropdown .dropdown-menu .testo-piccolo{
+    font-size: 13px;
+    color: #666666;
+}

@@ -5,12 +5,15 @@ import {
   FormControl,
   Container,
   NavDropdown,
-  Image,
+  Button,
+ 
 } from "react-bootstrap";
 import { FaTh } from "react-icons/fa";
-import { BsLinkedin } from "react-icons/bs";
+import {  BsFillPlayBtnFill, BsFillPostcardFill, BsLinkedin, BsPlusLg } from "react-icons/bs";
 import "../assets/mynavbar.css";
-import { BiCaretDown } from "react-icons/bi";
+import { BiCaretDown,  } from "react-icons/bi";
+import { BrowserSafari, Check,  FileBarGraph, PeopleFill, SquareFill } from "react-bootstrap-icons";
+
 
 const MyNavbar = () => {
   return (
@@ -119,54 +122,148 @@ const MyNavbar = () => {
               Notifiche
             </Nav.Link>
             <NavDropdown
-              title={
-                <div className="d-flex align-items-center mt-2">
-                  <div className="d-flex flex-column align-items-center">
-                    <img
-                      src={Image}
-                      alt="Profile"
-                      className="rounded-circle mb-1"
-                      width="24"
-                      height="20"
-                    />
-                    <span className="">
-                      Tu <BiCaretDown />
-                    </span>
-                  </div>
-                </div>
-              }
-              id="nav-dropdown-tu"
-              align="end"
-              className="dropdown"
-            >
-              <NavDropdown.Item href="#business1">Opzione 1</NavDropdown.Item>
-              <NavDropdown.Item href="#business2">Opzione 2</NavDropdown.Item>
-              <NavDropdown.Item href="#business3">Opzione 3</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#more">Scopri di più</NavDropdown.Item>
-            </NavDropdown>
+      title={
+        <div className="d-flex align-items-center mt-2 dropdown2">
+          <div className="d-flex flex-column align-items-center">
+            <img
+              src="circle"
+              alt="Profile"
+              className="rounded-circle mb-1"
+              width="24"
+              height="20"
+            />
+            <span className="">
+              Tu <BiCaretDown />
+            </span>
+          </div>
+        </div>
+      }
+      id="nav-dropdown-tu"
+      align="end"
+      className="small-dropdown"  
+    >
+      <NavDropdown.Item href="#business1">
+      <div className="d-flex align-items-center">
+            {/* Immagine circolare per l'opzione */}
+            <img
+              src='circle'
+              alt='imamgine'
+              className="rounded-circle mr-2 mb-5"
+              width="24"
+              height="24"
+            />
+            <div>
+              {/* Titolo e sottotitolo */}
+              <div>Nome Cognome</div>
+              <div className="small text-muted">Professione</div>
+              {/* Bottone 'Visualizza altro' */}
+              <Button className="btn bottone border-primary bg-white text-primary mt-2 ">Visualizza altro</Button>
+            </div>
+          </div>
+
+      </NavDropdown.Item>
+      <NavDropdown.Divider />
+      <NavDropdown.Item href="#business2"><h5>Account</h5></NavDropdown.Item>
+      <NavDropdown.Item href="#business3"><h7 className='testo-piccolo' ><SquareFill style={{color:'#b37d00'}} />Prova 1 mese di Premium per 0 <br /> EUR</h7></NavDropdown.Item>
+      <NavDropdown.Item href="#business3"><h7 className='testo-piccolo'>Impostazioni e privacy </h7></NavDropdown.Item>
+      <NavDropdown.Item href="#business3"><h7 className='testo-piccolo'>Guida </h7></NavDropdown.Item>
+      <NavDropdown.Item href="#business3"><h7 className='testo-piccolo'>Lingua</h7></NavDropdown.Item>
+      <NavDropdown.Divider />
+      <NavDropdown.Item href="#business2"><h5>Gestisci</h5></NavDropdown.Item>
+      <NavDropdown.Item href="#business3"><h7 className='testo-piccolo'>Post e attività </h7></NavDropdown.Item>
+      <NavDropdown.Item href="#business3"><h7 className='testo-piccolo'>Account per la pubblicazione di off... </h7></NavDropdown.Item>
+      <NavDropdown.Divider />
+      <NavDropdown.Item href="#business3"><h7 className='testo-piccolo'>Esci</h7></NavDropdown.Item>
+    </NavDropdown>
             <div className="nav-divider ms-5"></div>
             <NavDropdown
-              title={
-                <div className="d-flex align-items-center mt-2">
-                  <div className="d-flex flex-column align-items-center">
-                    <FaTh size={20} />
-                    <span className="mt-1">
-                      Per le aziende <BiCaretDown />
-                    </span>
-                  </div>
-                </div>
-              }
-              id="nav-dropdown-tu"
-              align="end"
-              className="dropdown"
-            >
-              <NavDropdown.Item href="#business1">Opzione 1</NavDropdown.Item>
-              <NavDropdown.Item href="#business2">Opzione 2</NavDropdown.Item>
-              <NavDropdown.Item href="#business3">Opzione 3</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#more">Scopri di più</NavDropdown.Item>
-            </NavDropdown>
+      title={
+        <div className="d-flex align-items-center mt-2">
+          <div className="d-flex flex-column align-items-center">
+            <FaTh size={20} />
+            <span className="mt-1">
+              Per le aziende <BiCaretDown />
+            </span>
+          </div>
+        </div>
+      }
+      id="nav-dropdown-tu"
+      align="end"
+      className="dropdown"
+    >
+      <div className="d-flex">
+        <div className="dropdown-col">
+          <div className="section-title mb-2">Scopri altri prodotti LinkedIn</div>
+          <NavDropdown.Item href="#find-clients">
+            <BrowserSafari style={{color:'#0A66C2'}} size={22} /> Trova nuovi clienti
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#groups">
+            <PeopleFill style={{color:'#0A66C2'}} size={22} /> Gruppi
+          </NavDropdown.Item>
+          <div className="section-title">Talent</div>
+          <NavDropdown.Item href="#talent-insights">
+            <FileBarGraph style={{color:'#0A66C2'}}  size={22} /> Talent Insights
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#post-job">
+            <BsFillPostcardFill style={{color:'#0A66C2'}} size={22} /> Pubblica un’offerta di lavoro
+          </NavDropdown.Item>
+          <div className="section-title">Vendite</div>
+          <NavDropdown.Item href="#service-marketplace">
+            <Check style={{color:'#0A66C2'}} size={24} /> Marketplace dei servizi
+          </NavDropdown.Item>
+  
+        
+          <div className="section-title">Marketing</div>
+          <NavDropdown.Item href="#advertise">
+          <svg fill="#0A66C2"version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 459.428 459.428" className="iconsarrow" xmlSpace="preserve" width="20" height="20">
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+         <g id="SVGRepo_iconCarrier"> 
+         <g> 
+        <path d="M349.792,157.708l-19.856,19.856c9.316,17.136,14.62,36.652,14.62,57.459c0,66.232-53.924,120.156-120.156,120.156 s-120.156-53.924-120.156-120.156c0-66.232,53.924-120.156,120.156-120.156c20.808,0,40.324,5.304,57.459,14.62l19.856-19.856 c-22.508-13.94-48.96-21.964-77.316-21.964c-81.26,0-147.356,66.096-147.356,147.356S143.14,382.38,224.4,382.38 s147.356-66.096,147.356-147.355C371.756,206.669,363.731,180.217,349.792,157.708z M294.644,212.925l-23.868,23.801 c-0.884,24.887-21.283,44.742-46.375,44.742c-25.636,0-46.444-20.807-46.444-46.443c0-25.092,19.856-45.492,44.744-46.375 l23.868-23.8c-7.004-2.244-14.416-3.468-22.167-3.468c-40.596,0-73.644,33.048-73.644,73.644s33.048,73.645,73.644,73.645 s73.644-33.049,73.644-73.645C298.044,227.34,296.888,219.861,294.644,212.925z M416.771,119.629l-19.855,19.856 c15.708,28.288,24.684,60.86,24.684,95.54c0,108.732-88.468,197.201-197.2,197.201S27.2,343.757,27.2,235.024 c0-108.732,88.468-197.2,197.2-197.2c34.68,0,67.251,8.976,95.54,24.684l19.856-19.856C306.067,22.321,266.56,10.625,224.4,10.625 C100.64,10.625,0,111.265,0,235.024s100.64,224.4,224.4,224.4s224.4-100.641,224.4-224.4 C448.8,192.865,437.104,153.357,416.771,119.629z M387.301,120.207l-25.963-2.883L233.431,245.226 c-5.311,5.311-13.92,5.311-19.231,0c-5.311-5.312-5.311-13.92,0-19.231L342.101,98.093l-2.883-25.962l72.128-72.128l9.615,38.468 l38.467,9.615L387.301,120.207z"></path>
+         </g> 
+         </g>
+         </svg>  Pubblicizza
+          </NavDropdown.Item>
+          <div className="section-title">Learning</div>
+          <NavDropdown.Item href="#learning">
+            <BsFillPlayBtnFill style={{color:'#0A66C2'}} size={22} /> Learning
+          </NavDropdown.Item>
+          </div>
+          <div className="nav-dividers"></div>
+          <div className="dropdown-col">
+          
+          <div className="section-title mb-2">Scopri altro per il business</div>
+          <NavDropdown.Item href="#hire-linkedin">
+            Assumi su LinkedIn<br/>
+            Trova, attrai e assumi
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#sell-linkedin">
+            Vendi con LinkedIn<br/>
+            Sblocca nuove opportunità di vendita
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#free-job-posting">
+            Offerta di lavoro gratuita<br/>
+            Ottieni rapidamente candidati qualificati
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#advertise-linkedin">
+            Fai pubblicità su LinkedIn<br />
+            Acquisisci clienti e fai crescere la tua azienda
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#learn-linkedin">
+            Impara con LinkedIn<br />
+            Assumi su LinkedIn
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#admin-center">
+            Admin Center<br />
+            Gestisci i dettagli di fatturazione e account
+          </NavDropdown.Item>
+          <NavDropdown.Item href="#create-page">
+            Crea una pagina aziendale <BsPlusLg />
+          </NavDropdown.Item>
+        </div>
+      </div>
+    </NavDropdown>
 
             <Nav.Link className="ms-4 prova-premium mt-2 ">
               Prova Premium per 0 <br /> EUR
