@@ -1,4 +1,4 @@
-import { Card, Col, Container, Row, Button } from "react-bootstrap";
+import { Card, Col,  Row, Button } from "react-bootstrap";
 import { useState } from "react";
 import { Pencil } from "react-bootstrap-icons";
 
@@ -10,7 +10,7 @@ const Informazioni = () => {
   };
 
   return (
-    <Container>
+
       <Row className="mt-4">
         <Col>
           <Card>
@@ -111,7 +111,7 @@ const Informazioni = () => {
           </Card>
         </Col>
       </Row>
-    </Container>
+    
   );
 };
 
