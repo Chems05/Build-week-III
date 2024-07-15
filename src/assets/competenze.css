@@ -1,0 +1,17 @@
+.center{
+    margin-left: 40%;
+}
+
+  
+.competence-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s, border-bottom-color 0.3s;
+  }
+  
+  .competence-link:hover {
+    color: #59B4E9; 
+    text-decoration: underline;
+  }
+ 
+  
