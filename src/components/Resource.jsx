@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const Resource = () => {
   return (
-    <Container className="border border-dark-subtle rounded-3 text-dark p-4 mt-5">
+    <Container className=" bg-white border border-dark-subtle rounded-3 text-dark p-4 mt-5">
       <Row className="mb-3">
         <Col md={8}>
           <h4>Attività</h4>
