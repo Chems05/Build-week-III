@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="text-black  mt-5 p-4">
       <Container>
         <Row>
-          <Col md={2}>
+          <Col md={2} className="d-none d-md-block">
             <h6>Informazioni</h6>
             <ul className="list-unstyled">
               <li>
@@ -35,7 +35,7 @@ const Footer = () => {
             </ul>
             <p>LinkedIn Corporation © 2024</p>
           </Col>
-          <Col md={2}>
+          <Col md={2} className="d-none d-md-block">
             <h6>Accessibilità</h6>
             <ul className="list-unstyled">
               <li>
@@ -55,7 +55,7 @@ const Footer = () => {
               </li>
             </ul>
           </Col>
-          <Col md={2}>
+          <Col md={2} className="d-none d-md-block">
             <h6>Talent Solutions</h6>
             <ul className="list-unstyled">
               <li>

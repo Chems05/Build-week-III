@@ -26,7 +26,7 @@ const Activity = () => {
   ];
 
   return (
-    <Container className="border-secondary rounded text-dark p-4 mt-5">
+    <Container className="border border-dark-subtle rounded-3 text-dark p-4 mt-5">
       <Row className="mb-3">
         <Col md={8}>
           <h4>Attività</h4>
