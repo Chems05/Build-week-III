@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, Image, Modal, Button, Form } from "react-bootstrap";
 import { Pencil, ShieldCheck } from "react-bootstrap-icons";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,34 +7,32 @@ import { uploadProfileImage } from "../redux/actions";
 const MainProfileInfo = () => {
   const dispatch = useDispatch();
   const singleUserInfo = useSelector((state) => state.users.singleUser);
+  const loading = useSelector((state) => state.users.loading);
   const [showModal, setShowModal] = useState(false);
   const [newImage, setNewImage] = useState(null);
 
   const handleModalOpen = () => setShowModal(true);
   const handleModalClose = () => setShowModal(false);
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      console.log("Selected file:", file);
       setNewImage(file);
-    } else {
-      console.log("No file selected.");
     }
   };
 
-  const handleImageSave = () => {
+  const handleImageSave = async () => {
     if (newImage && singleUserInfo) {
-      console.log("Uploading image:", newImage);
-      try {
-        dispatch(uploadProfileImage(singleUserInfo._id, newImage));
-      } catch (error) {
-        console.error("Error uploading image:", error);
-      }
-    } else {
-      console.log("No image or user information available for upload.");
+      await dispatch(uploadProfileImage(singleUserInfo._id, newImage));
+      setShowModal(false); 
     }
-    setShowModal(false);
   };
+
+  useEffect(() => {
+    if (singleUserInfo && singleUserInfo.image) {
+      setNewImage(null);
+    }
+  }, [singleUserInfo]);
 
   return (
     <>
@@ -110,16 +108,14 @@ const MainProfileInfo = () => {
               <Form.Control type="file" onChange={handleImageChange} />
             </Form.Group>
           </Form>
-          {newImage && (
-            <Image src={URL.createObjectURL(newImage)} fluid />
-          )}
+          {newImage && <Image src={URL.createObjectURL(newImage)} fluid />}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleModalClose}>
             Chiudi
           </Button>
-          <Button variant="primary" onClick={handleImageSave}>
-            Salva
+          <Button variant="primary" onClick={handleImageSave} disabled={loading}>
+            {loading ? 'Salvando...' : 'Salva'}
           </Button>
         </Modal.Footer>
       </Modal>

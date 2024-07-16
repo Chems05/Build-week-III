@@ -40,12 +40,16 @@ const ProfilePage = () => {
         <Row>
           <Col md={8} ref={mainProfileRef}>
             <MainProfileInfo />
-            <Informazioni />
-            <Competenze />
-            <Activity />
-            <Resource />
             <Analytics />
+            <Resource />
+            <Informazioni />
+            <Activity />
+            <Competenze />
+      
+         
+          
             <Esperienza />
+            <Competenze />
           </Col>
           <Col md={4}>
             <ProfileInfo />

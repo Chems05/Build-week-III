@@ -4,14 +4,14 @@ import { ArrowRight } from "react-bootstrap-icons";
 const Analytics = () => {
   return (
     <Container className="bg-white border rounded mt-3 p-3 pb-0">
-      <h2>Analisi</h2>
+      <h5 className="fw-bold">Analisi</h5>
 
       <div className="d-flex align-items-center mb-2 text-secondary">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
           data-supported-dps="16x16"
-          fill="currentColor"
+          fill="#404040"
           className="mercado-match"
           width="16"
           height="16"
@@ -30,7 +30,7 @@ const Analytics = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 data-supported-dps="24x24"
-                fill="currentColor"
+                fill="#404040"
                 className="mercado-match"
                 width="24"
                 height="24"
@@ -43,7 +43,7 @@ const Analytics = () => {
             <Col xs={10}>
               <a>
                 <strong className="d-inline-block">100 Visualizzazioni del profilo</strong>
-                <span>Scopri chi ha visualizzato il tuo profilo</span>
+                <span style={{fontSize:'14px'}}>Scopri chi ha visualizzato il tuo profilo</span>
               </a>
             </Col>
           </Row>
@@ -55,7 +55,7 @@ const Analytics = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 data-supported-dps="24x24"
-                fill="currentColor"
+                fill="#404040"
                 className="mercado-match"
                 width="24"
                 height="24"
@@ -67,8 +67,11 @@ const Analytics = () => {
 
             <Col xs={10}>
               <a>
-                <strong className="d-inline-block">500 Impressioni del post</strong>
-                <span>Scopri chi sta interagendo con il tuo post</span>
+                <strong className="d-inline-block ">500 Impressioni del post</strong>
+                <span style={{fontSize:'14px'}} >Scopri chi sta interagendo con il tuo post
+                  <br />
+                 <h6 style={{fontSize:'13px',color:'grey',marginTop:'5px'}}> Ultimi 7 giorni </h6>
+                </span>
               </a>
             </Col>
           </Row>
@@ -93,14 +96,15 @@ const Analytics = () => {
             <Col xs={10}>
               <a>
                 <strong className="d-inline-block">35 Comparse nei motori di ricerca</strong>
-                <span>Vedi quante volte compari nei risultati di ricerca</span>
+                <span style={{fontSize:'14px'}}>Vedi quante volte compari nei risultati di ricerca</span>
               </a>
             </Col>
           </Row>
         </Col>
         <hr className="mb-0" />
         <div style={{ cursor: "pointer" }} className="d-flex align-items-center justify-content-center p-2">
-          <span className="me-2 text-secondary">Mostra Tutte le analisi</span>
+          <span style={{ color: "grey",
+                      fontSize: "15px",}} className="me-2 text-secondary">Mostra Tutte le analisi</span>
           <ArrowRight />
         </div>
       </Row>

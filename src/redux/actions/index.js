@@ -125,21 +125,18 @@ export const uploadProfileImage = (userId, imageFile) => {
       const formData = new FormData();
       formData.append('profile', imageFile);
 
-      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/picture`,
-        {
-          method: 'POST',
-          headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`,
-          },
-          body: formData,
-        }
-      );
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/picture`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`,
+        },
+        body: formData,
+      });
 
       if (response.ok) {
         const data = await response.json();
-        dispatch({ type: UPLOAD_PROFILE_IMAGE_SUCCESS, payload: data });
-
-        dispatch(updateUserInfo(userId, data));
+        dispatch({ type: UPLOAD_PROFILE_IMAGE_SUCCESS, payload: { userId, url: data.image } });
+        dispatch(updateUserInfo(userId, { image: data.image }));
       } else {
         throw new Error('Image upload failed');
       }

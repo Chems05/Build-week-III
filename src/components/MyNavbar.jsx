@@ -26,7 +26,7 @@ const MyNavbar = () => {
     if (singleUserInfo) {
       dispatch(getUserExperiences(singleUserInfo._id));
     }
-  }, [singleUserInfo]);
+  }, []);
 
   return (
     <Navbar bg="white" variant="light" expand="lg" className="px-3 shadow-sm">
@@ -113,7 +113,7 @@ const MyNavbar = () => {
             >
               <NavDropdown.Item href="#business1">
                 <div className="d-flex align-items-center">
-                  {/* Immagine circolare per l'opzione */}
+                
 
                   {singleUserInfo && (
                     <img
@@ -125,7 +125,7 @@ const MyNavbar = () => {
                     />
                   )}
                   <div>
-                    {/* Titolo e sottotitolo */}
+                    
                     {singleUserInfo && (
                       <>
                         <div>
@@ -138,8 +138,8 @@ const MyNavbar = () => {
                       </>
                     )}
 
-                    {/* Bottone 'Visualizza altro' */}
-                    <Button className="btn bottone border-primary bg-white text-primary mt-2 ">Visualizza altro</Button>
+                   
+                    <Button style={{width:'180px ',fontSize:'12px'}} className="btn bottone border-primary bg-white text-primary mt-2  ">Visualizza profilo</Button>
                   </div>
                 </div>
               </NavDropdown.Item>
@@ -148,7 +148,7 @@ const MyNavbar = () => {
                 <h5>Account</h5>
               </NavDropdown.Item>
               <NavDropdown.Item href="#business3">
-                <h7 className="testo-piccolo">
+                <h7 className="testo-piccolo ">
                   <SquareFill style={{ color: "#b37d00" }} />
                   Prova 1 mese di Premium per 0 <br /> EUR
                 </h7>

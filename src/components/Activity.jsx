@@ -73,7 +73,8 @@ const Activity = () => {
       ))}
       <Row>
         <Col className="text-center">
-          <Button variant="" className="text-secondary">
+          <Button  style={{ color: "grey",
+                      fontSize: "15px",}} variant="" className="text-secondary">
             Mostra tutti i post →
           </Button>
         </Col>
