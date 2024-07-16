@@ -6,11 +6,13 @@ import { BiCaretDown } from "react-icons/bi";
 import { BrowserSafari, Check, FileBarGraph, PeopleFill, SquareFill } from "react-bootstrap-icons";
 
 import "../assets/mynavbar.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllUsersInformations, getUserInformation } from "../redux/actions";
 
 const MyNavbar = () => {
+  const singleUserInfo = useSelector((state) => state.users.singleUser);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -82,7 +84,15 @@ const MyNavbar = () => {
               title={
                 <div className="d-flex align-items-center mt-2 dropdown2">
                   <div className="d-flex flex-column align-items-center">
-                    <img src="circle" alt="Profile" className="rounded-circle mb-1" width="24" height="20" />
+                    {singleUserInfo && (
+                      <img
+                        src={singleUserInfo.image}
+                        alt="Profile"
+                        className="rounded-circle mb-1"
+                        width="24"
+                        height="20"
+                      />
+                    )}
                     <span className="">
                       Tu <BiCaretDown />
                     </span>
@@ -96,11 +106,30 @@ const MyNavbar = () => {
               <NavDropdown.Item href="#business1">
                 <div className="d-flex align-items-center">
                   {/* Immagine circolare per l'opzione */}
-                  <img src="circle" alt="imamgine" className="rounded-circle mr-2 mb-5" width="24" height="24" />
+
+                  {singleUserInfo && (
+                    <img
+                      src={singleUserInfo.image}
+                      alt="imamgine"
+                      className="rounded-circle mr-2 mb-5"
+                      width="24"
+                      height="24"
+                    />
+                  )}
                   <div>
                     {/* Titolo e sottotitolo */}
-                    <div>Nome Cognome</div>
-                    <div className="small text-muted">Professione</div>
+                    {singleUserInfo && (
+                      <>
+                        <div>
+                          <strong>
+                            {singleUserInfo.name}&nbsp;
+                            {singleUserInfo.surname}
+                          </strong>
+                        </div>
+                        <div className="small text-muted">{singleUserInfo.title}</div>
+                      </>
+                    )}
+
                     {/* Bottone 'Visualizza altro' */}
                     <Button className="btn bottone border-primary bg-white text-primary mt-2 ">Visualizza altro</Button>
                   </div>
