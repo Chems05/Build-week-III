@@ -18,9 +18,11 @@ const MyNavbar = () => {
     dispatch(getUserInformation());
     dispatch(getAllUsersInformations());
   }, []);
+
   //useffect con il ruolo di componentDidUpdate che fetcha le xperiences solo quandi otteniamo l'id dell'utente nella fetch che viene
   //eseguita al montaggio della pagina
   useEffect(() => {
+    //eseguirà la fetch solo quando singleUserInfo!== da null e
     if (singleUserInfo) {
       dispatch(getUserExperiences(singleUserInfo._id));
     }
