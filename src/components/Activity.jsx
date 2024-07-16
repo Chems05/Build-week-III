@@ -1,7 +1,9 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { FaPen, FaRegThumbsUp, FaRegComment } from "react-icons/fa";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
+import { Pencil } from "react-bootstrap-icons";
+import {  FaRegThumbsUp, FaRegComment } from "react-icons/fa";
+
+
+
 
 const Activity = () => {
   const posts = [
@@ -30,34 +32,48 @@ const Activity = () => {
       <Row className="mb-3">
         <Col md={8}>
           <h4>Attività</h4>
-          <p>13 follower</p>
+          <p style={{color:'#0A66C2'}}>13 follower</p>
+          <Button  variant="success" className="rounded-pill btns" size="sm">
+            Post
+          </Button>
+          <span><Button variant="light text-secondary border-secondary"size="sm" className="ms-2 rounded-pill btns" >
+            Immagini
+            </Button>
+          
+             </span>
         </Col>
         <Col md={4} className="text-end">
-          <Button variant="outline-primary" size="sm">
-            Crea un post <FaPen />
+          <Button variant="outline-primary"className="rounded-pill me-2" size="sm">
+            Crea un post 
           </Button>
+          <Pencil />
         </Col>
       </Row>
       {posts.map((post) => (
-        <Card key={post.id} className="mb-3 bg- text-dark">
-          <Card.Body>
-            <Card.Text>
+        <Card key={post.id} className="mb-3 bg- text-dark border-transparent border-0">
+          <Card.Body >
+            
+            <Card.Text style={{color:'grey',fontSize:'12px'}}>
               <strong>{post.user}</strong> ha pubblicato questo post - 1m
             </Card.Text>
-            <Card.Text>{post.content}</Card.Text>
-            <Card.Link href={post.linkUrl} className="text-info">
-              {post.link}
+            <Card.Text style={{fontSize:'14px'}}>{post.content}</Card.Text>
+            <Card.Link style={{textDecoration:'none',fontSize:'14px'}} href={post.linkUrl} className="text-black">
+            <span>
+                <img src="https://via.placeholder.com/50" alt="" />
+              </span> {post.link}
             </Card.Link>
-            <div className="d-flex align-items-center mt-2">
-              <FaRegThumbsUp className="me-2" /> {post.likes}
-              <FaRegComment className="ms-4 me-2" /> {post.comments}
+            <div className="d-flex align-items-center mt-3">
+              <FaRegThumbsUp className="me-2 text-primary" /> {post.likes}
+              <FaRegComment className="ms-4 me-2 text-success" /> {post.comments}
             </div>
           </Card.Body>
+          <hr />
         </Card>
+  
       ))}
       <Row>
         <Col className="text-center">
-          <Button variant="link" className="text-info">
+          <Button variant="" className="text-secondary">
             Mostra tutti i post →
           </Button>
         </Col>

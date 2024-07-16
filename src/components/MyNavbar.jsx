@@ -5,7 +5,7 @@ import "../assets/mynavbar.css";
 import { BiCaretDown } from "react-icons/bi";
 import { BrowserSafari, Check, FileBarGraph, PeopleFill, SquareFill } from "react-bootstrap-icons";
 
-import "../assets/mynavbar.css";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllUsersInformations, getUserInformation } from "../redux/actions";
