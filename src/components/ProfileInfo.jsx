@@ -42,20 +42,21 @@ const ProfileInfo = () => {
           <ListGroup>
             <ListGroupItem className="border border-0">
               <Row className="">
-                <Col xs={4}>
+                <Col xs={3}>
                   <img
                     className="rounded-circle imgProfileInfo"
                     src="https://media.licdn.com/dms/image/D5603AQHtmaSyfliXzQ/profile-displayphoto-shrink_100_100/0/1714389091023?e=1726704000&v=beta&t=Lx7IPkUanWzlX-2b967cjx1P-6DrU043cbBzdO-lzPY"
                     alt=""
                   />
                 </Col>
-                <Col className="d-flex row">
-                  <Col className="col-12">
-                    <p className="mb-1">Veronica Gerani</p>
-                    <p className="mb-1">Role</p>
-                  </Col>
-                  <Button className="btnPeaples p-3 mb-2 bg-transparent text-body d-flex align-items-center">
-                    <BsFillPersonPlusFill />
+                <Col xs={9}>
+                  <p className="mb-1">
+                    <strong>Veronica Gerani</strong>
+                  </p>
+                  <p className="mb-2">Role</p>
+
+                  <Button className="black-button rounded-pill mb-2 d-flex align-items-center justify-content-center">
+                    <BsFillPersonPlusFill className="me-2" />
                     <strong>Collegati</strong>
                   </Button>
                 </Col>
