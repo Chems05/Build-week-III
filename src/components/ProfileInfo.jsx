@@ -10,6 +10,11 @@ const ProfileInfo = () => {
       role: 'Ethical Hacking Student 🧑‍💻 | Junior Cybersecurity Analyst',
       avatar: 'https://media.licdn.com/dms/image/D5603AQHtmaSyfliXzQ/profile-displayphoto-shrink_100_100/0/1714389091023?e=1726704000&v=beta&t=Lx7IPkUanWzlX-2b967cjx1P-6DrU043cbBzdO-lzPY',
     },
+    {
+      name: 'Noemi D.',
+      role: 'Ethical Hacking Student 🧑‍💻 | Junior Cybersecurity Analyst',
+      avatar: 'https://media.licdn.com/dms/image/D5603AQHtmaSyfliXzQ/profile-displayphoto-shrink_100_100/0/1714389091023?e=1726704000&v=beta&t=Lx7IPkUanWzlX-2b967cjx1P-6DrU043cbBzdO-lzPY',
+    },
    
   ];
 
@@ -34,30 +39,32 @@ const ProfileInfo = () => {
         <BsFillPersonPlusFill className="ms-3" />
         <strong className='ms-4'>Collegati</strong>
       </Button>
+      
     </Col>
+    <hr className='mt-3' />
     </Row>
   );
 
   return (
     <Container xs="4" md="4" className="mb-4">
       <Row className="bg-white d-flex justify-content-between border border-dark-subtle rounded-3">
-        <Col className="row ps-2 col-8">
-          <span className="fs-5">
+        <Col className="row ps-2 col-8 ms-2">
+          <span className="mt-3 ">
             <strong>Lingua del profilo</strong>
           </span>
-          <p className="fw-lighter text-secondary">Italiano</p>
+          <small className="fw-lighter text-secondary mt-2 mb-4">Italiano</small>
         </Col>
         <Col className="text-end">
           <LiaPenSolid className="svgSize" />
         </Col>
-        <Col className="row ps-2 col-8">
-          <hr className="hrPrfileInfo text-center ms-3 mb-2" />
-          <span className="fs-5">
-            <strong>Profilo pubblico e URL</strong>
+        <Col className="row ps-2 col-8 ms-2">
+          <hr className="hrPrfileInfo text-center ms-3 mb-2 " />
+          <span className="mt-2">
+            <strong >Profilo pubblico e URL</strong>
           </span>
-          <p className="fw-lighter text-secondary">
+          <small className="fw-lighter text-secondary mt-2 mb-3">
             www.linkedin.com/in/todor-petrov-6ab7482b7
-          </p>
+          </small>
         </Col>
         <Col className="text-end">
           <LiaPenSolid className="svgSize" />
