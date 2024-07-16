@@ -1,47 +1,39 @@
-
-import { Button, Col, Container, ListGroup, ListGroupItem, Row } from 'react-bootstrap';
-import { LiaPenSolid } from 'react-icons/lia';
-import { BsFillPersonPlusFill } from 'react-icons/bs';
+import { Button, Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap";
+import { LiaPenSolid } from "react-icons/lia";
+import { BsFillPersonPlusFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const ProfileInfo = () => {
-  const users = [
-    {
-      name: 'Noemi D.',
-      role: 'Ethical Hacking Student 🧑‍💻 | Junior Cybersecurity Analyst',
-      avatar: 'https://media.licdn.com/dms/image/D5603AQHtmaSyfliXzQ/profile-displayphoto-shrink_100_100/0/1714389091023?e=1726704000&v=beta&t=Lx7IPkUanWzlX-2b967cjx1P-6DrU043cbBzdO-lzPY',
-    },
-    {
-      name: 'Noemi D.',
-      role: 'Ethical Hacking Student 🧑‍💻 | Junior Cybersecurity Analyst',
-      avatar: 'https://media.licdn.com/dms/image/D5603AQHtmaSyfliXzQ/profile-displayphoto-shrink_100_100/0/1714389091023?e=1726704000&v=beta&t=Lx7IPkUanWzlX-2b967cjx1P-6DrU043cbBzdO-lzPY',
-    },
-   
-  ];
+  const usersArray = useSelector((state) => state.users.users);
 
   const UserCard = ({ user }) => (
     <Row className="mb-2 align-items-center">
-    <Col xs={2} className="d-flex justify-content-center">
-      <img
-        className="rounded-circle imgProfileInfo"
-        src={user.avatar}
-        alt={user.name}
-        style={{ width: '50px', height: '50px' }}
-      />
-    </Col>
-    <Col xs={10} className="d-flex flex-column">
-      <div>
-        <p className="mb-1 fw-bold">{user.name}</p>
-        <p className="mb-1 text-muted" style={{ fontSize: '0.9em' }}>{user.role}</p>
-      </div>
-    </Col>
-    <Col xs={0} className="d-flex justify-content-center align-items-end ">
-      <Button className="btnPeaples mt-2 p-1 bg-transparent text-body d-flex align-items-center border border-secondary rounded-pill me-4 w-50">
-        <BsFillPersonPlusFill className="ms-3" />
-        <strong className='ms-4'>Collegati</strong>
-      </Button>
-      
-    </Col>
-    <hr className='mt-3' />
+      <Col xs={2} className="d-flex justify-content-center">
+        <img
+          className="rounded-circle imgProfileInfo"
+          src={user.image}
+          alt={user.name}
+          style={{ width: "50px", height: "50px" }}
+        />
+      </Col>
+      <Col xs={10} className="d-flex flex-column">
+        <div>
+          <p className="mb-1 fw-bold">
+            {user.name}&nbsp;
+            {user.surname}
+          </p>
+          <p className="mb-1 text-muted" style={{ fontSize: "0.9em" }}>
+            {user.title}
+          </p>
+        </div>
+      </Col>
+      <Col xs={0} className="d-flex justify-content-center align-items-end ">
+        <Button className="btnPeaples mt-2 p-1 bg-transparent text-body d-flex align-items-center border border-secondary rounded-pill me-4 w-50">
+          <BsFillPersonPlusFill className="ms-3" />
+          <strong className="ms-4">Collegati</strong>
+        </Button>
+      </Col>
+      <hr className="mt-3" />
     </Row>
   );
 
@@ -60,11 +52,9 @@ const ProfileInfo = () => {
         <Col className="row ps-2 col-8 ms-2">
           <hr className="hrPrfileInfo text-center ms-3 mb-2 " />
           <span className="mt-2">
-            <strong >Profilo pubblico e URL</strong>
+            <strong>Profilo pubblico e URL</strong>
           </span>
-          <small className="fw-lighter text-secondary mt-2 mb-3">
-            www.linkedin.com/in/todor-petrov-6ab7482b7
-          </small>
+          <small className="fw-lighter text-secondary mt-2 mb-3">www.linkedin.com/in/todor-petrov-6ab7482b7</small>
         </Col>
         <Col className="text-end">
           <LiaPenSolid className="svgSize" />
@@ -86,8 +76,8 @@ const ProfileInfo = () => {
         </Col>
         <Col>
           <ListGroup>
-            {users.map((user, index) => (
-              <ListGroupItem key={index} className="border border-0">
+            {usersArray.slice(0, 10).map((user) => (
+              <ListGroupItem key={user._id} className="border border-0">
                 <UserCard user={user} />
               </ListGroupItem>
             ))}
