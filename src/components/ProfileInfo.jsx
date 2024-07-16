@@ -1,17 +1,10 @@
-import {
-  Button,
-  Col,
-  Container,
-  ListGroup,
-  ListGroupItem,
-  Row,
-} from "react-bootstrap";
+import { Button, Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import { LiaPenSolid } from "react-icons/lia";
 import { BsFillPersonPlusFill } from "react-icons/bs";
 
 const ProfileInfo = () => {
   return (
-    <Container xs="4" md="4" className="bg-white mb-4">
+    <Container xs="4" md="4" className=" mb-4">
       <Row className=" bg-white d-flex justify-content-between border border-dark-subtle rounded-3">
         <Col className="row ps-2 col-8">
           <span className="fs-5">Lingua del profilo </span>
@@ -23,9 +16,7 @@ const ProfileInfo = () => {
         <Col className="row ps-2 col-8">
           <hr className="hrPrfileInfo text-center ms-3 mb-2" />
           <span className="fs-5">Profilo pubblico e URL </span>
-          <p className="fw-lighter">
-            www.linkedin.com/in/todor-petrov-6ab7482b7
-          </p>
+          <p className="fw-lighter">www.linkedin.com/in/todor-petrov-6ab7482b7</p>
         </Col>
         <Col className="text-end ">
           <LiaPenSolid className="svgSize" />
