@@ -13,7 +13,7 @@ import Esperienza from "../components/Esperienza";
 
 const ProfilePage = () => {
   return (
-    <div style={{ color: "grey" }}>
+    <div>
       <MyNavbar />
       <Container className="mt-4">
         <Row>
@@ -25,7 +25,6 @@ const ProfilePage = () => {
             <Resource />
             <Analytics />
             <Esperienza />
-          
           </Col>
           <Col md={4}>
             <ProfileInfo />
