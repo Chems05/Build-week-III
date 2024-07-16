@@ -12,7 +12,7 @@ import ProfileInfo from "../components/ProfileInfo";
 
 const ProfilePage = () => {
   return (
-    <div style={{ color: "grey" }}>
+    <div>
       <MyNavbar />
       <Container className="mt-4">
         <Row>
@@ -23,7 +23,6 @@ const ProfilePage = () => {
             <Activity />
             <Resource />
             <Analytics />
-          
           </Col>
           <Col md={4}>
             <ProfileInfo />
