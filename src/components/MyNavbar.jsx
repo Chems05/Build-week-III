@@ -5,20 +5,26 @@ import "../assets/mynavbar.css";
 import { BiCaretDown } from "react-icons/bi";
 import { BrowserSafari, Check, FileBarGraph, PeopleFill, SquareFill } from "react-bootstrap-icons";
 
-
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getAllUsersInformations, getUserInformation } from "../redux/actions";
+import { getAllUsersInformations, getUserExperiences, getUserInformation } from "../redux/actions";
 
 const MyNavbar = () => {
   const singleUserInfo = useSelector((state) => state.users.singleUser);
-
+  const userExperiences = useSelector((state) => state.experiences.experiencesArray);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUserInformation());
     dispatch(getAllUsersInformations());
   }, []);
+  //useffect con il ruolo di componentDidUpdate che fetcha le xperiences solo quandi otteniamo l'id dell'utente nella fetch che viene
+  //eseguita al montaggio della pagina
+  useEffect(() => {
+    if (singleUserInfo) {
+      dispatch(getUserExperiences(singleUserInfo._id));
+    }
+  }, [singleUserInfo]);
 
   return (
     <Navbar bg="light" variant="light" expand="lg" className="px-3 shadow-sm">
