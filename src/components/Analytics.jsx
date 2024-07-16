@@ -6,7 +6,7 @@ const Analytics = () => {
     <Container className="bg-white border rounded mt-3 p-3 pb-0">
       <h2>Analisi</h2>
 
-      <div className="d-flex align-items-center mb-2">
+      <div className="d-flex align-items-center mb-2 text-secondary">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 16 16"
@@ -19,7 +19,7 @@ const Analytics = () => {
         >
           <path d="M8 3a8.59 8.59 0 00-8 5 8.54 8.54 0 008 5 8.55 8.55 0 008-5 8.55 8.55 0 00-8-5zm0 8a3 3 0 113-3 3 3 0 01-3 3zm2-3a2 2 0 11-2-2 2 2 0 012 2z"></path>
         </svg>
-        <span className="ms-2">Solo per te</span>
+        <span className="ms-1">Solo per te</span>
       </div>
 
       <Row>
@@ -42,9 +42,7 @@ const Analytics = () => {
 
             <Col xs={10}>
               <a>
-                <strong className="d-inline-block">
-                  100 Visualizzazioni del profilo
-                </strong>
+                <strong className="d-inline-block">100 Visualizzazioni del profilo</strong>
                 <span>Scopri chi ha visualizzato il tuo profilo</span>
               </a>
             </Col>
@@ -69,9 +67,7 @@ const Analytics = () => {
 
             <Col xs={10}>
               <a>
-                <strong className="d-inline-block">
-                  500 Impressioni del post
-                </strong>
+                <strong className="d-inline-block">500 Impressioni del post</strong>
                 <span>Scopri chi sta interagendo con il tuo post</span>
               </a>
             </Col>
@@ -96,20 +92,15 @@ const Analytics = () => {
 
             <Col xs={10}>
               <a>
-                <strong className="d-inline-block">
-                  35 Comparse nei motori di ricerca
-                </strong>
+                <strong className="d-inline-block">35 Comparse nei motori di ricerca</strong>
                 <span>Vedi quante volte compari nei risultati di ricerca</span>
               </a>
             </Col>
           </Row>
         </Col>
         <hr className="mb-0" />
-        <div
-          style={{ cursor: "pointer" }}
-          className="d-flex align-items-center justify-content-center p-2"
-        >
-          <span className="me-2">Mostra Tutte le analisi</span>
+        <div style={{ cursor: "pointer" }} className="d-flex align-items-center justify-content-center p-2">
+          <span className="me-2 text-secondary">Mostra Tutte le analisi</span>
           <ArrowRight />
         </div>
       </Row>
