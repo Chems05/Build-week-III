@@ -1,17 +1,39 @@
-import { Navbar, Nav, Form, FormControl, Container, NavDropdown, Button } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Container,
+  NavDropdown,
+  Button,
+} from "react-bootstrap";
 import { FaTh } from "react-icons/fa";
-import { BsFillPlayBtnFill, BsFillPostcardFill, BsLinkedin, BsPlusLg } from "react-icons/bs";
+import {
+  BsFillPlayBtnFill,
+  BsFillPostcardFill,
+  BsLinkedin,
+  BsPlusLg,
+} from "react-icons/bs";
 import "../assets/mynavbar.css";
 import { BiCaretDown } from "react-icons/bi";
-import { BrowserSafari, Check, FileBarGraph, PeopleFill, SquareFill } from "react-bootstrap-icons";
+import {
+  BrowserSafari,
+  Check,
+  FileBarGraph,
+  PeopleFill,
+  SquareFill,
+} from "react-bootstrap-icons";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getAllUsersInformations, getUserExperiences, getUserInformation } from "../redux/actions";
+import {
+  getAllUsersInformations,
+  getUserExperiences,
+  getUserInformation,
+} from "../redux/actions";
 
 const MyNavbar = () => {
   const singleUserInfo = useSelector((state) => state.users.singleUser);
-  const userExperiences = useSelector((state) => state.experiences.experiencesArray);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -56,32 +78,77 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home" className="d-flex flex-column align-items-center ms-5">
-              <svg width="24" height="20" fill="currentColor" viewBox="0 0 24 24" className="mb-1  mt-2">
+            <Nav.Link
+              href="#home"
+              className="d-flex flex-column align-items-center ms-5"
+            >
+              <svg
+                width="24"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="mb-1  mt-2"
+              >
                 <path d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7z"></path>
               </svg>
               Home
             </Nav.Link>
-            <Nav.Link href="#network" className="d-flex flex-column align-items-center">
-              <svg width="24" height="20" fill="currentColor" viewBox="0 0 24 24" className="mb-1 mx- mt-2">
+            <Nav.Link
+              href="#network"
+              className="d-flex flex-column align-items-center"
+            >
+              <svg
+                width="24"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="mb-1 mx- mt-2"
+              >
                 <path d="M12 16v6H3v-6a3 3 0 013-3h3a3 3 0 013 3zm5.5-3A3.5 3.5 0 1014 9.5a3.5 3.5 0 003.5 3.5zm1 2h-2a2.5 2.5 0 00-2.5 2.5V22h7v-4.5a2.5 2.5 0 00-2.5-2.5zM7.5 2A4.5 4.5 0 1012 6.5 4.49 4.49 0 007.5 2z"></path>
               </svg>{" "}
               Rete
             </Nav.Link>
-            <Nav.Link href="#jobs" className="d-flex flex-column align-items-center">
-              <svg width="24" height="20" fill="currentColor" viewBox="0 0 24 24" className="mb-1 mx- mt-2">
+            <Nav.Link
+              href="#jobs"
+              className="d-flex flex-column align-items-center"
+            >
+              <svg
+                width="24"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="mb-1 mx- mt-2"
+              >
                 <path d="M17 6V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2v4a3 3 0 003 3h14a3 3 0 003-3V6zM9 5a1 1 0 011-1h4a1 1 0 011 1v1H9zm10 9a4 4 0 003-1.38V17a3 3 0 01-3 3H5a3 3 0 01-3-3v-4.38A4 4 0 005 14z"></path>
               </svg>{" "}
               Lavoro
             </Nav.Link>
-            <Nav.Link href="#messaging" className="d-flex flex-column align-items-center">
-              <svg width="24" height="20" fill="currentColor" viewBox="0 0 24 24" className="mb-1 mx- mt-2">
+            <Nav.Link
+              href="#messaging"
+              className="d-flex flex-column align-items-center"
+            >
+              <svg
+                width="24"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="mb-1 mx- mt-2"
+              >
                 <path d="M16 4H8a7 7 0 000 14h4v4l8.16-5.39A6.78 6.78 0 0023 11a7 7 0 00-7-7zm-8 8.25A1.25 1.25 0 119.25 11 1.25 1.25 0 018 12.25zm4 0A1.25 1.25 0 1113.25 11 1.25 1.25 0 0112 12.25zm4 0A1.25 1.25 0 1117.25 11 1.25 1.25 0 0116 12.25z"></path>
               </svg>{" "}
               Messaggistica
             </Nav.Link>
-            <Nav.Link href="#notifications" className="d-flex flex-column align-items-center me-2">
-              <svg width="24" height="20" fill="currentColor" viewBox="0 0 24 24" className="mb-1  mt-2">
+            <Nav.Link
+              href="#notifications"
+              className="d-flex flex-column align-items-center me-2"
+            >
+              <svg
+                width="24"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="mb-1  mt-2"
+              >
                 <path d="M22 19h-8.28a2 2 0 11-3.44 0H2v-1a4.52 4.52 0 011.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0122 18zM18.21 7.44A6.27 6.27 0 0012 2a6.27 6.27 0 00-6.21 5.44L5 13h14z"></path>
               </svg>{" "}
               Notifiche
@@ -132,12 +199,16 @@ const MyNavbar = () => {
                             {singleUserInfo.surname}
                           </strong>
                         </div>
-                        <div className="small text-muted">{singleUserInfo.title}</div>
+                        <div className="small text-muted">
+                          {singleUserInfo.title}
+                        </div>
                       </>
                     )}
 
                     {/* Bottone 'Visualizza altro' */}
-                    <Button className="btn bottone border-primary bg-white text-primary mt-2 ">Visualizza altro</Button>
+                    <Button className="btn bottone border-primary bg-white text-primary mt-2 ">
+                      Visualizza altro
+                    </Button>
                   </div>
                 </div>
               </NavDropdown.Item>
@@ -168,7 +239,9 @@ const MyNavbar = () => {
                 <h7 className="testo-piccolo">Post e attività </h7>
               </NavDropdown.Item>
               <NavDropdown.Item href="#business3">
-                <h7 className="testo-piccolo">Account per la pubblicazione di off... </h7>
+                <h7 className="testo-piccolo">
+                  Account per la pubblicazione di off...{" "}
+                </h7>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#business3">
@@ -193,23 +266,32 @@ const MyNavbar = () => {
             >
               <div className="d-flex">
                 <div className="dropdown-col">
-                  <div className="section-title mb-2">Scopri altri prodotti LinkedIn</div>
+                  <div className="section-title mb-2">
+                    Scopri altri prodotti LinkedIn
+                  </div>
                   <NavDropdown.Item href="#find-clients">
-                    <BrowserSafari style={{ color: "#0A66C2" }} size={22} /> Trova nuovi clienti
+                    <BrowserSafari style={{ color: "#0A66C2" }} size={22} />{" "}
+                    Trova nuovi clienti
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#groups">
                     <PeopleFill style={{ color: "#0A66C2" }} size={22} /> Gruppi
                   </NavDropdown.Item>
                   <div className="section-title">Talent</div>
                   <NavDropdown.Item href="#talent-insights">
-                    <FileBarGraph style={{ color: "#0A66C2" }} size={22} /> Talent Insights
+                    <FileBarGraph style={{ color: "#0A66C2" }} size={22} />{" "}
+                    Talent Insights
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#post-job">
-                    <BsFillPostcardFill style={{ color: "#0A66C2" }} size={22} /> Pubblica un’offerta di lavoro
+                    <BsFillPostcardFill
+                      style={{ color: "#0A66C2" }}
+                      size={22}
+                    />{" "}
+                    Pubblica un’offerta di lavoro
                   </NavDropdown.Item>
                   <div className="section-title">Vendite</div>
                   <NavDropdown.Item href="#service-marketplace">
-                    <Check style={{ color: "#0A66C2" }} size={24} /> Marketplace dei servizi
+                    <Check style={{ color: "#0A66C2" }} size={24} /> Marketplace
+                    dei servizi
                   </NavDropdown.Item>
 
                   <div className="section-title">Marketing</div>
@@ -227,7 +309,11 @@ const MyNavbar = () => {
                       height="20"
                     >
                       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      ></g>
                       <g id="SVGRepo_iconCarrier">
                         <g>
                           <path d="M349.792,157.708l-19.856,19.856c9.316,17.136,14.62,36.652,14.62,57.459c0,66.232-53.924,120.156-120.156,120.156 s-120.156-53.924-120.156-120.156c0-66.232,53.924-120.156,120.156-120.156c20.808,0,40.324,5.304,57.459,14.62l19.856-19.856 c-22.508-13.94-48.96-21.964-77.316-21.964c-81.26,0-147.356,66.096-147.356,147.356S143.14,382.38,224.4,382.38 s147.356-66.096,147.356-147.355C371.756,206.669,363.731,180.217,349.792,157.708z M294.644,212.925l-23.868,23.801 c-0.884,24.887-21.283,44.742-46.375,44.742c-25.636,0-46.444-20.807-46.444-46.443c0-25.092,19.856-45.492,44.744-46.375 l23.868-23.8c-7.004-2.244-14.416-3.468-22.167-3.468c-40.596,0-73.644,33.048-73.644,73.644s33.048,73.645,73.644,73.645 s73.644-33.049,73.644-73.645C298.044,227.34,296.888,219.861,294.644,212.925z M416.771,119.629l-19.855,19.856 c15.708,28.288,24.684,60.86,24.684,95.54c0,108.732-88.468,197.201-197.2,197.201S27.2,343.757,27.2,235.024 c0-108.732,88.468-197.2,197.2-197.2c34.68,0,67.251,8.976,95.54,24.684l19.856-19.856C306.067,22.321,266.56,10.625,224.4,10.625 C100.64,10.625,0,111.265,0,235.024s100.64,224.4,224.4,224.4s224.4-100.641,224.4-224.4 C448.8,192.865,437.104,153.357,416.771,119.629z M387.301,120.207l-25.963-2.883L233.431,245.226 c-5.311,5.311-13.92,5.311-19.231,0c-5.311-5.312-5.311-13.92,0-19.231L342.101,98.093l-2.883-25.962l72.128-72.128l9.615,38.468 l38.467,9.615L387.301,120.207z"></path>
@@ -238,12 +324,15 @@ const MyNavbar = () => {
                   </NavDropdown.Item>
                   <div className="section-title">Learning</div>
                   <NavDropdown.Item href="#learning">
-                    <BsFillPlayBtnFill style={{ color: "#0A66C2" }} size={22} /> Learning
+                    <BsFillPlayBtnFill style={{ color: "#0A66C2" }} size={22} />{" "}
+                    Learning
                   </NavDropdown.Item>
                 </div>
                 <div className="nav-dividers"></div>
                 <div className="dropdown-col">
-                  <div className="section-title mb-2">Scopri altro per il business</div>
+                  <div className="section-title mb-2">
+                    Scopri altro per il business
+                  </div>
                   <NavDropdown.Item href="#hire-linkedin">
                     Assumi su LinkedIn
                     <br />
