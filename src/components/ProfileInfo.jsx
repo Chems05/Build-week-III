@@ -1,8 +1,10 @@
 import { Button, Col, Container, ListGroup, ListGroupItem, Row } from "react-bootstrap";
 import { LiaPenSolid } from "react-icons/lia";
 import { BsFillPersonPlusFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const ProfileInfo = () => {
+  const allUsersArray = useSelector((state) => state.users.users);
   return (
     <Container xs="4" md="4" className=" mb-4">
       <Row className=" bg-white d-flex justify-content-between border border-dark-subtle rounded-3">
@@ -41,25 +43,28 @@ const ProfileInfo = () => {
         <Col>
           <ListGroup>
             <ListGroupItem className="border border-0">
-              <Row className="">
-                <Col xs={3}>
-                  <img
-                    className="rounded-circle imgProfileInfo"
-                    src="https://media.licdn.com/dms/image/D5603AQHtmaSyfliXzQ/profile-displayphoto-shrink_100_100/0/1714389091023?e=1726704000&v=beta&t=Lx7IPkUanWzlX-2b967cjx1P-6DrU043cbBzdO-lzPY"
-                    alt=""
-                  />
-                </Col>
-                <Col xs={9}>
-                  <p className="mb-1">
-                    <strong>Veronica Gerani</strong>
-                  </p>
-                  <p className="mb-2">Role</p>
+              <Row>
+                {allUsersArray.slice(0, 10).map((user) => (
+                  <>
+                    <Col xs={2}>
+                      <img className="rounded-circle imgProfileInfo" src={user.image} alt="" />
+                    </Col>
+                    <Col xs={10}>
+                      <p className="mb-1">
+                        <strong>
+                          {user.name}&nbsp; {user.surname}
+                        </strong>
+                      </p>
+                      <p className="mb-2">{user.title}</p>
 
-                  <Button className="black-button rounded-pill mb-2 d-flex align-items-center justify-content-center">
-                    <BsFillPersonPlusFill className="me-2" />
-                    <strong>Collegati</strong>
-                  </Button>
-                </Col>
+                      <Button className="black-button rounded-pill mb-2 d-flex align-items-center justify-content-center">
+                        <BsFillPersonPlusFill className="me-2" />
+                        <strong>Collegati</strong>
+                      </Button>
+                    </Col>
+                    <hr />
+                  </>
+                ))}
               </Row>
             </ListGroupItem>
           </ListGroup>
