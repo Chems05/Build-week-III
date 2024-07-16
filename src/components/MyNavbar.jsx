@@ -11,7 +11,7 @@ import { getAllUsersInformations, getUserExperiences, getUserInformation } from 
 
 const MyNavbar = () => {
   const singleUserInfo = useSelector((state) => state.users.singleUser);
-  const userExperiences = useSelector((state) => state.experiences.experiencesArray);
+ 
   const dispatch = useDispatch();
 
   useEffect(() => {
