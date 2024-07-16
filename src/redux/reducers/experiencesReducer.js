@@ -1,4 +1,4 @@
-import { ADD_EXPERIENCES_TO_ARRAY } from "../actions";
+import { ADD_EXPERIENCES_TO_ARRAY, POST_NEW_EXPERIENCE } from "../actions";
 
 const initialState = {
   experiencesArray: [],
@@ -10,6 +10,11 @@ const experiencesReducer = (state = initialState, action) => {
       return {
         ...state,
         experiencesArray: action.payload,
+      };
+    case POST_NEW_EXPERIENCE:
+      return {
+        ...state,
+        experiencesArray: [...state.experiencesArray, action.payload],
       };
     default:
       return state;
