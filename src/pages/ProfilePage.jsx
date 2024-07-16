@@ -9,6 +9,7 @@ import Informazioni from "../components/Informazioni";
 import Analytics from "../components/Analytics";
 import Competenze from "../components/Competenze";
 import ProfileInfo from "../components/ProfileInfo";
+import Esperienza from "../components/Esperienza";
 
 const ProfilePage = () => {
   return (
@@ -23,6 +24,7 @@ const ProfilePage = () => {
             <Activity />
             <Resource />
             <Analytics />
+            <Esperienza />
           
           </Col>
           <Col md={4}>
