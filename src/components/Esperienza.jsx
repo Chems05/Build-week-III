@@ -1,34 +1,49 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Card, ListGroup, Row, Col, Modal, Button, Form } from "react-bootstrap";
-import { BsPlusLg, BsTrash } from "react-icons/bs";
+import { BsPlusLg, BsTrash, BsPencil } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchExperiences, addExperience, deleteExperience } from "../redux/actions";
+import { fetchExperiences, addExperience, deleteExperience, updateExperience } from "../redux/actions";
 
 const Esperienza = () => {
   const [showModal, setShowModal] = useState(false);
-  const [newExperience, setNewExperience] = useState({
+  const [editMode, setEditMode] = useState(false);
+  const [selectedExperience, setSelectedExperience] = useState(null);
+  const [experienceData, setExperienceData] = useState({
     role: "",
     company: "",
     startDate: "",
     endDate: "",
     description: "",
     area: "",
-    logo: "https://via.placeholder.com/50",
+    logo: "",
   });
 
   const dispatch = useDispatch();
-  const experiencesArray = useSelector((state) => state.experiences.experiencesArray);
+  const userId = "6694d9a2196d7b0015d6b528"; // Update with dynamic user ID if needed
+  const experiencesArray = useSelector((state) => state.experiences.experiencesArray || []);
 
   useEffect(() => {
-    dispatch(fetchExperiences("6694d9a2196d7b0015d6b528")); 
-  }, [dispatch]);
+    dispatch(fetchExperiences(userId));
+  }, [dispatch, userId]);
 
   const handleShow = () => setShowModal(true);
-  const handleClose = () => setShowModal(false);
+  const handleClose = () => {
+    setShowModal(false);
+    setEditMode(false);
+    setExperienceData({
+      role: "",
+      company: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+      area: "",
+      logo: "",
+    });
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setNewExperience((prevExperience) => ({
+    setExperienceData((prevExperience) => ({
       ...prevExperience,
       [name]: value,
     }));
@@ -36,23 +51,35 @@ const Esperienza = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addExperience("6694d9a2196d7b0015d6b528", newExperience)); 
+    if (editMode) {
+      dispatch(updateExperience(userId, selectedExperience._id, experienceData));
+    } else {
+      dispatch(addExperience(userId, experienceData));
+    }
+    
     handleClose();
-    setNewExperience({
-      role: "",
-      company: "",
-      startDate: "",
-      endDate: "",
-      description: "",
-      area: "",
-      logo: "https://via.placeholder.com/50",
-    });
+    dispatch(fetchExperiences(userId));
   };
 
   const handleDelete = (experienceId) => {
-    dispatch(deleteExperience("6694d9a2196d7b0015d6b528", experienceId)); 
+    dispatch(deleteExperience(userId, experienceId));
   };
-  console.log(experiencesArray);
+
+  const handleEdit = (experience) => {
+    setSelectedExperience(experience);
+    setExperienceData({
+      role: experience.role,
+      company: experience.company,
+      startDate: experience.startDate,
+      endDate: experience.endDate,
+      description: experience.description,
+      area: experience.area,
+      logo: experience.logo,
+    });
+    setEditMode(true);
+    handleShow();
+  };
+
   return (
     <>
       <Card className="mt-5">
@@ -64,12 +91,15 @@ const Esperienza = () => {
             <Col className="text-end">
               <BsPlusLg
                 style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
-                onClick={handleShow}
+                onClick={() => {
+                  setEditMode(false);
+                  handleShow();
+                }}
               />
             </Col>
           </Row>
           {experiencesArray.map((exp) => (
-            <ListGroup.Item key={exp.id}>
+            <ListGroup.Item key={exp._id}>
               <div className="d-flex align-items-start justify-content-between">
                 <div className="d-flex align-items-start">
                   <img
@@ -81,16 +111,22 @@ const Esperienza = () => {
                     <h5 style={{ fontWeight: "bold", fontSize: "16px" }}>{exp.role}</h5>
                     <p style={{ fontSize: "14px" }}>{exp.company}</p>
                     <p style={{ color: "grey", fontSize: "13px" }}>
-                      {exp.startDate} - {exp.endDate || "Present"}
+                      {new Date(exp.startDate).toLocaleDateString()} - {exp.endDate ? new Date(exp.endDate).toLocaleDateString() : "Present"}
                     </p>
                     <p style={{ color: "grey", fontSize: "13px" }}>{exp.area}</p>
                     <p style={{ color: "grey", fontSize: "13px" }}>{exp.description}</p>
                   </div>
                 </div>
-                <BsTrash
-                  style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
-                  onClick={() => handleDelete(exp.id)}
-                />
+                <div>
+                  <BsPencil
+                    style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
+                    onClick={() => handleEdit(exp)}
+                  />
+                  <BsTrash
+                    style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
+                    onClick={() => handleDelete(exp._id)}
+                  />
+                </div>
               </div>
             </ListGroup.Item>
           ))}
@@ -99,7 +135,7 @@ const Esperienza = () => {
 
       <Modal className="mt-5" show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add New Experience</Modal.Title>
+          <Modal.Title>{editMode ? "Edit Experience" : "Add New Experience"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -109,7 +145,7 @@ const Esperienza = () => {
                 type="text"
                 placeholder="Enter role"
                 name="role"
-                value={newExperience.role}
+                value={experienceData.role}
                 onChange={handleChange}
                 required
               />
@@ -120,7 +156,7 @@ const Esperienza = () => {
                 type="text"
                 placeholder="Enter company"
                 name="company"
-                value={newExperience.company}
+                value={experienceData.company}
                 onChange={handleChange}
                 required
               />
@@ -130,14 +166,19 @@ const Esperienza = () => {
               <Form.Control
                 type="date"
                 name="startDate"
-                value={newExperience.startDate}
+                value={experienceData.startDate}
                 onChange={handleChange}
                 required
               />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>End Date</Form.Label>
-              <Form.Control type="date" name="endDate" value={newExperience.endDate} onChange={handleChange} />
+              <Form.Control
+                type="date"
+                name="endDate"
+                value={experienceData.endDate}
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Description</Form.Label>
@@ -145,7 +186,7 @@ const Esperienza = () => {
                 type="text"
                 placeholder="Enter description"
                 name="description"
-                value={newExperience.description}
+                value={experienceData.description}
                 onChange={handleChange}
                 required
               />
@@ -156,13 +197,13 @@ const Esperienza = () => {
                 type="text"
                 placeholder="Enter area"
                 name="area"
-                value={newExperience.area}
+                value={experienceData.area}
                 onChange={handleChange}
                 required
               />
             </Form.Group>
             <Button variant="primary" type="submit">
-              Add Experience
+              {editMode ? "Update Experience" : "Add Experience"}
             </Button>
           </Form>
         </Modal.Body>

@@ -5,11 +5,15 @@ import {
   UPLOAD_PROFILE_IMAGE_SUCCESS,
   UPLOAD_PROFILE_IMAGE_FAILURE,
   UPDATE_USER_INFO,
+  ADD_EXPERIENCE,
+  DELETE_EXPERIENCE,
+  FETCH_EXPERIENCES
 } from "../actions";
 
 const initialState = {
   users: [],
   singleUser: null,
+  experiencesArray: [],
   loading: false,
   error: null,
 };
@@ -41,6 +45,21 @@ const userReducer = (state = initialState, action) => {
         return { ...state, singleUser: { ...state.singleUser, ...action.payload.newInfo } };
       }
       return state;
+    case FETCH_EXPERIENCES:
+      return {
+        ...state,
+        experiencesArray: action.payload,
+      };
+    case ADD_EXPERIENCE:
+      return {
+        ...state,
+        experiencesArray: [...state.experiencesArray, action.payload],
+      };
+    case DELETE_EXPERIENCE:
+      return {
+        ...state,
+        experiencesArray: state.experiencesArray.filter((exp) => exp._id !== action.payload),
+      };
     default:
       return state;
   }

@@ -8,6 +8,7 @@ export const UPDATE_USER_INFO = "UPDATE_USER_INFO";
 export const FETCH_EXPERIENCES = 'FETCH_EXPERIENCES';
 export const ADD_EXPERIENCE = 'ADD_EXPERIENCE';
 export const DELETE_EXPERIENCE = 'DELETE_EXPERIENCE';
+export const UPDATE_EXPERIENCE = "UPDATE_EXPERIENCE";
 
 
 export const POST_NEW_EXPERIENCE = "POST_NEW_EXPERIENCE";
@@ -206,22 +207,42 @@ export const addExperience = (userId, experience) => async (dispatch) => {
   }
 };
 
-export const deleteExperience = (userId, experienceId) => async (dispatch) => {
+export const deleteExperience = (userId, experienceId) => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch(`${baseURL}/${userId}/experiences/${experienceId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`, // Replace with your actual bearer token
+        },
+      });
+      if (response.ok) {
+        dispatch({
+          type: DELETE_EXPERIENCE,
+          payload: experienceId,
+        });
+      }
+    } catch (error) {
+      console.error('Error deleting experience:', error);
+    }
+  };
+};
+
+
+export const updateExperience = (userId, experienceId, updatedExperience) => async (dispatch) => {
   try {
     const response = await fetch(`${baseURL}/${userId}/experiences/${experienceId}`, {
-      method: "DELETE",
+      method: "PUT",
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`, // Replace with your actual bearer token
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`,
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify(updatedExperience),
     });
-
-    if (!response.ok) {
-      throw new Error("Failed to delete experience");
-    }
-
-    dispatch({ type: DELETE_EXPERIENCE, payload: experienceId });
+    const data = await response.json();
+    dispatch({ type: UPDATE_EXPERIENCE, payload: { userId, experienceId, updatedExperience: data } });
+    dispatch(fetchExperiences(userId));
   } catch (error) {
-    console.error("Error deleting experience:", error);
-    // You might dispatch an error action or handle errors as needed
+    console.error("Failed to update experience:", error);
   }
 };
