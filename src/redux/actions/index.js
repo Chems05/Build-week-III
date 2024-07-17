@@ -5,6 +5,9 @@ export const UPLOAD_PROFILE_IMAGE_REQUEST = "UPLOAD_PROFILE_IMAGE_REQUEST";
 export const UPLOAD_PROFILE_IMAGE_SUCCESS = "UPLOAD_PROFILE_IMAGE_SUCCESS";
 export const UPLOAD_PROFILE_IMAGE_FAILURE = "UPLOAD_PROFILE_IMAGE_FAILURE";
 export const UPDATE_USER_INFO = "UPDATE_USER_INFO";
+export const FETCH_EXPERIENCES = 'FETCH_EXPERIENCES';
+export const ADD_EXPERIENCE = 'ADD_EXPERIENCE';
+export const DELETE_EXPERIENCE = 'DELETE_EXPERIENCE';
 
 
 export const POST_NEW_EXPERIENCE = "POST_NEW_EXPERIENCE";
@@ -158,3 +161,17 @@ export const postNewExperienceAction = (newExperience) => {
     payload: newExperience,
   };
 };
+export const fetchExperiences = (experiences) => ({
+  type: FETCH_EXPERIENCES,
+  payload: experiences,
+});
+
+export const addExperience = (experience) => ({
+  type: ADD_EXPERIENCE,
+  payload: experience,
+});
+
+export const deleteExperience = (experienceId) => ({
+  type: DELETE_EXPERIENCE,
+  payload: experienceId,
+});

@@ -44,8 +44,7 @@ const ProfilePage = () => {
             <Resource />
             <Informazioni />
             <Activity />
-            <Competenze />
-      
+           
          
           
             <Esperienza />

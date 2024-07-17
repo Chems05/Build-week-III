@@ -1,32 +1,10 @@
-import { useState } from "react";
+import{ useState, useEffect } from "react";
 import { Card, ListGroup, Row, Col, Modal, Button, Form } from "react-bootstrap";
-import { Pencil } from "react-bootstrap-icons";
 import { BsPlusLg, BsTrash } from "react-icons/bs";
-import { useSelector } from "react-redux";
-
-const initialExperiences = [
-  {
-    role: "Full Stack Web Developer",
-    company: "FizzBuzz",
-    startDate: "2022-06-16",
-    endDate: "2023-06-16",
-    description: "Implementing new features",
-    area: "Milan",
-    logo: "https://via.placeholder.com/50",
-  },
-  {
-    role: "Junior Developer",
-    company: "Innovatech Ltd.",
-    startDate: "2018-03-01",
-    endDate: "2020-12-31",
-    description: "Developed various web applications",
-    area: "New York, USA",
-    logo: "https://via.placeholder.com/50",
-  },
-];
+import { useSelector, useDispatch } from "react-redux";
+import { fetchExperiences, addExperience, deleteExperience } from "../redux/actions";
 
 const Esperienza = () => {
-  const [experiences, setExperiences] = useState(initialExperiences);
   const [showModal, setShowModal] = useState(false);
   const [newExperience, setNewExperience] = useState({
     role: "",
@@ -37,6 +15,35 @@ const Esperienza = () => {
     area: "",
     logo: "https://via.placeholder.com/50",
   });
+
+  const dispatch = useDispatch();
+  const experiencesArray = useSelector((state) => state.experiences.experiencesArray);
+
+  useEffect(() => {
+    // Simulate fetching experiences (normally this would be an API call)
+    dispatch(fetchExperiences([
+      {
+        id: 1,
+        role: "Full Stack Web Developer",
+        company: "FizzBuzz",
+        startDate: "2022-06-16",
+        endDate: "2023-06-16",
+        description: "Implementing new features",
+        area: "Milan",
+        logo: "https://via.placeholder.com/50",
+      },
+      {
+        id: 2,
+        role: "Junior Developer",
+        company: "Innovatech Ltd.",
+        startDate: "2018-03-01",
+        endDate: "2020-12-31",
+        description: "Developed various web applications",
+        area: "New York, USA",
+        logo: "https://via.placeholder.com/50",
+      },
+    ]));
+  }, [dispatch]);
 
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
@@ -51,7 +58,10 @@ const Esperienza = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setExperiences((prevExperiences) => [...prevExperiences, newExperience]);
+    dispatch(addExperience({
+      ...newExperience,
+      id: Date.now(), // Simulate unique ID (normally this would come from the server)
+    }));
     setNewExperience({
       role: "",
       company: "",
@@ -64,10 +74,9 @@ const Esperienza = () => {
     handleClose();
   };
 
-  const handleDelete = (index) => {
-    setExperiences((prevExperiences) => prevExperiences.filter((_, i) => i !== index));
+  const handleDelete = (experienceId) => {
+    dispatch(deleteExperience(experienceId));
   };
-  const experiencesArray = useSelector((state) => state.experiences.experiencesArray);
 
   return (
     <>
@@ -79,15 +88,14 @@ const Esperienza = () => {
             </Col>
             <Col className="text-end">
               <BsPlusLg style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }} onClick={handleShow} />
-              <Pencil style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }} />
             </Col>
           </Row>
-          {experiencesArray.map((exp, index) => (
-            <ListGroup.Item key={index}>
+          {experiencesArray.map((exp) => (
+            <ListGroup.Item key={exp.id}>
               <div className="d-flex align-items-start justify-content-between">
                 <div className="d-flex align-items-start">
                   <img
-                    src={exp.image}
+                    src={exp.logo}
                     alt={`${exp.company} logo`}
                     style={{ width: "50px", height: "50px", marginRight: "15px", marginTop: "3px" }}
                   />
@@ -103,7 +111,7 @@ const Esperienza = () => {
                 </div>
                 <BsTrash
                   style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
-                  onClick={() => handleDelete(index)}
+                  onClick={() => handleDelete(exp.id)}
                 />
               </div>
             </ListGroup.Item>
