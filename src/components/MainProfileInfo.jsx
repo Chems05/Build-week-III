@@ -24,7 +24,7 @@ const MainProfileInfo = () => {
   const handleImageSave = async () => {
     if (newImage && singleUserInfo) {
       await dispatch(uploadProfileImage(singleUserInfo._id, newImage));
-      setShowModal(false); 
+      setShowModal(false);
     }
   };
 
@@ -92,7 +92,9 @@ const MainProfileInfo = () => {
             <div className="blue-button d-inline-block rounded-pill">Disponibile per</div>
             <div className="light-blue-button d-inline-block rounded-pill ms-2">Aggiungi sezione del profilo</div>
             <div className="light-blue-button d-inline-block rounded-pill ms-2">Migliora profilo</div>
-            <div className="black-button d-inline-block rounded-pill ms-2">Altro</div>
+            <div style={{ fontSize: "19px" }} className="black-button d-inline-block rounded-pill ms-2">
+              Altro
+            </div>
           </Card.Body>
         </Card>
       )}
@@ -115,7 +117,7 @@ const MainProfileInfo = () => {
             Chiudi
           </Button>
           <Button variant="primary" onClick={handleImageSave} disabled={loading}>
-            {loading ? 'Salvando...' : 'Salva'}
+            {loading ? "Salvando..." : "Salva"}
           </Button>
         </Modal.Footer>
       </Modal>
