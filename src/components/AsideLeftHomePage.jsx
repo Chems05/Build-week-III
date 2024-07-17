@@ -8,7 +8,7 @@ const AsideLeftHomePage = () => {
   return (
     <>
       <Card className="mb-3">
-        <Card.Img variant="top" src="path/to/profile/background/image.jpg" />
+        <Card.Img variant="top" src="https://img.freepik.com/free-vector/blue-polygon-dark-background-social-template_53876-116080.jpg" />
         <Card.Body className="text-center">
           <Card.Img
             src="path/to/profile/image.jpg"
