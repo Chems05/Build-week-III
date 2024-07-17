@@ -30,6 +30,11 @@ const CreatePost = () => {
       Altro
     </Tooltip>
   );
+  const renderTooltipClock = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Programma per un secondo momento
+    </Tooltip>
+  );
   return (
     <Container className="p-2 border border-2 rounded bg-white">
       <Row className="d-flex align-items-center mb-2">
@@ -134,7 +139,9 @@ const CreatePost = () => {
               className=" d-inline-flex align-items-center justify-content-center black-button rounded-circle"
               style={{ width: "42px", height: "42px", border: "none" }}
             >
-              <Clock style={{ color: "#404040" }} />
+              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipClock}>
+                <Clock style={{ color: "#404040" }} />
+              </OverlayTrigger>
             </div>
             <div className="blue-button rounded-pill" onClick={handleClose}>
               Pubblica
