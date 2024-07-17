@@ -1,5 +1,7 @@
+import LinkedinNotizie from "../components/LinkedinNotizie";
+
 const HomePage = () => {
-  return;
+  return <LinkedinNotizie />;
 };
 
 export default HomePage;
