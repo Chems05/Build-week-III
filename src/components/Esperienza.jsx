@@ -1,4 +1,4 @@
-import{ useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { Card, ListGroup, Row, Col, Modal, Button, Form } from "react-bootstrap";
 import { BsPlusLg, BsTrash } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
@@ -20,29 +20,7 @@ const Esperienza = () => {
   const experiencesArray = useSelector((state) => state.experiences.experiencesArray);
 
   useEffect(() => {
-    // Simulate fetching experiences (normally this would be an API call)
-    dispatch(fetchExperiences([
-      {
-        id: 1,
-        role: "Full Stack Web Developer",
-        company: "FizzBuzz",
-        startDate: "2022-06-16",
-        endDate: "2023-06-16",
-        description: "Implementing new features",
-        area: "Milan",
-        logo: "https://via.placeholder.com/50",
-      },
-      {
-        id: 2,
-        role: "Junior Developer",
-        company: "Innovatech Ltd.",
-        startDate: "2018-03-01",
-        endDate: "2020-12-31",
-        description: "Developed various web applications",
-        area: "New York, USA",
-        logo: "https://via.placeholder.com/50",
-      },
-    ]));
+    dispatch(fetchExperiences("6694d9a2196d7b0015d6b528")); 
   }, [dispatch]);
 
   const handleShow = () => setShowModal(true);
@@ -58,10 +36,8 @@ const Esperienza = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addExperience({
-      ...newExperience,
-      id: Date.now(), // Simulate unique ID (normally this would come from the server)
-    }));
+    dispatch(addExperience("6694d9a2196d7b0015d6b528", newExperience)); 
+    handleClose();
     setNewExperience({
       role: "",
       company: "",
@@ -71,13 +47,12 @@ const Esperienza = () => {
       area: "",
       logo: "https://via.placeholder.com/50",
     });
-    handleClose();
   };
 
   const handleDelete = (experienceId) => {
-    dispatch(deleteExperience(experienceId));
+    dispatch(deleteExperience("6694d9a2196d7b0015d6b528", experienceId)); 
   };
-
+  console.log(experiencesArray);
   return (
     <>
       <Card className="mt-5">
@@ -87,7 +62,10 @@ const Esperienza = () => {
               <h4 className="ms-3 mt-2 mb-2">Esperienza</h4>
             </Col>
             <Col className="text-end">
-              <BsPlusLg style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }} onClick={handleShow} />
+              <BsPlusLg
+                style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
+                onClick={handleShow}
+              />
             </Col>
           </Row>
           {experiencesArray.map((exp) => (

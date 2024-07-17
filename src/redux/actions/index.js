@@ -161,17 +161,67 @@ export const postNewExperienceAction = (newExperience) => {
     payload: newExperience,
   };
 };
-export const fetchExperiences = (experiences) => ({
-  type: FETCH_EXPERIENCES,
-  payload: experiences,
-});
+const baseURL = "https://striveschool-api.herokuapp.com/api/profile";
 
-export const addExperience = (experience) => ({
-  type: ADD_EXPERIENCE,
-  payload: experience,
-});
+export const fetchExperiences = (userId) => async (dispatch) => {
+  try {
+    const response = await fetch(`${baseURL}/${userId}/experiences`, {
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`, // Replace with your actual bearer token
+      },
+    });
 
-export const deleteExperience = (experienceId) => ({
-  type: DELETE_EXPERIENCE,
-  payload: experienceId,
-});
+    if (!response.ok) {
+      throw new Error("Failed to fetch experiences");
+    }
+
+    const data = await response.json();
+    dispatch({ type: FETCH_EXPERIENCES, payload: data });
+  } catch (error) {
+    console.error("Error fetching experiences:", error);
+    // You might dispatch an error action or handle errors as needed
+  }
+};
+
+export const addExperience = (userId, experience) => async (dispatch) => {
+  try {
+    const response = await fetch(`${baseURL}/${userId}/experiences`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`, 
+      },
+      body: JSON.stringify(experience),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add experience");
+    }
+
+    const data = await response.json();
+    dispatch({ type: ADD_EXPERIENCE, payload: data });
+  } catch (error) {
+    console.error("Error adding experience:", error);
+    // You might dispatch an error action or handle errors as needed
+  }
+};
+
+export const deleteExperience = (userId, experienceId) => async (dispatch) => {
+  try {
+    const response = await fetch(`${baseURL}/${userId}/experiences/${experienceId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`, // Replace with your actual bearer token
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to delete experience");
+    }
+
+    dispatch({ type: DELETE_EXPERIENCE, payload: experienceId });
+  } catch (error) {
+    console.error("Error deleting experience:", error);
+    // You might dispatch an error action or handle errors as needed
+  }
+};
