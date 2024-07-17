@@ -124,12 +124,13 @@ const Esperienza = () => {
                   />
                   <div>
                     <h5 style={{ fontWeight: "bold", fontSize: "16px" }}>{exp.role}</h5>
-                    <p style={{ fontSize: "14px" }}>{exp.company}</p>
-                    <p style={{ color: "grey", fontSize: "13px" }}>
+                    <h6 style={{ fontSize: "14px" }}>{exp.company}</h6>
+                    <h6 style={{ color: "grey", fontSize: "13px" }}>
                       {new Date(exp.startDate).toLocaleDateString()} - {exp.endDate ? new Date(exp.endDate).toLocaleDateString() : "Present"}
-                    </p>
+                    </h6>
+                    <h6 style={{ color: "grey", fontSize: "13px" }}>{exp.description}</h6>
                     <p style={{ color: "grey", fontSize: "13px" }}>{exp.area}</p>
-                    <p style={{ color: "grey", fontSize: "13px" }}>{exp.description}</p>
+                   
                   </div>
                 </div>
                 <div>
