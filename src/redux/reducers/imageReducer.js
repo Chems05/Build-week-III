@@ -1,4 +1,3 @@
-// userReducer.js
 import { UPLOAD_PROFILE_IMAGE_REQUEST, UPLOAD_PROFILE_IMAGE_SUCCESS, UPLOAD_PROFILE_IMAGE_FAILURE, UPDATE_USER_INFO } from "../actions";
 
 const initialState = {
