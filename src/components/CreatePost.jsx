@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Form, Image, Modal, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { Asterisk, Calendar3, CardText, Clock, EmojiSmile, ImageAlt, PlusLg } from "react-bootstrap-icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllPosts } from "../redux/actions/postsActions";
 
 const CreatePost = () => {
   const singleUserInfo = useSelector((state) => state.users.singleUser);
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -35,6 +37,10 @@ const CreatePost = () => {
       Programma per un secondo momento
     </Tooltip>
   );
+
+  useEffect(() => {
+    dispatch(getAllPosts());
+  }, []);
   return (
     <Container className="p-2 border border-2 rounded bg-white">
       <Row className="d-flex align-items-center mb-2">

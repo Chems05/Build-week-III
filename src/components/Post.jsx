@@ -1,5 +1,5 @@
 import { Card, Col, Image, Row } from "react-bootstrap";
-import { Calendar3, CardText, ImageAlt } from "react-bootstrap-icons";
+import { ArrowRepeat, ChatRightText, HandThumbsUp, Send } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 
 const Post = () => {
@@ -41,19 +41,39 @@ const Post = () => {
           </Row>
         </Card.Text>
         <Card.Text>Text of the Post</Card.Text>
-        <hr />
+        <hr className="mb-1" />
         <Row className="d-flex justify-content-around">
-          <Col md={4} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
-            <ImageAlt className="me-3" style={{ color: "#378FE9" }} />
-            <span>Contenuti multimediali</span>
+          <Col
+            md={3}
+            className="black-button rounded p-2 d-flex align-items-center justify-content-center"
+            style={{ border: "none" }}
+          >
+            <HandThumbsUp className="me-3" />
+            <span>Consiglia</span>
           </Col>
-          <Col md={2} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
-            <Calendar3 className="me-3" style={{ color: "#C37D16" }} />
-            <span>Evento</span>
+          <Col
+            md={3}
+            className="black-button rounded p-2 d-flex align-items-center justify-content-center"
+            style={{ border: "none" }}
+          >
+            <ChatRightText className="me-3" />
+            <span>Commenta</span>
           </Col>
-          <Col md={4} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
-            <CardText className="me-3" style={{ color: "#E06847" }} />
-            <span>Scrivi un articolo</span>
+          <Col
+            md={3}
+            className="black-button rounded p-2 d-flex align-items-center justify-content-center"
+            style={{ border: "none" }}
+          >
+            <ArrowRepeat className="me-3" />
+            <span>Diffondi il post</span>
+          </Col>
+          <Col
+            md={2}
+            className="black-button rounded p-2 d-flex align-items-center justify-content-center"
+            style={{ border: "none" }}
+          >
+            <Send className="me-3" />
+            <span>Invia</span>
           </Col>
         </Row>
       </Card.Body>
