@@ -120,7 +120,7 @@ const Esperienza = () => {
                   <img
                     src={exp.image}
                     alt={`${exp.company} logo`}
-                    style={{ width: "50px", height: "50px", marginRight: "15px", marginTop: "3px" }}
+                    style={{ width: "80px", height: "60px", marginRight: "15px", marginTop: "3px" }}
                   />
                   <div>
                     <h5 style={{ fontWeight: "bold", fontSize: "16px" }}>{exp.role}</h5>
