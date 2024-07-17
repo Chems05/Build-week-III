@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Col, Container, Form, Image, Modal, Row } from "react-bootstrap";
+import { Col, Container, Form, Image, Modal, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { Asterisk, Calendar3, CardText, Clock, EmojiSmile, ImageAlt, PlusLg } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 
@@ -10,8 +10,13 @@ const CreatePost = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Simple tooltip
+    </Tooltip>
+  );
   return (
-    <Container className="border border-3 rounded bg-white">
+    <Container className="p-2 border border-2 rounded bg-white">
       <Row className="d-flex align-items-center mb-2">
         <Col md={1}>
           {singleUserInfo && (
@@ -95,7 +100,10 @@ const CreatePost = () => {
               <EmojiSmile style={{ color: "#404040" }} />
             </div>
             <div className="d-flex align-items-center ">
-              <ImageAlt className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
+                <ImageAlt className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              </OverlayTrigger>
+
               <Calendar3 className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
               <Asterisk className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
               <PlusLg className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
