@@ -38,7 +38,7 @@ const CreatePost = () => {
   return (
     <Container className="p-2 border border-2 rounded bg-white">
       <Row className="d-flex align-items-center mb-2">
-        <Col md={1}>
+        <Col className="d-flex justify-content-center" md={2}>
           {singleUserInfo && (
             <Image
               src={singleUserInfo.image}
@@ -50,7 +50,7 @@ const CreatePost = () => {
             />
           )}
         </Col>
-        <Col md={11}>
+        <Col className="ps-0" md={10}>
           <div
             className="black-button rounded-pill d-flex align-items-center"
             style={{ height: "3em" }}
