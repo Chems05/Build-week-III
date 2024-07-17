@@ -29,7 +29,9 @@ const Post = () => {
                         />
 
                         <div>
-                          <p className="mb-0">{post.username}&nbsp;</p>
+                          <p style={{ fontWeight: "bold" }} className="mb-0">
+                            {post.user.name}&nbsp;{post.user.surname}
+                          </p>
                           <p className="text-secondary">{singleUserInfo.title}</p>
                         </div>
                       </>
