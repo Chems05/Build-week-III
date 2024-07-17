@@ -136,7 +136,7 @@ body {
   height: 25px;
 }
 
-.fontPErsonale {
+.fontPersonale {
   font-size: 1.4rem;
   font-weight: 600;
 }
@@ -159,4 +159,24 @@ body {
 }
 .btnVediAltro:hover {
   background-color: #ebebeb;
+}
+.bgBadge {
+  background-color: #fce3bb;
+  border-radius: 6px;
+}
+
+.gioghi {
+  cursor: pointer;
+}
+
+.imgLinkedin {
+  width: 6%;
+}
+.footerText {
+  color: #62615f;
+}
+.footerText:hover {
+  cursor: pointer;
+  color: #0b66c2;
+  text-decoration: underline;
 }
