@@ -10,9 +10,24 @@ const CreatePost = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const renderTooltip = (props) => (
+  const renderTooltipImage = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      Simple tooltip
+      Aggiungi contenuto multimediale
+    </Tooltip>
+  );
+  const renderTooltipCalendar = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Crea un evento
+    </Tooltip>
+  );
+  const renderTooltipStar = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Festeggia un occasione speciale
+    </Tooltip>
+  );
+  const renderTooltipPlus = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Altro
     </Tooltip>
   );
   return (
@@ -100,13 +115,18 @@ const CreatePost = () => {
               <EmojiSmile style={{ color: "#404040" }} />
             </div>
             <div className="d-flex align-items-center ">
-              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltip}>
+              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipImage}>
                 <ImageAlt className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
               </OverlayTrigger>
-
-              <Calendar3 className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
-              <Asterisk className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
-              <PlusLg className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipCalendar}>
+                <Calendar3 className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              </OverlayTrigger>
+              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipStar}>
+                <Asterisk className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              </OverlayTrigger>
+              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipPlus}>
+                <PlusLg className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              </OverlayTrigger>
             </div>
           </Modal.Body>
           <Modal.Footer>
