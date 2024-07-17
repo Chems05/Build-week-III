@@ -180,7 +180,6 @@ export const fetchExperiences = (userId) => async (dispatch) => {
     dispatch({ type: FETCH_EXPERIENCES, payload: data });
   } catch (error) {
     console.error("Error fetching experiences:", error);
-    // You might dispatch an error action or handle errors as needed
   }
 };
 
@@ -203,7 +202,7 @@ export const addExperience = (userId, experience) => async (dispatch) => {
     dispatch({ type: ADD_EXPERIENCE, payload: data });
   } catch (error) {
     console.error("Error adding experience:", error);
-    // You might dispatch an error action or handle errors as needed
+   
   }
 };
 

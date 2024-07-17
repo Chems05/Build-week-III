@@ -5,9 +5,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchExperiences, addExperience, deleteExperience, updateExperience } from "../redux/actions";
 
 const Esperienza = () => {
+  // Stato per mostrare/nascondere il modal
   const [showModal, setShowModal] = useState(false);
+  // Stato per la modalità di modifica
   const [editMode, setEditMode] = useState(false);
+  // Stato per l'esperienza selezionata da modificare
   const [selectedExperience, setSelectedExperience] = useState(null);
+  // Stato per i dati dell'esperienza
   const [experienceData, setExperienceData] = useState({
     role: "",
     company: "",
@@ -15,18 +19,23 @@ const Esperienza = () => {
     endDate: "",
     description: "",
     area: "",
-    logo: "",
+    image: "",
   });
 
   const dispatch = useDispatch();
-  const userId = "6694d9a2196d7b0015d6b528"; // Update with dynamic user ID if needed
+  // ID utente
+  const userId = "6694d9a2196d7b0015d6b528";
+  // Seleziona l'array delle esperienze dal Redux store
   const experiencesArray = useSelector((state) => state.experiences.experiencesArray || []);
 
+  // Recupera le esperienze all'inizio e ad ogni aggiornamento dell'ID utente
   useEffect(() => {
     dispatch(fetchExperiences(userId));
   }, [dispatch, userId]);
 
+  // Mostra il modal
   const handleShow = () => setShowModal(true);
+  // Chiude il modal e resetta i dati
   const handleClose = () => {
     setShowModal(false);
     setEditMode(false);
@@ -37,10 +46,11 @@ const Esperienza = () => {
       endDate: "",
       description: "",
       area: "",
-      logo: "",
+      image: "",
     });
   };
 
+  // Gestisce i cambiamenti nei campi del form
   const handleChange = (e) => {
     const { name, value } = e.target;
     setExperienceData((prevExperience) => ({
@@ -49,11 +59,14 @@ const Esperienza = () => {
     }));
   };
 
+  // Gestisce l'invio del form per aggiungere o aggiornare un'esperienza
   const handleSubmit = (e) => {
     e.preventDefault();
     if (editMode) {
+      // Aggiorna una esperienza esistente
       dispatch(updateExperience(userId, selectedExperience._id, experienceData));
     } else {
+      // Aggiunge una nuova esperienza
       dispatch(addExperience(userId, experienceData));
     }
     
@@ -61,10 +74,12 @@ const Esperienza = () => {
     dispatch(fetchExperiences(userId));
   };
 
+  // Gestisce la cancellazione di un'esperienza
   const handleDelete = (experienceId) => {
     dispatch(deleteExperience(userId, experienceId));
   };
 
+  // Prepara i dati dell'esperienza per la modifica
   const handleEdit = (experience) => {
     setSelectedExperience(experience);
     setExperienceData({
@@ -74,7 +89,7 @@ const Esperienza = () => {
       endDate: experience.endDate,
       description: experience.description,
       area: experience.area,
-      logo: experience.logo,
+      image: experience.image,
     });
     setEditMode(true);
     handleShow();
@@ -103,7 +118,7 @@ const Esperienza = () => {
               <div className="d-flex align-items-start justify-content-between">
                 <div className="d-flex align-items-start">
                   <img
-                    src={exp.logo}
+                    src={exp.image}
                     alt={`${exp.company} logo`}
                     style={{ width: "50px", height: "50px", marginRight: "15px", marginTop: "3px" }}
                   />
@@ -198,6 +213,17 @@ const Esperienza = () => {
                 placeholder="Enter area"
                 name="area"
                 value={experienceData.area}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Image URL</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter image URL"
+                name="image"
+                value={experienceData.image}
                 onChange={handleChange}
                 required
               />

@@ -1,4 +1,6 @@
-import { Card, ListGroup, Col } from "react-bootstrap";
+import { Card, ListGroup,
+    
+ } from "react-bootstrap";
 import { ArrowDown, Hash, PlusLg, SquareFill } from "react-bootstrap-icons";
 import { BsFillBookmarkFill } from "react-icons/bs";
 
