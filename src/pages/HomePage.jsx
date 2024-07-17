@@ -2,6 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import AsideLeftHomePage from "../components/AsideLeftHomePage";
 import CreatePost from "../components/CreatePost";
 import MyNavbar from "../components/MyNavbar";
+import Post from "../components/Post";
 
 const HomePage = () => {
   return (
@@ -9,11 +10,12 @@ const HomePage = () => {
       <MyNavbar />
       <Container className="mt-4">
         <Row>
-          <Col md={4}>
+          <Col md={3}>
             <AsideLeftHomePage />
           </Col>
-          <Col md={8}>
+          <Col md={6}>
             <CreatePost />
+            <Post />
           </Col>
         </Row>
       </Container>
