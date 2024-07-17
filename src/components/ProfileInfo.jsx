@@ -28,9 +28,9 @@ const ProfileInfo = () => {
         </div>
       </Col>
       <Col xs={0} className="d-flex justify-content-center align-items-end ">
-        <Button className="black-button mt-2 p-1  text-body d-flex align-items-center border border-secondary rounded-pill me-4 w-50">
-          <BsFillPersonPlusFill className="ms-3" />
-          <strong className="ms-4">Collegati</strong>
+        <Button className="black-button mt-2   text-body d-flex align-items-center border border-secondary rounded-pill me-4 w-50">
+          <BsFillPersonPlusFill size={17} className="ms-4" />
+          <strong style={{fontSize: "0.9em" }} className="ms-2">Collegati</strong>
         </Button>
       </Col>
       <hr className="mt-3" />
