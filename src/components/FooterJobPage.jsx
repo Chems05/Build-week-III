@@ -4,16 +4,19 @@ import { FaPlus } from "react-icons/fa";
 const FooterJobPage = () => {
   return (
     <Container>
-      <Row style={{ fontSize: "13px" }} className="text-center mt-3">
-        <Col md="12 mb-2">
-          <span className="footerText">Informazioni</span> <span className="ms-3 footerText">Accessibilità</span>
+      <Row style={{ fontSize: "13px" }} className="text-center mt-3 d-flex justify-content-center">
+        <Col md="6" className="mb-2 footerText text-end">
+          Informazioni
         </Col>
-        <Col md="12 mb-2">
-          <span className="footerText">Centro assistenza</span>
+        <Col md="6" className="mb-2 footerText text-start">
+          Accessibilità
         </Col>
-        <Col md="12 mb-2">
+        <Col md="6" className="mb-2 footerText">
+          Centro assistenza
+        </Col>
+        <Col md="12" className="mb-2">
           <span className="footerText">
-            <Dropdown>
+            <Dropdown className="w-auto h-auto">
               <Dropdown.Toggle variant="" className="footerText border-0">
                 Privacy e condizioni
               </Dropdown.Toggle>
@@ -27,17 +30,17 @@ const FooterJobPage = () => {
             </Dropdown>
           </span>
         </Col>
-        <Col md="12 mb-2">
+        <Col md="12" className="mb-2">
           <span className="footerText">Opzioni per gli annunci pubblicitari </span>
         </Col>
-        <Col md="12 mb-2">
-          <span className="footerText">Pubblicià</span>
-          <span className="ms-3 footerText">
+        <Col className=" col-12 mb-2 d-flex justify-content-center">
+          <span className="footerText ">Pubblicià</span>
+          <span className="footerText ">
             <Dropdown>
-              <Dropdown.Toggle variant="" className="footerText border-0">
+              <Dropdown.Toggle variant="" className="footerText border-0 pt-0">
                 Servizi alle aziende
               </Dropdown.Toggle>
-              <Dropdown.Menu className="w-100 h-auto">
+              <Dropdown.Menu className="w-auto h-auto">
                 <Dropdown.Item href="#/action-1" className="dropDownItems">
                   <strong>
                     Assumi su LinkedIn <br />
@@ -98,7 +101,7 @@ const FooterJobPage = () => {
             </Dropdown>
           </span>
         </Col>
-        <Col md="12 mb-2">
+        <Col md="12" className="mb-2">
           <span className="footerText">Scarica l`app Linkedin</span> <span className="ms-3 footerText">Altro</span>
         </Col>
       </Row>
@@ -110,7 +113,7 @@ const FooterJobPage = () => {
             className="imgLinkedin"
           />
           <span style={{ fontSize: "14px" }} className="ms-2">
-            LinkedIn Corporation © 2024{" "}
+            LinkedIn Corporation © 2024
           </span>
         </Col>
       </Row>
