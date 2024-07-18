@@ -25,7 +25,7 @@ import {
 } from "react-bootstrap-icons";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   getAllUsersInformations,
   getUserExperiences,
@@ -56,6 +56,12 @@ const MyNavbar = () => {
     }
   }, []);
 
+  const [showSearch, setShowSearch] = useState(false);
+
+  const handleIconClick = () => {
+    setShowSearch(!showSearch);
+  };
+
   return (
     <Navbar bg="white" variant="light" expand="lg" className="px-3 shadow-sm">
       <Container>
@@ -63,7 +69,30 @@ const MyNavbar = () => {
           <Link to="/">
             <BsLinkedin size={33} className="ms-2 " color="#0077b5" />
           </Link>
-          <BiSearch size={25} color="grey" className="ms-2 d-md-none  " />
+
+          <div className="search-container">
+            <BiSearch
+              size={25}
+              color="grey"
+              className="ms-2 d-md-none"
+              onClick={handleIconClick}
+            />
+            {showSearch && (
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Search..."
+                style={{
+                  position: "fixed",
+                  zIndex: 1000,
+                  right: "84px",
+                  top: "18px",
+                  width: "290px",
+                  height: "30px",
+                }}
+              />
+            )}
+          </div>
         </Navbar.Brand>
         <Form className="d-flex mx-2 search-form d-none d-xl-block">
           <div className="search-container ">
@@ -187,7 +216,7 @@ const MyNavbar = () => {
           }
           id="nav-dropdown-tu"
           align="end"
-          className="small-dropdown"
+          className="small-dropdown small-dropdown-"
         >
           <NavDropdown.Item href="#business1">
             <div className="d-flex align-items-center">
