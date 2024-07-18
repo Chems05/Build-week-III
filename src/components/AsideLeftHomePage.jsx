@@ -15,20 +15,22 @@ const AsideLeftHomePage = () => {
               variant="top"
               src="https://media.licdn.com/dms/image/C4E16AQF8TC4KCgMDNA/profile-displaybackgroundimage-shrink_350_1400/0/1523715805906?e=1726704000&v=beta&t=wGs6DFrGhY_bDMVESIcstUxHmOmzNXgZTlG5gqy9Jn4"
             />
-            <Card.Body className="text-center">
+            <Card.Body className="position-relativ">
               <Card.Img
                 src={singleUserInfo.image}
-                className="rounded-circle mb-2"
+                className="rounded-circle mb-2 position-absolute mb-3 asideLeftHomePage"
                 style={{ width: "80px", height: "80px" }}
               />
-              <Card.Title className="mt-3" style={{ fontSize: "16px" }}>
-                <strong>
-                  {singleUserInfo.name}&nbsp;
-                  {singleUserInfo.surname}
-                </strong>
-              </Card.Title>
-              <Card.Text style={{ color: "grey", fontSize: "13px" }}>{singleUserInfo.title}</Card.Text>
             </Card.Body>
+            <Card.Title className="mt-3 ms-2" style={{ fontSize: "16px" }}>
+              <strong>
+                {singleUserInfo.name}&nbsp;
+                {singleUserInfo.surname}
+              </strong>
+            </Card.Title>
+            <Card.Text className="ms-2" style={{ color: "grey", fontSize: "13px" }}>
+              {singleUserInfo.title}
+            </Card.Text>
             <ListGroup className="list-group-flush p-3">
               <p style={{ fontSize: "13px", color: "grey", marginBottom: "5px" }}>
                 Visitatori del profilo{" "}
@@ -49,13 +51,12 @@ const AsideLeftHomePage = () => {
               </small>
               <br />
               <small style={{ fontSize: "13px" }} className="d-flex align-items-center">
-                {" "}
                 <SquareFill className="me-2" style={{ color: "#b37d00" }} /> Prova per 0 EUR
               </small>
               <hr />
               <small style={{ fontSize: "13px" }} className="d-flex align-items-center">
                 <BsFillBookmarkFill className="me-2" />
-                Elementi salvati{" "}
+                Elementi salvati
               </small>
             </Card.Body>
           </Card>
@@ -67,28 +68,23 @@ const AsideLeftHomePage = () => {
               </Card.Title>
               <ListGroup className="list-group-flush p-1 mb-4">
                 <span style={{ fontSize: "14px", color: "#838383" }}>
-                  {" "}
-                  <Hash className="me-1 text-black" /> produttività{" "}
+                  <Hash className="me-1 text-black" /> produttività
                 </span>
                 <br />
                 <span style={{ fontSize: "14px", color: "#838383" }}>
-                  {" "}
-                  <Hash className="me-1 text-black" /> innovazione{" "}
+                  <Hash className="me-1 text-black" /> innovazione
                 </span>
                 <br />
                 <span style={{ fontSize: "14px", color: "#838383" }}>
-                  {" "}
-                  <Hash className="me-1 text-black" /> fibraottica{" "}
+                  <Hash className="me-1 text-black" /> fibraottica
                 </span>
                 <br />
                 <span style={{ fontSize: "14px", color: "#838383" }}>
-                  {" "}
-                  <Hash className="me-1 text-black" /> startup{" "}
+                  <Hash className="me-1 text-black" /> startup
                 </span>
                 <br />
                 <span style={{ fontSize: "14px", color: "#838383" }}>
-                  {" "}
-                  <Hash className="me-1 text-black" /> innovation{" "}
+                  <Hash className="me-1 text-black" /> innovation
                 </span>
               </ListGroup>
 
@@ -97,7 +93,7 @@ const AsideLeftHomePage = () => {
               </h6>
               <br />
               <p style={{ textDecoration: "none", color: "#0A66C2", fontSize: "14px" }} href="#">
-                Eventi{" "}
+                Eventi
                 <span style={{ color: "black" }} className="float-end">
                   <PlusLg />
                 </span>
@@ -108,23 +104,19 @@ const AsideLeftHomePage = () => {
               </p>
               <ListGroup className="list-group-flush p-1 ">
                 <span style={{ fontSize: "14px", color: "#838383" }}>
-                  {" "}
-                  <Hash className="me-1 text-black" /> produttività{" "}
+                  <Hash className="me-1 text-black" /> produttività
                 </span>
                 <br />
                 <span style={{ fontSize: "14px", color: "#838383" }}>
-                  {" "}
-                  <Hash className="me-1 text-black" /> innovazione{" "}
+                  <Hash className="me-1 text-black" /> innovazione
                 </span>
                 <br />
                 <span style={{ fontSize: "14px", color: "#838383" }}>
-                  {" "}
-                  <Hash className="me-1 text-black" /> fibraottica{" "}
+                  <Hash className="me-1 text-black" /> fibraottica
                 </span>
                 <br />
                 <span style={{ fontSize: "14px", color: "#838383" }}>
-                  {" "}
-                  Visualizza altro <ArrowDown />{" "}
+                  Visualizza altro <ArrowDown />
                 </span>
               </ListGroup>
             </Card.Body>
