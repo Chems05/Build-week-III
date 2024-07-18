@@ -7,6 +7,7 @@ export const fetchJobQuery = (query) => {
       const response = await fetch("https://strive-benchmark.herokuapp.com/api/jobs?search=" + query);
       if (response.ok) {
         const data = await response.json();
+
         dispatch(addJobsSearchedToArray(data.data));
       }
     } catch (error) {

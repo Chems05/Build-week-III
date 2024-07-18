@@ -11,7 +11,7 @@ import { getAllUsersInformations, getUserExperiences, getUserInformation } from 
 import { getAllPosts } from "../redux/actions/postsActions";
 
 import { Link } from "react-router-dom";
-import { addJobsSearchedToArray, fetchJobQuery, updateSearchQueryAction } from "../redux/actions/searchActions";
+import { fetchJobQuery, updateSearchQueryAction } from "../redux/actions/searchActions";
 
 const MyNavbar = () => {
   const singleUserInfo = useSelector((state) => state.users.singleUser);
