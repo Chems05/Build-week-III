@@ -87,7 +87,7 @@ const MainProfileInfo = () => {
             </div>
             <h6 style={{fontSize:'16px', color:'#191919'}} >{singleUserInfo.title}</h6>
             <p style={{fontSize:'15px ',color:'grey'}} className="lead d-inline-block">{singleUserInfo.area} ·</p>
-            <span style={{fontSize:'14px'}} className="light-blue ms-3">informazioni di contatto</span>
+            <span style={{fontSize:'14px'}} className="light-blue ms-1">informazioni di contatto</span>
             <Card.Text style={{fontSize:'14px'}} className="light-blue">250 collegamenti</Card.Text>
             <div style={{fontSize:'17px',height:'30px'}} className="blue-button d-inline-block rounded-pill ">Disponibile per</div>
             <div style={{fontSize:'17px',height:'30px'}}  className="light-blue-button d-inline-block rounded-pill ms-2">Aggiungi sezione del profilo</div>
