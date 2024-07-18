@@ -179,7 +179,7 @@ body {
   cursor: pointer;
   color: #0b66c2;
   text-decoration: underline;
-  
+}
 
 .dropDownItems {
   background-color: white;
@@ -195,4 +195,34 @@ body {
 .dropdown-toggle {
   color: #a4a4a4;
   font-size: 13px;
+}
+
+.asideLeftHomePage {
+  top: 4%;
+}
+@media (min-width: 320px) {
+  .asideLeftHomePage {
+    top: 4%;
+  }
+}
+@media (min-width: 576px) {
+  .asideLeftHomePage {
+    top: 19%;
+  }
+}
+@media (min-width: 768px) {
+  .asideLeftHomePage {
+    top: 4%;
+  }
+}
+
+@media (min-width: 992px) {
+  .asideLeftHomePage {
+    top: 10%;
+  }
+}
+@media (min-width: 1200px) {
+  .asideLeftHomePage {
+    top: 12%;
+  }
 }

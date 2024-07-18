@@ -1,8 +1,7 @@
-import { Button, Col, Container, Dropdown, DropdownDivider, Modal, Row } from "react-bootstrap";
+import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { HiInformationCircle } from "react-icons/hi";
 import { useState } from "react";
-import { FaPlus } from "react-icons/fa";
 import FooterJobPage from "./FooterJobPage";
 
 const LinkedinNotizie = () => {
