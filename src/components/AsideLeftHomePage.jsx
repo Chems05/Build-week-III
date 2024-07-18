@@ -15,20 +15,20 @@ const AsideLeftHomePage = () => {
               variant="top"
               src="https://media.licdn.com/dms/image/C4E16AQF8TC4KCgMDNA/profile-displaybackgroundimage-shrink_350_1400/0/1523715805906?e=1726704000&v=beta&t=wGs6DFrGhY_bDMVESIcstUxHmOmzNXgZTlG5gqy9Jn4"
             />
-            <Card.Body className="position-relativ">
+            <Card.Body className="">
               <Card.Img
                 src={singleUserInfo.image}
-                className="rounded-circle mb-2 position-absolute mb-3 asideLeftHomePage"
-                style={{ width: "80px", height: "80px" }}
+                className="rounded-circle mb-2 position-absolute mb-3 asideLeftHomePage "
+                style={{ width: "80px", height: "80px",marginLeft:'30% '}}
               />
             </Card.Body>
-            <Card.Title className="mt-3 ms-2" style={{ fontSize: "16px" }}>
+            <Card.Title className="mt-5 " style={{ fontSize: "16px",marginLeft:'30%' }}>
               <strong>
                 {singleUserInfo.name}&nbsp;
                 {singleUserInfo.surname}
               </strong>
             </Card.Title>
-            <Card.Text className="ms-2" style={{ color: "grey", fontSize: "13px" }}>
+            <Card.Text  style={{ color: "grey", fontSize: "13px",marginLeft:'30%' }}>
               {singleUserInfo.title}
             </Card.Text>
             <ListGroup className="list-group-flush p-3">
