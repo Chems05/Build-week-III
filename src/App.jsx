@@ -13,7 +13,6 @@ function App() {
           <Route path="/home" element={<ProfilePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/" element={<JobsPage />} />
-
         </Routes>
       </BrowserRouter>
     </>
