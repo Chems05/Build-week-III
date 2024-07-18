@@ -11,7 +11,7 @@ import { getAllUsersInformations, getUserExperiences, getUserInformation } from 
 import { getAllPosts } from "../redux/actions/postsActions";
 
 import { Link } from "react-router-dom";
-import { updateSearchQueryAction } from "../redux/actions/searchActions";
+import { addJobsSearchedToArray, fetchJobQuery, updateSearchQueryAction } from "../redux/actions/searchActions";
 
 const MyNavbar = () => {
   const singleUserInfo = useSelector((state) => state.users.singleUser);
@@ -46,6 +46,10 @@ const MyNavbar = () => {
         <Form
           onChange={(e) => dispatch(updateSearchQueryAction(e.target.value))}
           value={searchQuery}
+          onSubmit={(e) => {
+            e.preventDefault();
+            dispatch(fetchJobQuery(searchQuery));
+          }}
           className="d-flex mx-2 search-form d-none d-xl-block"
         >
           <div className="search-container ">
