@@ -1,9 +1,8 @@
-import { Button, Col, Container, Modal, Row } from "react-bootstrap";
+import { Button, Col, Container, Dropdown, DropdownDivider, Modal, Row } from "react-bootstrap";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { HiInformationCircle } from "react-icons/hi";
 import { useState } from "react";
-
-
+import { FaPlus } from "react-icons/fa";
 
 const LinkedinNotizie = () => {
   const [showInfo, setShowInfo] = useState(false);
@@ -53,103 +52,111 @@ const LinkedinNotizie = () => {
       )}
       <Row className="bg-white d-flex justify-content-between border border-dark-subtle rounded-3">
         <Row className="row ps-2 col-8 ms-1">
-        <h6 style={{ fontSize: '18px', whiteSpace: 'nowrap' }} className="mt-3 fw-semibold">
-  <span>    Linkedin Notizie   <HiInformationCircle style={{marginLeft:'85px'}} alt="info" onClick={handleInfoclic} />
-  </span>   
-    </h6>
-  
+          <h6 style={{ fontSize: "18px", whiteSpace: "nowrap" }} className="mt-3 fw-semibold">
+            <span>
+              {" "}
+              Linkedin Notizie{" "}
+              <HiInformationCircle style={{ marginLeft: "85px" }} alt="info" onClick={handleInfoclic} />
+            </span>
+          </h6>
         </Row>
-    
-          <HiInformationCircle alt="info" className="infoIcon" onClick={handleInfoclic} />
-       
+
+        <HiInformationCircle alt="info" className="infoIcon" onClick={handleInfoclic} />
+
         <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
-        <p style={{ color: '#A4A4A4', fontSize: '15px', whiteSpace: 'nowrap' }} className=" text-body-secondary">
-      Storie Principali
-    </p>
-    <h6 style={{ whiteSpace: 'nowrap',fontSize:'14px' }} className="fw-semibold">
-      Semaforo giallo per il talento elettrico
-    </h6>
-    <p style={{ color: '#A4A4A4', fontSize: '13px', whiteSpace: 'nowrap' }} className="text-body-secondary">
-      11 ore fa·637 lettori
-    </p>
-  </Row>
-  <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
-    <h6 style={{ whiteSpace: 'nowrap',fontSize:'14px' }} className="m-0 fw-semibold">
-      Dal principio di scarsità al valore
-    </h6>
-    <p style={{ color: '#A4A4A4', fontSize: '13px', whiteSpace: 'nowrap' }} className="text-body-secondary">
-      8 giorni fa·6.782 lettori
-    </p>
-  </Row>
-  <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
-    <p style={{ whiteSpace: 'nowrap',fontSize:'14px' }} className="m-0 fw-semibold">
-      Cambio al vertice di Telethon
-    </p>
-    <p style={{ color: '#A4A4A4', fontSize: '13px', whiteSpace: 'nowrap' }} className="text-body-secondary">
-      13 ore fa·4.145 lettori
-    </p>
-  </Row>
-  <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
-    <p style={{ whiteSpace: 'nowrap',fontSize:'14px' }} className="m-0 fw-semibold">
-      Dove Crescono e calano i salari
-    </p>
-    <p style={{ color: '#A4A4A4', fontSize: '13px', whiteSpace: 'nowrap' }} className="text-body-secondary">
-      1 giorno fa·510 lettori
-    </p>
-  </Row>
-  <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
-    <p style={{ whiteSpace: 'nowrap',fontSize:'14px' }} className="m-0 fw-semibold">
-      Due italiane al top nella matematica
-    </p>
-    <p style={{ color: '#A4A4A4', fontSize: '13px', whiteSpace: 'nowrap' }} className="text-body-secondary">
-      1 giorno fa·331 lettori
-    </p>
-  </Row>
+          <p style={{ color: "#A4A4A4", fontSize: "15px", whiteSpace: "nowrap" }} className=" text-body-secondary">
+            Storie Principali
+          </p>
+          <h6 style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="fw-semibold">
+            Semaforo giallo per il talento elettrico
+          </h6>
+          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+            11 ore fa·637 lettori
+          </p>
+        </Row>
+        <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
+          <h6 style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+            Dal principio di scarsità al valore
+          </h6>
+          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+            8 giorni fa·6.782 lettori
+          </p>
+        </Row>
+        <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
+          <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+            Cambio al vertice di Telethon
+          </p>
+          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+            13 ore fa·4.145 lettori
+          </p>
+        </Row>
+        <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
+          <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+            Dove Crescono e calano i salari
+          </p>
+          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+            1 giorno fa·510 lettori
+          </p>
+        </Row>
+        <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
+          <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+            Due italiane al top nella matematica
+          </p>
+          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+            1 giorno fa·331 lettori
+          </p>
+        </Row>
         {showFullArticole && (
           <>
-             <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
-        <p style={{ whiteSpace: 'nowrap',fontSize:'14px' }} className="m-0 fw-semibold">
-          Fnac prova a prendersi Unieuro
-        </p>
-        <p style={{ color: '#A4A4A4', fontSize: '13px', whiteSpace: 'nowrap' }} className="text-body-secondary">
-          21 ore fa·500 lettori
-        </p>
-      </Row>
-      <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
-        <p style={{ whiteSpace: 'nowrap',fontSize:'14px' }} className="m-0 fw-semibold">
-          Ora che l`AI Act è legge
-        </p>
-        <p style={{ color: '#A4A4A4', fontSize: '13px', whiteSpace: 'nowrap' }} className="text-body-secondary">
-          26 ore fa·5.000 lettori
-        </p>
-      </Row>
-      <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
-        <p style={{ whiteSpace: 'nowrap',fontSize:'14px' }} className="m-0 fw-semibold">
-          Ferragamo crsce nel mondo dei vini
-        </p>
-        <p style={{ color: '#A4A4A4', fontSize: '13px', whiteSpace: 'nowrap' }} className="text-body-secondary">
-          1 giorno fa·862 lettori
-        </p>
-      </Row>
-      <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
-        <p style={{ whiteSpace: 'nowrap',fontSize:'14px' }} className="m-0 fw-semibold">
-          Alla comunicazione servono processi <br /> chiari
-        </p>
-        <p style={{ color: '#A4A4A4', fontSize: '13px', whiteSpace: 'nowrap' }} className="text-body-secondary">
-          2 gorni fa·2.000 lettori
-        </p>
-      </Row>
+            <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
+              <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+                Fnac prova a prendersi Unieuro
+              </p>
+              <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+                21 ore fa·500 lettori
+              </p>
+            </Row>
+            <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
+              <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+                Ora che l`AI Act è legge
+              </p>
+              <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+                26 ore fa·5.000 lettori
+              </p>
+            </Row>
+            <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
+              <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+                Ferragamo crsce nel mondo dei vini
+              </p>
+              <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+                1 giorno fa·862 lettori
+              </p>
+            </Row>
+            <Row className="row ps-2 col-8 ms-1 hooverElementLinkedinNotizie">
+              <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+                Alla comunicazione servono processi <br /> chiari
+              </p>
+              <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+                2 gorni fa·2.000 lettori
+              </p>
+            </Row>
           </>
         )}
         <Col className="col-12 ms-1">
-          <Button style={{height:'40px'}} className="btnVediAltro text-dark" onClick={toggleShowFullArticole}>
+          <Button style={{ height: "40px" }} className="btnVediAltro text-dark" onClick={toggleShowFullArticole}>
             {showFullArticole ? (
               <>
-             <p style={{fontSize:'14px'}}>   Meno dettagli <IoIosArrowUp className="iconArrow" />  </p> 
+                <p style={{ fontSize: "14px" }}>
+                  {" "}
+                  Meno dettagli <IoIosArrowUp className="iconArrow" />{" "}
+                </p>
               </>
             ) : (
               <>
-                 <p style={{fontSize:'14px'}}>   Vedi altro <IoIosArrowDown  className="iconArrow" /> </p>
+                <p style={{ fontSize: "14px" }}>
+                  {" "}
+                  Vedi altro <IoIosArrowDown className="iconArrow" />{" "}
+                </p>
               </>
             )}
           </Button>
@@ -163,7 +170,9 @@ const LinkedinNotizie = () => {
           <Col className="d-flex m-2 gioghi">
             <img src="https://static.licdn.com/aero-v1/sc/h/25itbd3dpc6ockbgvdhot9qp1" alt="gioco" />
             <p className="d-inline mt-3 ms-2">
-              <span style={{fontSize:'15px'}} className="fw-bold text-secondary ">Queens #78 </span>
+              <span style={{ fontSize: "15px" }} className="fw-bold text-secondary ">
+                Queens #78{" "}
+              </span>
               <small className="text-body-secondary d-block">Incorona ogni regione</small>
             </p>
           </Col>
@@ -175,7 +184,7 @@ const LinkedinNotizie = () => {
           className="m-0 p-0"
         />
       </Row>
-      <Row style={{fontSize:'13px'}} className="text-center mt-3">
+      <Row style={{ fontSize: "13px" }} className="text-center mt-3">
         <Col md="12 mb-2">
           <span className="footerText">Informazioni</span> <span className="ms-3 footerText">Accessibilità</span>
         </Col>
@@ -183,13 +192,91 @@ const LinkedinNotizie = () => {
           <span className="footerText">Centro assistenza</span>
         </Col>
         <Col md="12 mb-2">
-          <span className="footerText">Privacy e condizioni </span>
+          <span className="footerText">
+            <Dropdown>
+              <Dropdown.Toggle variant="" className="footerText border-0">
+                Privacy e condizioni
+              </Dropdown.Toggle>
+              <Dropdown.Menu className="w-100 h-auto">
+                <Dropdown.Item href="#/action-1">Informativa sulla privacy</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Contratto di licenza</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Termini e condizioni delle pagine</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Informativa sui cookie </Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Informativa sul copyright</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </span>
         </Col>
         <Col md="12 mb-2">
           <span className="footerText">Opzioni per gli annunci pubblicitari </span>
         </Col>
         <Col md="12 mb-2">
-          <span className="footerText">Pubblicià</span> <span className="ms-3 footerText">Servizi alle aziende</span>
+          <span className="footerText">Pubblicià</span>
+          <span className="ms-3 footerText">
+            <Dropdown>
+              <Dropdown.Toggle variant="" className="footerText border-0">
+                Servizi alle aziende
+              </Dropdown.Toggle>
+              <Dropdown.Menu className="w-100 h-auto">
+                <Dropdown.Item href="#/action-1" className="dropDownItems">
+                  <strong>
+                    Assumi su LinkedIn <br />
+                    <span className="fw-lighter" style={{ color: "#A4A4A4", fontSize: "15px", whiteSpace: "nowrap" }}>
+                      Trova, atrai e assumi
+                    </span>
+                  </strong>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-2" className="dropDownItems">
+                  <strong>
+                    Vendi su LinkedIn <br />
+                    <span className="fw-lighter" style={{ color: "#A4A4A4", fontSize: "15px", whiteSpace: "wrap" }}>
+                      Sblocca nuove oppurtunita di vendita
+                    </span>
+                  </strong>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3" className="dropDownItems">
+                  <strong>
+                    Offerta di lavoro gratuita <br />
+                    <span className="fw-lighter" style={{ color: "#A4A4A4", fontSize: "15px", whiteSpace: "wrap" }}>
+                      Ottieni rpidamente candidati qualificati
+                    </span>
+                  </strong>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3" className="dropDownItems">
+                  <strong>
+                    Fai pubblicità su LinkedIn <br />
+                    <span className="fw-lighter" style={{ color: "#A4A4A4", fontSize: "15px", whiteSpace: "wrap" }}>
+                      Acquisisci clienti e fai crescere la tua azienda
+                    </span>
+                  </strong>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3" className="dropDownItems">
+                  <strong>
+                    Impara con LinkedIn
+                    <br />
+                    <span className="fw-lighter" style={{ color: "#A4A4A4", fontSize: "15px", whiteSpace: "wrap" }}>
+                      Assumi su LinkedIn
+                    </span>
+                  </strong>
+                </Dropdown.Item>
+                <Dropdown.Item href="#/action-3" className="dropDownItems">
+                  <strong>
+                    Admin Center
+                    <br />
+                    <span className="fw-lighter" style={{ color: "#A4A4A4", fontSize: "15px", whiteSpace: "wrap" }}>
+                      Gestisci i dettagli di fatturazione e account
+                    </span>
+                  </strong>
+                </Dropdown.Item>
+                <DropdownDivider />
+                <Dropdown.Item href="#/action-3" className="dropDownItems">
+                  <strong className="d-flex align-items-center">
+                    Crea una pagina aziendale <FaPlus className="ms-1" />
+                  </strong>
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </span>
         </Col>
         <Col md="12 mb-2">
           <span className="footerText">Scarica l`app Linkedin</span> <span className="ms-3 footerText">Altro</span>
@@ -202,7 +289,9 @@ const LinkedinNotizie = () => {
             alt="nomeAzienda"
             className="imgLinkedin"
           />
-          <span style={{fontSize:'14px'}} className="ms-2">LinkedIn Corporation © 2024 </span>
+          <span style={{ fontSize: "14px" }} className="ms-2">
+            LinkedIn Corporation © 2024{" "}
+          </span>
         </Col>
       </Row>
     </Container>
