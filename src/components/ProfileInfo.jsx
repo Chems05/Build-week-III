@@ -27,10 +27,10 @@ const ProfileInfo = () => {
           </p>
         </div>
       </Col>
-      <Col xs={0} className="d-flex justify-content-center align-items-end ">
-        <Button className="black-button mt-2   text-body d-flex align-items-center border border-secondary rounded-pill me-4 w-50">
-          <BsFillPersonPlusFill size={17} className="ms-4" />
-          <strong style={{fontSize: "0.9em" }} className="ms-2">Collegati</strong>
+      <Col xs={12} className="d-flex justify-content-center align-items-end button-col mt-2">
+        <Button className="black-button text-body d-flex align-items-center justify-content-center border border-secondary rounded-pill ">
+          <BsFillPersonPlusFill size={17} className="icon-adjust ms-2 " />
+          <strong className="text-adjust ">Collegati</strong>
         </Button>
       </Col>
       <hr className="mt-3" />
@@ -38,7 +38,7 @@ const ProfileInfo = () => {
   );
 
   return (
-    <Container xs="4" md="4" className="mb-4">
+    <Container className="mb-4">
       <Row className="bg-white d-flex justify-content-between border border-dark-subtle rounded-3">
         <Col className="row ps-2 col-8 ms-2">
           <span className="mt-3 ">
