@@ -68,6 +68,25 @@ export const editPost = (postId, updatedText) => {
   };
 };
 
+export const deletePost = (postId) => {
+  return async () => {
+    try {
+      const response = await fetch("https://striveschool-api.herokuapp.com/api/posts/" + postId, {
+        method: "DELETE",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs",
+        },
+      });
+      if (response.ok) {
+        return response.json();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export const addAllPostsToArrayAction = (posts) => {
   return {
     type: ADD_ALL_POSTS_TO_ARRAY,

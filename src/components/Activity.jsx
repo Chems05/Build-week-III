@@ -4,7 +4,7 @@ import { Asterisk, Calendar3, Clock, EmojiSmile, ImageAlt, Pencil, PlusLg } from
 import { BsPencil, BsTrash } from "react-icons/bs";
 import { FaRegThumbsUp, FaRegComment } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { editPost, getAllPosts } from "../redux/actions/postsActions";
+import { deletePost, editPost, getAllPosts } from "../redux/actions/postsActions";
 
 const Activity = () => {
   const posts = [
@@ -193,7 +193,13 @@ const Activity = () => {
                         </div>
                       </Modal.Footer>
                     </Modal>
-                    <BsTrash style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }} />
+                    <BsTrash
+                      onClick={() => {
+                        dispatch(deletePost(post._id));
+                        dispatch(getAllPosts());
+                      }}
+                      style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
+                    />
                   </div>
                 </Card.Text>
                 <Card.Text style={{ fontSize: "14px" }}>{post.text}</Card.Text>
