@@ -1,7 +1,10 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { Pencil } from "react-bootstrap-icons";
+import { useState } from "react";
+import { Container, Row, Col, Card, Button, Modal, Image, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Asterisk, Calendar3, Clock, EmojiSmile, ImageAlt, Pencil, PlusLg } from "react-bootstrap-icons";
+import { BsPencil, BsTrash } from "react-icons/bs";
 import { FaRegThumbsUp, FaRegComment } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { editPost, getAllPosts } from "../redux/actions/postsActions";
 
 const Activity = () => {
   const posts = [
@@ -24,13 +27,44 @@ const Activity = () => {
       comments: 0,
     },
   ];
+  const dispatch = useDispatch();
 
   const singleUserInfo = useSelector((state) => state.users.singleUser);
   const postsArray = useSelector((state) => state.posts.allPosts);
 
-  const filterPostsByUserId = (posts, userId) => {
-    return posts.filter((post) => post.user._id === userId);
-  };
+  const [textPostForm, setTextPostForm] = useState({
+    text: "",
+  });
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const renderTooltipImage = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Aggiungi contenuto multimediale
+    </Tooltip>
+  );
+  const renderTooltipCalendar = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Crea un evento
+    </Tooltip>
+  );
+  const renderTooltipStar = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Festeggia un occasione speciale
+    </Tooltip>
+  );
+  const renderTooltipPlus = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Altro
+    </Tooltip>
+  );
+  const renderTooltipClock = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Programma per un secondo momento
+    </Tooltip>
+  );
 
   return (
     <Container className=" bg-white border border-dark-subtle rounded-3 text-dark p-4 mt-5">
@@ -54,6 +88,7 @@ const Activity = () => {
           <Pencil />
         </Col>
       </Row>
+      {/* map all'array di post filtrato in base all'id */}
       {singleUserInfo !== null &&
         postsArray &&
         postsArray
@@ -61,8 +96,105 @@ const Activity = () => {
           .map((post) => (
             <Card key={post._id} className="mb-3 bg- text-dark border-transparent border-0">
               <Card.Body>
-                <Card.Text style={{ color: "grey", fontSize: "12px" }}>
+                <Card.Text className="d-flex" style={{ color: "grey", fontSize: "12px" }}>
                   <strong>{post.user.name}</strong> ha pubblicato questo post - 1m
+                  <div className="d-flex ms-auto">
+                    <BsPencil
+                      onClick={handleShow}
+                      style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
+                    />
+                    <Modal className="mt-5" show={show} onHide={handleClose}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>
+                          <Row>
+                            <Col style={{ border: "none" }} className="d-flex black-button rounded p-2">
+                              <Image
+                                src={singleUserInfo.image}
+                                style={{
+                                  width: "60px",
+                                  height: "60px",
+                                  borderRadius: "50%",
+                                }}
+                              />
+                              <div className="ms-2">
+                                <p style={{ fontWeight: "500" }} className="mb-0">
+                                  {singleUserInfo.name}&nbsp;
+                                  {singleUserInfo.surname}
+                                </p>
+                                <span style={{ fontSize: "0.7em" }}>Pubblica:chiunque</span>
+                              </div>
+                            </Col>
+                          </Row>
+                        </Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Form>
+                          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                            <Form.Control
+                              style={{ border: "none", boxShadow: "none", resize: "none" }}
+                              placeholder="Di cosa vorresti parlare"
+                              as="textarea"
+                              rows={4}
+                              onChange={(e) => {
+                                setTextPostForm({ text: e.target.value });
+                              }}
+                            />
+                          </Form.Group>
+                        </Form>
+                        <div
+                          className="mb-3 d-inline-flex align-items-center justify-content-center black-button rounded-circle"
+                          style={{ width: "42px", height: "42px", border: "none" }}
+                        >
+                          <EmojiSmile style={{ color: "#404040" }} />
+                        </div>
+                        <div className="d-flex align-items-center ">
+                          <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipImage}>
+                            <ImageAlt className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+                          </OverlayTrigger>
+                          <OverlayTrigger
+                            placement="top"
+                            delay={{ show: 250, hide: 400 }}
+                            overlay={renderTooltipCalendar}
+                          >
+                            <Calendar3 className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+                          </OverlayTrigger>
+                          <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipStar}>
+                            <Asterisk className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+                          </OverlayTrigger>
+                          <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipPlus}>
+                            <PlusLg className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+                          </OverlayTrigger>
+                        </div>
+                      </Modal.Body>
+                      <Modal.Footer>
+                        <div
+                          className=" d-inline-flex align-items-center justify-content-center black-button rounded-circle"
+                          style={{ width: "42px", height: "42px", border: "none" }}
+                        >
+                          <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipClock}>
+                            <Clock style={{ color: "#404040" }} />
+                          </OverlayTrigger>
+                        </div>
+                        <div
+                          className="blue-button rounded-pill"
+                          onClick={(e) => {
+                            e.preventDefault();
+
+                            // Aggiunge un nuovo post
+                            if (singleUserInfo._id === post.user._id) {
+                              dispatch(editPost(post._id, textPostForm));
+                            }
+
+                            handleClose();
+                            dispatch(getAllPosts());
+                          }}
+                        >
+                          Pubblica
+                        </div>
+                      </Modal.Footer>
+                    </Modal>
+                    <BsTrash style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }} />
+                  </div>
                 </Card.Text>
                 <Card.Text style={{ fontSize: "14px" }}>{post.text}</Card.Text>
 
@@ -72,7 +204,7 @@ const Activity = () => {
                   className="text-black"
                 >
                   <span>
-                    <img style={{ width: "40px", height: "40px" }} src={post.user.image} alt="" />
+                    <img style={{ width: "40px", height: "40px" }} src="https://via.placeholder.com/50" alt="" />
                   </span>
                   {post.link}
                 </Card.Link>
