@@ -24,14 +24,15 @@ const Esperienza = () => {
 
   const dispatch = useDispatch();
   // ID utente
-  const userId = "6694d9a2196d7b0015d6b528";
+  const teamId = {giuseeppId:"66991b7287ffcb001574cb79",gianlucaId:"6694d9a2196d7b0015d6b528"}
+  
   // Seleziona l'array delle esperienze dal Redux store
   const experiencesArray = useSelector((state) => state.experiences.experiencesArray || []);
 
   // Recupera le esperienze all'inizio e ad ogni aggiornamento dell'ID utente
   useEffect(() => {
-    dispatch(fetchExperiences(userId));
-  }, [dispatch, userId]);
+    dispatch(fetchExperiences(teamId.giuseeppId));
+  }, [dispatch, teamId.giuseeppId]);
 
   // Mostra il modal
   const handleShow = () => setShowModal(true);
@@ -64,19 +65,19 @@ const Esperienza = () => {
     e.preventDefault();
     if (editMode) {
       // Aggiorna una esperienza esistente
-      dispatch(updateExperience(userId, selectedExperience._id, experienceData));
+      dispatch(updateExperience(teamId.giuseeppId, selectedExperience._id, experienceData));
     } else {
       // Aggiunge una nuova esperienza
-      dispatch(addExperience(userId, experienceData));
+      dispatch(addExperience(teamId.giuseeppId, experienceData));
     }
     
     handleClose();
-    dispatch(fetchExperiences(userId));
+    dispatch(fetchExperiences(teamId.giuseeppId));
   };
 
   // Gestisce la cancellazione di un'esperienza
   const handleDelete = (experienceId) => {
-    dispatch(deleteExperience(userId, experienceId));
+    dispatch(deleteExperience(teamId.giuseeppId, experienceId));
   };
 
   // Prepara i dati dell'esperienza per la modifica
@@ -151,7 +152,7 @@ const Esperienza = () => {
 
       <Modal className="mt-5" show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{editMode ? "Edit Experience" : "Add New Experience"}</Modal.Title>
+          <Modal.Title>{editMode ? "Modifica Esperienza" : "Aggiungi Esperienza"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>

@@ -12,6 +12,13 @@ export const UPDATE_EXPERIENCE = "UPDATE_EXPERIENCE";
 
 
 export const POST_NEW_EXPERIENCE = "POST_NEW_EXPERIENCE";
+
+
+
+const tokens = {giuseppe:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk5MWI3Mjg3ZmZjYjAwMTU3NGNiNzkiLCJpYXQiOjE3MjEzMTAwNjYsImV4cCI6MTcyMjUxOTY2Nn0.aHoj16XGEUnXPdfaYmFylo4R04WSoEiRgVM-GB0kMdU",
+  gianluca:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs',
+    chems:'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk5MWNjODg3ZmZjYjAwMTU3NGNiN2EiLCJpYXQiOjE3MjEzMTA0MDgsImV4cCI6MTcyMjUyMDAwOH0.rqvx0RdnErmfOGtOMVp3ckczUKXtGBuZyYEsa8Qdi90'
+}
 //fetch che reperisce i dati del "mio profilo"
 export const getUserInformation = () => {
   return async (dispatch) => {
@@ -19,7 +26,7 @@ export const getUserInformation = () => {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs",
+           tokens.giuseppe,
         },
       });
       if (response.ok) {
@@ -41,7 +48,7 @@ export const getAllUsersInformations = () => {
       const response = await fetch("https://striveschool-api.herokuapp.com/api/profile/", {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs",
+           tokens.giuseppe,
         },
       });
       if (response.ok) {
@@ -62,7 +69,7 @@ export const getUserExperiences = (userId) => {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`, {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs",
+           tokens.giuseppe,
         },
       });
       if (response.ok) {
@@ -83,7 +90,7 @@ export const postUserExperiences = (userId, experienceData) => {
         method: "POST",
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs",
+           tokens.giuseppe,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(experienceData),
@@ -132,7 +139,7 @@ export const uploadProfileImage = (userId, imageFile) => {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/profile/${userId}/picture`, {
         method: 'POST',
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`,
+          Authorization: tokens.giuseppe,
         },
         body: formData,
       });
@@ -168,7 +175,7 @@ export const fetchExperiences = (userId) => async (dispatch) => {
   try {
     const response = await fetch(`${baseURL}/${userId}/experiences`, {
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`, // Replace with your actual bearer token
+        Authorization: tokens.giuseppe
       },
     });
 
@@ -189,7 +196,7 @@ export const addExperience = (userId, experience) => async (dispatch) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`, 
+        Authorization: tokens.giuseppe 
       },
       body: JSON.stringify(experience),
     });
@@ -212,7 +219,7 @@ export const deleteExperience = (userId, experienceId) => {
       const response = await fetch(`${baseURL}/${userId}/experiences/${experienceId}`, {
         method: 'DELETE',
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`, // Replace with your actual bearer token
+          Authorization: tokens.giuseppe 
         },
       });
       if (response.ok) {
@@ -233,7 +240,7 @@ export const updateExperience = (userId, experienceId, updatedExperience) => asy
     const response = await fetch(`${baseURL}/${userId}/experiences/${experienceId}`, {
       method: "PUT",
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs`,
+        Authorization: tokens.giuseppe,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(updatedExperience),

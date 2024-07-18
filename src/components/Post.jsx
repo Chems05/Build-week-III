@@ -21,23 +21,23 @@ const Post = () => {
                           className="me-2"
                           src={post.user.image}
                           style={{
-                            width: "60px",
-                            height: "60px",
+                            width: "40px",
+                            height: "40px",
                             borderRadius: "50%",
                           }}
                         />
 
                         <div>
-                          <p style={{ fontWeight: "bold" }} className="mb-0">
+                          <p style={{ fontWeight: "bold",fontSize:'15px' }} className="mb-0">
                             {post.user.name}&nbsp;{post.user.surname}
                           </p>
-                          <p className="text-secondary">{post.user.title}</p>
+                          <p style={{fontSize:'13px'}} className="text-secondary">{post.user.title}</p>
                         </div>
                       </>
                     )}
                   </Col>
                   <Col className="d-inline-flex justify-content-end">
-                    <div style={{ border: "none" }} className="light-blue-button rounded d-inline align-items-center">
+                    <div style={{ border: "none",fontSize:'14px' }} className="light-blue-button rounded d-inline align-items-center">
                       Segui
                     </div>
                   </Col>
@@ -51,32 +51,32 @@ const Post = () => {
                   className="black-button rounded p-2 d-flex align-items-center justify-content-center"
                   style={{ border: "none" }}
                 >
-                  <HandThumbsUp className="me-3" />
-                  <span>Consiglia</span>
+                  <HandThumbsUp className="me-1" />
+                  <span style={{fontSize:'15px'}} className="mt-1">Consiglia</span>
                 </Col>
                 <Col
                   md={3}
                   className="black-button rounded p-2 d-flex align-items-center justify-content-center"
                   style={{ border: "none" }}
                 >
-                  <ChatRightText className="me-3" />
-                  <span>Commenta</span>
+                  <ChatRightText className="me-1" />
+                  <span style={{fontSize:'15px'}} className="mt-1">Commenta</span>
                 </Col>
                 <Col
                   md={3}
                   className="black-button rounded p-2 d-flex align-items-center justify-content-center"
                   style={{ border: "none" }}
                 >
-                  <ArrowRepeat className="me-3" />
-                  <span>Diffondi il post</span>
+                  <ArrowRepeat className="me-1" />
+                  <span style={{fontSize:'14px'}} className="mt-1">Diffondi il post</span>
                 </Col>
                 <Col
                   md={2}
                   className="black-button rounded p-2 d-flex align-items-center justify-content-center"
                   style={{ border: "none" }}
                 >
-                  <Send className="me-3" />
-                  <span>Invia</span>
+                  <Send className="me-1" />
+                  <span style={{fontSize:'15px'}} className="mt-1">Invia</span>
                 </Col>
               </Row>
             </Card.Body>
