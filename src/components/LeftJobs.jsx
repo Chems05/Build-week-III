@@ -1,4 +1,5 @@
 import { Col, ListGroup, Button, Card } from "react-bootstrap";
+import { PencilSquare } from "react-bootstrap-icons";
 
 const LeftJobs = () => {
   return (
@@ -6,7 +7,7 @@ const LeftJobs = () => {
       <Card>
         <Card.Body>
           <ListGroup variant="flush">
-            <p style={{ fontSize: "14px" }}>
+            <p className="mb-4" style={{ fontSize: "14px" }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -21,7 +22,7 @@ const LeftJobs = () => {
               <path d="M19 5a3 3 0 00-3-3H5v20l7-6.29L19 22z"></path>
               Le mie offerte di lavoro
             </p>
-            <p style={{ fontSize: "14px" }}>
+            <p className="mb-4"  style={{ fontSize: "14px" }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -36,7 +37,7 @@ const LeftJobs = () => {
               <path d="M7 4a2 2 0 11-2-2 2 2 0 012 2zm2-1v2h12V3zm-4 7a2 2 0 102 2 2 2 0 00-2-2zm4 3h12v-2H9zm-4 5a2 2 0 102 2 2 2 0 00-2-2zm4 3h12v-2H9z"></path>
               Preferenze
             </p>
-            <p style={{ fontSize: "14px" }}>
+            <p className="mb-4"  style={{ fontSize: "14px" }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -69,8 +70,8 @@ const LeftJobs = () => {
           </ListGroup>
         </Card.Body>
       </Card>
-      <Button variant="primary" className="mt-3 w-100">
-        Pubblica offerta gratuita
+      <Button style={{height:'60px',borderRadius:'25px',fontSize:'15px'}}  className="mt-3 w-100 bg-transparent text-primary ">
+       <PencilSquare size={20} className="me-3 mt-2" /> Pubblica offerta gratuita
       </Button>
     </Col>
   );
