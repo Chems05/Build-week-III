@@ -10,7 +10,7 @@ const Resource = () => {
     <Container className=" bg-white border border-dark-subtle rounded-3 text-dark p-3 pb-0 mt-5">
       <Row className="">
         <Col md={12}>
-          <h5 className="fw-bold mt-2"> Risorse </h5>
+          <h4 className=" mt-2"> Risorse </h4>
           <h6 className="text-secondary d-flex align-items-center">
             <FaEye className="me-1" />
             Solo per te
@@ -53,7 +53,7 @@ const Resource = () => {
         <hr className="mb-0" />
         <div style={{ cursor: "pointer" }} className="d-flex align-items-center justify-content-center p-2">
           <span  style={{ color: "grey",
-                      fontSize: "15px",}} className="me-2 text-secondary">Mostra Tutte le analisi</span>
+                      fontSize: "15px",}} className="me-2 text-secondary">Mostra tutte le risorse</span>
           <ArrowRight />
         </div>
       </Row>
