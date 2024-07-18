@@ -9,7 +9,7 @@ const FixedTopBar = ({show}) => {
     <>
         {singleUserInfo && (
         <div className={`fixed-top-bar ${show ? 'sticky' : ''}`}>
-          <Card className="w-100 p-3 mt-5">
+          <Card className="w-100 p-3 mt-5 d-none d-lg-block">
             <Container>
               <Row className="align-items-center">
                 <Col xs={6} className="d-flex align-items-center">
@@ -30,9 +30,9 @@ const FixedTopBar = ({show}) => {
                   </div>
                 </Col>
                 <Col xs={6} className="d-flex justify-content-end">
-                  <Button style={{fontSize:'14px'}} className="me-4 bg-white text-secondary border-secondary rounded-pill  ">Altro</Button>
-                  <Button style={{fontSize:'14px'}}  className="me-4 bg-white text-primary border-primary rounded-pill ">Aggiungi sezione del profilo</Button>
-                  <Button style={{fontSize:'14px'}} className="me-1 bg-primary text-white border-primary rounded-pill">Disponibile per</Button>
+                  <Button style={{fontSize:'14px'}} className="me-4 bg-white text-secondary border-secondary rounded-pill d-none d-lg-block  ">Altro</Button>
+                  <Button style={{fontSize:'14px'}}  className="me-4 bg-white text-primary border-primary rounded-pill d-none d-lg-block ">Aggiungi sezione del profilo</Button>
+                  <Button style={{fontSize:'14px'}} className="me-1 bg-primary text-white border-primary rounded-pill d-none d-lg-block">Disponibile per</Button>
                 </Col>
               </Row>
             </Container>
