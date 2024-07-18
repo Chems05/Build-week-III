@@ -8,6 +8,11 @@
   font-size: 16px;
   font-weight: 600;
 }
+.dashed-border-button:hover {
+  color: #004081;
+  background-color: #ebf4fd;
+}
+
 .light-blue {
   color: #116ac4;
 }
@@ -25,7 +30,7 @@
 
 .light-blue-button:hover {
   background-color: #ebf4fd;
-  border: 3px solid #004081;
+  border: 2px solid #004081;
   color: #004081;
 }
 
