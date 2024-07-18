@@ -68,7 +68,7 @@ const Analytics = () => {
             <Col xs={10}>
               <a>
                 <strong className="d-inline-block ">500 Impressioni del post</strong>
-                <span style={{fontSize:'14px'}} >Scopri chi sta interagendo con il tuo post
+                <span style={{fontSize:'15px'}} >Scopri chi sta interagendo con il tuo post
                   <br />
                  <h6 style={{fontSize:'13px',color:'grey',marginTop:'5px'}}> Ultimi 7 giorni </h6>
                 </span>

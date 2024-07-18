@@ -1,3 +1,8 @@
+.body {
+  font-family: "Source Sans 3", sans-serif;
+ 
+}
+
 /* classe per stilizzare il bottone tratteggiato */
 .dashed-border-button {
   border: 2px dashed #116ac4; /* Bordo tratteggiato di 2px e colore nero */

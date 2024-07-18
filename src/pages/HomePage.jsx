@@ -11,10 +11,10 @@ const HomePage = () => {
       <MyNavbar />
       <Container className="mt-4">
         <Row>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={3}>
             <AsideLeftHomePage />
           </Col>
-          <Col xs={12} md={7} xl={5}>
+          <Col xs={12} md={8} xl={5}>
             <CreatePost />
             <Post />
           </Col>
