@@ -1,9 +1,9 @@
-import { Col, ListGroup, Button, Card } from "react-bootstrap";
+import {  ListGroup, Button, Card } from "react-bootstrap";
 import { PencilSquare } from "react-bootstrap-icons";
 
 const LeftJobs = () => {
   return (
-    <Col md={4}>
+    <>
       <Card>
         <Card.Body>
           <ListGroup variant="flush">
@@ -70,10 +70,10 @@ const LeftJobs = () => {
           </ListGroup>
         </Card.Body>
       </Card>
-      <Button style={{height:'60px',borderRadius:'25px',fontSize:'15px'}}  className="mt-3 w-100 bg-transparent text-primary ">
+      <Button style={{height:'60px',borderRadius:'25px',fontSize:'15px'}}  className="mt-3 w-100 bg-transparent text-primary  ">
        <PencilSquare size={20} className="me-3 mt-2" /> Pubblica offerta gratuita
       </Button>
-    </Col>
+      </>
   );
 };
 
