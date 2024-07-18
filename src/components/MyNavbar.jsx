@@ -89,7 +89,7 @@ const MyNavbar = () => {
           href="#home"
           className="d-flex flex-column align-items-center ms-5"
         >
-          <Link to="/Home">
+          <Link to="/">
             <svg
               width="24"
               height="20"
