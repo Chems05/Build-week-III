@@ -89,7 +89,7 @@ const MyNavbar = () => {
           href="#home"
           className="d-flex flex-column align-items-center ms-5"
         >
-          <Link to="/Home">
+          <Link to="/" className="text-dark">
             <svg
               width="24"
               height="20"
@@ -121,7 +121,7 @@ const MyNavbar = () => {
           href="#jobs"
           className="d-flex flex-column align-items-center"
         >
-          <Link to="/jobs">
+          <Link to="/jobs" className="text-dark">
             <svg
               width="24"
               height="20"
@@ -212,14 +212,15 @@ const MyNavbar = () => {
                     </div>
                   </>
                 )}
-                <Link to="/Profile">
-                  <Button
-                    style={{ width: "180px ", fontSize: "12px" }}
-                    className="btn bottone border-primary bg-white text-primary mt-2  "
-                  >
+
+                <Button
+                  style={{ width: "180px ", fontSize: "12px" }}
+                  className="btn bottone border-primary bg-white text-primary mt-2  "
+                >
+                  <Link to="/Profile" className="bg-white">
                     Visualizza profilo
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </div>
             </div>
           </NavDropdown.Item>
