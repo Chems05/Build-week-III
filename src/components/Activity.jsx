@@ -7,26 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { deletePost, editPost, getAllPosts } from "../redux/actions/postsActions";
 
 const Activity = () => {
-  const posts = [
-    {
-      id: 1,
-      user: "User",
-      content: "un altro grande traguardo ✌️",
-      link: "EPICODE - Sblocca competenze tech e inizia subito a lavorare | Certificate for Chems Eddine Zghaidi",
-      linkUrl: "https://certificates.epicode.com",
-      likes: 2,
-      comments: 0,
-    },
-    {
-      id: 2,
-      user: "User",
-      content: "un altra settimana un altro successo",
-      link: "EPICODE - Sblocca competenze tech e inizia subito a lavorare | Certificate for Chems Eddine Zghaidi",
-      linkUrl: "https://certificates.epicode.com",
-      likes: 5,
-      comments: 0,
-    },
-  ];
   const dispatch = useDispatch();
 
   const singleUserInfo = useSelector((state) => state.users.singleUser);
@@ -97,11 +77,17 @@ const Activity = () => {
             <Card key={post._id} className="mb-3 bg- text-dark border-transparent border-0">
               <Card.Body>
                 <Card.Text className="d-flex" style={{ color: "grey", fontSize: "12px" }}>
-                  <strong>{post.user.name}</strong> ha pubblicato questo post - 1m
+                  <strong>{post.user.name}</strong>&nbsp; ha pubblicato questo post - 1m
                   <div className="d-flex ms-auto">
                     <BsPencil
                       onClick={handleShow}
-                      style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
+                      style={{
+                        cursor: "pointer",
+                        marginRight: "15px",
+                        marginTop: "3px",
+                        fontSize: "16",
+                        color: "#212529",
+                      }}
                     />
                     <Modal className="mt-5" show={show} onHide={handleClose}>
                       <Modal.Header closeButton>
@@ -198,7 +184,13 @@ const Activity = () => {
                         dispatch(deletePost(post._id));
                         dispatch(getAllPosts());
                       }}
-                      style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
+                      style={{
+                        cursor: "pointer",
+
+                        marginTop: "3px",
+                        fontSize: "16",
+                        color: "#212529",
+                      }}
                     />
                   </div>
                 </Card.Text>
