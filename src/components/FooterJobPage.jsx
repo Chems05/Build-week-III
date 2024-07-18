@@ -17,8 +17,8 @@ const FooterJobPage = () => {
         <Col md="12" className="mb-2">
           <span className="footerText">
             <Dropdown className="w-auto h-auto">
-              <Dropdown.Toggle variant="" className="footerText border-0">
-                Privacy e condizioni
+              <Dropdown.Toggle variant="" className="border-0">
+                <span className="footerText">Privacy e condizioni</span>
               </Dropdown.Toggle>
               <Dropdown.Menu className="w-100 h-auto">
                 <Dropdown.Item href="#/action-1">Informativa sulla privacy</Dropdown.Item>
@@ -37,8 +37,8 @@ const FooterJobPage = () => {
           <span className="footerText ">Pubblicià</span>
           <span className="footerText ">
             <Dropdown>
-              <Dropdown.Toggle variant="" className="footerText border-0 pt-0">
-                Servizi alle aziende
+              <Dropdown.Toggle variant="" className="border-0 pt-0">
+                <span className="footerText">Servizi alle aziende</span>
               </Dropdown.Toggle>
               <Dropdown.Menu className="w-auto h-auto">
                 <Dropdown.Item href="#/action-1" className="dropDownItems">

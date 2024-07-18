@@ -179,7 +179,7 @@ body {
   cursor: pointer;
   color: #0b66c2;
   text-decoration: underline;
-}
+  
 
 .dropDownItems {
   background-color: white;
@@ -189,8 +189,8 @@ body {
   text-decoration-color: #0b65c2;
 }
 .dropdown-toggle :hover {
-  text-decoration: underline;
-  text-decoration-color: #0b65c2;
+  text-decoration: underline !important;
+  text-decoration-color: #0b65c2 !important;
 }
 .dropdown-toggle {
   color: #a4a4a4;
