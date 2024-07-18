@@ -1,4 +1,4 @@
-import { ADD_ALL_POSTS_TO_ARRAY, ADD_NEW_POST } from "../actions/postsActions";
+import { ADD_ALL_POSTS_TO_ARRAY, ADD_NEW_POST, EDIT_POST } from "../actions/postsActions";
 
 const initialState = {
   allPosts: [],
@@ -15,6 +15,13 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         allPosts: [...state.allPosts, action.payload],
+      };
+    case EDIT_POST:
+      return {
+        ...state,
+        allPosts: state.allPosts.map((post) =>
+          post._id === action.payload.postId ? { ...post, ...action.payload.updatedText } : post
+        ),
       };
     default:
       return state;

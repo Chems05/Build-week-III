@@ -8,15 +8,18 @@ import { BrowserSafari, Check, FileBarGraph, PeopleFill, SquareFill } from "reac
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllUsersInformations, getUserExperiences, getUserInformation } from "../redux/actions";
+import { getAllPosts } from "../redux/actions/postsActions";
 
 const MyNavbar = () => {
   const singleUserInfo = useSelector((state) => state.users.singleUser);
- 
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUserInformation());
     dispatch(getAllUsersInformations());
+
+    dispatch(getAllPosts());
   }, []);
 
   //useffect con il ruolo di componentDidUpdate che fetcha le xperiences solo quandi otteniamo l'id dell'utente nella fetch che viene
@@ -112,8 +115,6 @@ const MyNavbar = () => {
             >
               <NavDropdown.Item href="#business1">
                 <div className="d-flex align-items-center">
-                
-
                   {singleUserInfo && (
                     <img
                       src={singleUserInfo.image}
@@ -124,7 +125,6 @@ const MyNavbar = () => {
                     />
                   )}
                   <div>
-                    
                     {singleUserInfo && (
                       <>
                         <div>
@@ -137,8 +137,12 @@ const MyNavbar = () => {
                       </>
                     )}
 
-                   
-                    <Button style={{width:'180px ',fontSize:'12px'}} className="btn bottone border-primary bg-white text-primary mt-2  ">Visualizza profilo</Button>
+                    <Button
+                      style={{ width: "180px ", fontSize: "12px" }}
+                      className="btn bottone border-primary bg-white text-primary mt-2  "
+                    >
+                      Visualizza profilo
+                    </Button>
                   </div>
                 </div>
               </NavDropdown.Item>

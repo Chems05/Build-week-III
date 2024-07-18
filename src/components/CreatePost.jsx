@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Col, Container, Form, Image, Modal, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { Asterisk, Calendar3, CardText, Clock, EmojiSmile, ImageAlt, PlusLg } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -52,9 +52,6 @@ const CreatePost = () => {
     dispatch(getAllPosts());
   };
 
-  useEffect(() => {
-    dispatch(getAllPosts());
-  }, []);
   return (
     <Container className="p-2 border border-2 rounded bg-white">
       <Row className="d-flex align-items-center mb-2">
