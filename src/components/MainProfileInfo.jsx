@@ -82,17 +82,17 @@ const MainProfileInfo = () => {
               </strong>
             </Card.Title>
 
-            <div className="dashed-border-button d-inline-flex align-items-center rounded-pill ms-3">
+            <div style={{fontSize:'14px'}} className="dashed-border-button d-inline-flex align-items-center rounded-pill ms-3">
               <ShieldCheck className="me-1" fill="currentColor" /> Verifica ora
             </div>
-            <Card.Text>{singleUserInfo.title}</Card.Text>
-            <Card.Text className="lead d-inline-block">{singleUserInfo.area}</Card.Text>
-            <span className="light-blue ms-3">informazioni di contatto</span>
-            <Card.Text className="light-blue">X collegamenti</Card.Text>
-            <div className="blue-button d-inline-block rounded-pill">Disponibile per</div>
-            <div className="light-blue-button d-inline-block rounded-pill ms-2">Aggiungi sezione del profilo</div>
-            <div className="light-blue-button d-inline-block rounded-pill ms-2">Migliora profilo</div>
-            <div style={{ fontSize: "19px" }} className="black-button d-inline-block rounded-pill ms-2">
+            <h6 style={{fontSize:'16px', color:'#191919'}} >{singleUserInfo.title}</h6>
+            <p style={{fontSize:'15px ',color:'grey'}} className="lead d-inline-block">{singleUserInfo.area} ·</p>
+            <span style={{fontSize:'14px'}} className="light-blue ms-3">informazioni di contatto</span>
+            <Card.Text style={{fontSize:'14px'}} className="light-blue">250 collegamenti</Card.Text>
+            <div style={{fontSize:'17px',height:'30px'}} className="blue-button d-inline-block rounded-pill ">Disponibile per</div>
+            <div style={{fontSize:'17px',height:'30px'}}  className="light-blue-button d-inline-block rounded-pill ms-2">Aggiungi sezione del profilo</div>
+           
+            <div style={{ fontSize: "17px",height:'30px' }} className="black-button d-inline-block rounded-pill ms-2">
               Altro
             </div>
           </Card.Body>
