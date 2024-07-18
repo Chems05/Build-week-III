@@ -3,7 +3,6 @@ import { ArrowRepeat, ChatRightText, HandThumbsUp, Send } from "react-bootstrap-
 import { useSelector } from "react-redux";
 
 const Post = () => {
-  const singleUserInfo = useSelector((state) => state.users.singleUser);
   const postsArray = useSelector((state) => state.posts.allPosts);
   return (
     <>
@@ -32,7 +31,7 @@ const Post = () => {
                           <p style={{ fontWeight: "bold" }} className="mb-0">
                             {post.user.name}&nbsp;{post.user.surname}
                           </p>
-                          <p className="text-secondary">{singleUserInfo.title}</p>
+                          <p className="text-secondary">{post.user.title}</p>
                         </div>
                       </>
                     )}

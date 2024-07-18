@@ -1,26 +1,31 @@
-import { Card, ListGroup,
-    
- } from "react-bootstrap";
+import { Card, ListGroup } from "react-bootstrap";
 import { ArrowDown, Hash, PlusLg, SquareFill } from "react-bootstrap-icons";
 import { BsFillBookmarkFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const AsideLeftHomePage = () => {
+  const singleUserInfo = useSelector((state) => state.users.singleUser);
+
   return (
     <>
       <Card className="mb-3">
-        <Card.Img variant="top" src="https://media.licdn.com/dms/image/C4E16AQF8TC4KCgMDNA/profile-displaybackgroundimage-shrink_350_1400/0/1523715805906?e=1726704000&v=beta&t=wGs6DFrGhY_bDMVESIcstUxHmOmzNXgZTlG5gqy9Jn4" />
+        <Card.Img
+          variant="top"
+          src="https://media.licdn.com/dms/image/C4E16AQF8TC4KCgMDNA/profile-displaybackgroundimage-shrink_350_1400/0/1523715805906?e=1726704000&v=beta&t=wGs6DFrGhY_bDMVESIcstUxHmOmzNXgZTlG5gqy9Jn4"
+        />
         <Card.Body className="text-center">
           <Card.Img
-            src="path/to/profile/image.jpg"
+            src={singleUserInfo.image}
             className="rounded-circle mb-2"
             style={{ width: "80px", height: "80px" }}
           />
           <Card.Title className="mt-3" style={{ fontSize: "16px" }}>
-            Nome Cognome
+            <strong>
+              {singleUserInfo.name}&nbsp;
+              {singleUserInfo.surname}
+            </strong>
           </Card.Title>
-          <Card.Text style={{ color: "grey", fontSize: "13px" }}>
-            Studio presso Epicode, per diventare un Fullstack developer
-          </Card.Text>
+          <Card.Text style={{ color: "grey", fontSize: "13px" }}>{singleUserInfo.title}</Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush p-3">
           <p style={{ fontSize: "13px", color: "grey", marginBottom: "5px" }}>
