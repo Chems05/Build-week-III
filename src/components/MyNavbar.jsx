@@ -60,7 +60,9 @@ const MyNavbar = () => {
     <Navbar bg="white" variant="light" expand="lg" className="px-3 shadow-sm">
       <Container>
         <Navbar.Brand href="#home">
-          <BsLinkedin size={33} className="ms-2 " color="#0077b5" />
+          <Link to="/">
+            <BsLinkedin size={33} className="ms-2 " color="#0077b5" />
+          </Link>
           <BiSearch size={25} color="grey" className="ms-2 d-md-none  " />
         </Navbar.Brand>
         <Form className="d-flex mx-2 search-form d-none d-xl-block">
