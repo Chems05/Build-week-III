@@ -1,4 +1,6 @@
-import { Card, ListGroup, Col } from "react-bootstrap";
+import { Card, ListGroup,
+    
+ } from "react-bootstrap";
 import { ArrowDown, Hash, PlusLg, SquareFill } from "react-bootstrap-icons";
 import { BsFillBookmarkFill } from "react-icons/bs";
 
@@ -6,7 +8,7 @@ const AsideLeftHomePage = () => {
   return (
     <>
       <Card className="mb-3">
-        <Card.Img variant="top" src="path/to/profile/background/image.jpg" />
+        <Card.Img variant="top" src="https://media.licdn.com/dms/image/C4E16AQF8TC4KCgMDNA/profile-displaybackgroundimage-shrink_350_1400/0/1523715805906?e=1726704000&v=beta&t=wGs6DFrGhY_bDMVESIcstUxHmOmzNXgZTlG5gqy9Jn4" />
         <Card.Body className="text-center">
           <Card.Img
             src="path/to/profile/image.jpg"

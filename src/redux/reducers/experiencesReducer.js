@@ -1,4 +1,9 @@
-import { ADD_EXPERIENCE, DELETE_EXPERIENCE, FETCH_EXPERIENCES } from "../actions";
+import {
+  ADD_EXPERIENCE,
+  DELETE_EXPERIENCE,
+  FETCH_EXPERIENCES,
+  UPDATE_EXPERIENCE
+} from "../actions";
 
 const initialState = {
   experiencesArray: [],
@@ -19,10 +24,20 @@ const experiencesReducer = (state = initialState, action) => {
     case DELETE_EXPERIENCE:
       return {
         ...state,
-        experiencesArray: state.experiencesArray.filter((exp) => exp.id !== action.payload),
+        experiencesArray: state.experiencesArray.filter((exp) => exp._id !== action.payload),
+      };
+    case UPDATE_EXPERIENCE:
+      return {
+        ...state,
+        experiencesArray: state.experiencesArray.map((exp) =>
+          exp._id === action.payload.experienceId
+            ? { ...exp, ...action.payload.updatedExperience }
+            : exp
+        ),
       };
     default:
       return state;
   }
 };
-export default experiencesReducer
+
+export default experiencesReducer;

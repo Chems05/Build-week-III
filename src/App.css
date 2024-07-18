@@ -48,7 +48,7 @@
   border: 2px solid #404040;
   padding-inline: 10px;
   cursor: pointer;
-  font-size: 19px;
+
   background-color: white;
   color: #404040;
   transition: 300ms;
@@ -99,7 +99,7 @@ body {
 }
 
 .competence-link:hover {
-  color: #59B4E9; 
+  color: #59b4e9;
   text-decoration: underline;
 }
 @keyframes fadeInDown {
@@ -120,8 +120,8 @@ body {
   background-color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  opacity: 0; 
-  transform: translateY(-20px); 
+  opacity: 0;
+  transform: translateY(-20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
   font-size: 14px;
 }
@@ -129,5 +129,54 @@ body {
 .fixed-top-bar.sticky {
   opacity: 1;
   transform: translateY(0);
-  animation: fadeInDown 0.7s ease-out; 
+  animation: fadeInDown 0.7s ease-out;
+}
+.infoIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.fontPersonale {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.iconArrow {
+  width: 30px;
+  height: 30px;
+}
+
+.hooverElementLinkedinNotizie {
+  background-color: white;
+  cursor: pointer;
+}
+.hooverElementLinkedinNotizie:hover {
+  background-color: #ebebeb;
+}
+.btnVediAltro {
+  background-color: #ebebeb;
+  border: none;
+  display: block;
+}
+.btnVediAltro:hover {
+  background-color: #ebebeb;
+}
+.bgBadge {
+  background-color: #fce3bb;
+  border-radius: 6px;
+}
+
+.gioghi {
+  cursor: pointer;
+}
+
+.imgLinkedin {
+  width: 23%;
+}
+.footerText {
+  color: #62615f;
+}
+.footerText:hover {
+  cursor: pointer;
+  color: #0b66c2;
+  text-decoration: underline;
 }

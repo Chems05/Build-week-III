@@ -1,58 +1,100 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Card, ListGroup, Row, Col, Modal, Button, Form } from "react-bootstrap";
-import { BsPlusLg, BsTrash } from "react-icons/bs";
+import { BsPlusLg, BsTrash, BsPencil } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchExperiences, addExperience, deleteExperience } from "../redux/actions";
+import { fetchExperiences, addExperience, deleteExperience, updateExperience } from "../redux/actions";
 
 const Esperienza = () => {
+  // Stato per mostrare/nascondere il modal
   const [showModal, setShowModal] = useState(false);
-  const [newExperience, setNewExperience] = useState({
+  // Stato per la modalità di modifica
+  const [editMode, setEditMode] = useState(false);
+  // Stato per l'esperienza selezionata da modificare
+  const [selectedExperience, setSelectedExperience] = useState(null);
+  // Stato per i dati dell'esperienza
+  const [experienceData, setExperienceData] = useState({
     role: "",
     company: "",
     startDate: "",
     endDate: "",
     description: "",
     area: "",
-    logo: "https://via.placeholder.com/50",
+    image: "",
   });
 
   const dispatch = useDispatch();
-  const experiencesArray = useSelector((state) => state.experiences.experiencesArray);
+  // ID utente
+  const userId = "6694d9a2196d7b0015d6b528";
+  // Seleziona l'array delle esperienze dal Redux store
+  const experiencesArray = useSelector((state) => state.experiences.experiencesArray || []);
 
+  // Recupera le esperienze all'inizio e ad ogni aggiornamento dell'ID utente
   useEffect(() => {
-    dispatch(fetchExperiences("6694d9a2196d7b0015d6b528")); 
-  }, [dispatch]);
+    dispatch(fetchExperiences(userId));
+  }, [dispatch, userId]);
 
+  // Mostra il modal
   const handleShow = () => setShowModal(true);
-  const handleClose = () => setShowModal(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setNewExperience((prevExperience) => ({
-      ...prevExperience,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(addExperience("6694d9a2196d7b0015d6b528", newExperience)); 
-    handleClose();
-    setNewExperience({
+  // Chiude il modal e resetta i dati
+  const handleClose = () => {
+    setShowModal(false);
+    setEditMode(false);
+    setExperienceData({
       role: "",
       company: "",
       startDate: "",
       endDate: "",
       description: "",
       area: "",
-      logo: "https://via.placeholder.com/50",
+      image: "",
     });
   };
 
-  const handleDelete = (experienceId) => {
-    dispatch(deleteExperience("6694d9a2196d7b0015d6b528", experienceId)); 
+  // Gestisce i cambiamenti nei campi del form
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setExperienceData((prevExperience) => ({
+      ...prevExperience,
+      [name]: value,
+    }));
   };
-  console.log(experiencesArray);
+
+  // Gestisce l'invio del form per aggiungere o aggiornare un'esperienza
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (editMode) {
+      // Aggiorna una esperienza esistente
+      dispatch(updateExperience(userId, selectedExperience._id, experienceData));
+    } else {
+      // Aggiunge una nuova esperienza
+      dispatch(addExperience(userId, experienceData));
+    }
+    
+    handleClose();
+    dispatch(fetchExperiences(userId));
+  };
+
+  // Gestisce la cancellazione di un'esperienza
+  const handleDelete = (experienceId) => {
+    dispatch(deleteExperience(userId, experienceId));
+  };
+
+  // Prepara i dati dell'esperienza per la modifica
+  const handleEdit = (experience) => {
+    setSelectedExperience(experience);
+    setExperienceData({
+      role: experience.role,
+      company: experience.company,
+      startDate: experience.startDate,
+      endDate: experience.endDate,
+      description: experience.description,
+      area: experience.area,
+      image: experience.image,
+    });
+    setEditMode(true);
+    handleShow();
+  };
+
   return (
     <>
       <Card className="mt-5">
@@ -64,33 +106,43 @@ const Esperienza = () => {
             <Col className="text-end">
               <BsPlusLg
                 style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
-                onClick={handleShow}
+                onClick={() => {
+                  setEditMode(false);
+                  handleShow();
+                }}
               />
             </Col>
           </Row>
           {experiencesArray.map((exp) => (
-            <ListGroup.Item key={exp.id}>
+            <ListGroup.Item key={exp._id}>
               <div className="d-flex align-items-start justify-content-between">
                 <div className="d-flex align-items-start">
                   <img
-                    src={exp.logo}
+                    src={exp.image}
                     alt={`${exp.company} logo`}
-                    style={{ width: "50px", height: "50px", marginRight: "15px", marginTop: "3px" }}
+                    style={{ width: "80px", height: "60px", marginRight: "15px", marginTop: "3px" }}
                   />
                   <div>
                     <h5 style={{ fontWeight: "bold", fontSize: "16px" }}>{exp.role}</h5>
-                    <p style={{ fontSize: "14px" }}>{exp.company}</p>
-                    <p style={{ color: "grey", fontSize: "13px" }}>
-                      {exp.startDate} - {exp.endDate || "Present"}
-                    </p>
+                    <h6 style={{ fontSize: "14px" }}>{exp.company}</h6>
+                    <h6 style={{ color: "grey", fontSize: "13px" }}>
+                      {new Date(exp.startDate).toLocaleDateString()} - {exp.endDate ? new Date(exp.endDate).toLocaleDateString() : "Present"}
+                    </h6>
+                    <h6 style={{ color: "grey", fontSize: "13px" }}>{exp.description}</h6>
                     <p style={{ color: "grey", fontSize: "13px" }}>{exp.area}</p>
-                    <p style={{ color: "grey", fontSize: "13px" }}>{exp.description}</p>
+                   
                   </div>
                 </div>
-                <BsTrash
-                  style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
-                  onClick={() => handleDelete(exp.id)}
-                />
+                <div>
+                  <BsPencil
+                    style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
+                    onClick={() => handleEdit(exp)}
+                  />
+                  <BsTrash
+                    style={{ cursor: "pointer", marginRight: "15px", marginTop: "3px" }}
+                    onClick={() => handleDelete(exp._id)}
+                  />
+                </div>
               </div>
             </ListGroup.Item>
           ))}
@@ -99,7 +151,7 @@ const Esperienza = () => {
 
       <Modal className="mt-5" show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add New Experience</Modal.Title>
+          <Modal.Title>{editMode ? "Edit Experience" : "Add New Experience"}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -109,7 +161,7 @@ const Esperienza = () => {
                 type="text"
                 placeholder="Enter role"
                 name="role"
-                value={newExperience.role}
+                value={experienceData.role}
                 onChange={handleChange}
                 required
               />
@@ -120,7 +172,7 @@ const Esperienza = () => {
                 type="text"
                 placeholder="Enter company"
                 name="company"
-                value={newExperience.company}
+                value={experienceData.company}
                 onChange={handleChange}
                 required
               />
@@ -130,14 +182,19 @@ const Esperienza = () => {
               <Form.Control
                 type="date"
                 name="startDate"
-                value={newExperience.startDate}
+                value={experienceData.startDate}
                 onChange={handleChange}
                 required
               />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>End Date</Form.Label>
-              <Form.Control type="date" name="endDate" value={newExperience.endDate} onChange={handleChange} />
+              <Form.Control
+                type="date"
+                name="endDate"
+                value={experienceData.endDate}
+                onChange={handleChange}
+              />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Description</Form.Label>
@@ -145,7 +202,7 @@ const Esperienza = () => {
                 type="text"
                 placeholder="Enter description"
                 name="description"
-                value={newExperience.description}
+                value={experienceData.description}
                 onChange={handleChange}
                 required
               />
@@ -156,13 +213,24 @@ const Esperienza = () => {
                 type="text"
                 placeholder="Enter area"
                 name="area"
-                value={newExperience.area}
+                value={experienceData.area}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Image URL</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter image URL"
+                name="image"
+                value={experienceData.image}
                 onChange={handleChange}
                 required
               />
             </Form.Group>
             <Button variant="primary" type="submit">
-              Add Experience
+              {editMode ? "Update Experience" : "Add Experience"}
             </Button>
           </Form>
         </Modal.Body>

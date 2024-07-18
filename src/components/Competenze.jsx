@@ -18,9 +18,9 @@ const Competenze = () => {
           <Card.Body>
             <Row>
               <Col xs={10}>
-                <Card.Title style={{ fontWeight: "bold" }} className="mb-4">
+                <h4 className="mb-4">
                   Competenze
-                </Card.Title>
+                </h4>
               </Col>
               <Col
                 xs={2}

@@ -4,7 +4,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 const Analytics = () => {
   return (
     <Container className="bg-white border rounded mt-3 p-3 pb-0">
-      <h5 className="fw-bold">Analisi</h5>
+      <h4 >Analisi</h4>
 
       <div className="d-flex align-items-center mb-2 text-secondary">
         <svg
@@ -104,7 +104,7 @@ const Analytics = () => {
         <hr className="mb-0" />
         <div style={{ cursor: "pointer" }} className="d-flex align-items-center justify-content-center p-2">
           <span style={{ color: "grey",
-                      fontSize: "15px",}} className="me-2 text-secondary">Mostra Tutte le analisi</span>
+                      fontSize: "15px",}} className="me-2 text-secondary">Mostra tutte le analisi</span>
           <ArrowRight />
         </div>
       </Row>

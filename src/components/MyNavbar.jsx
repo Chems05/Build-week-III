@@ -98,7 +98,7 @@ const MyNavbar = () => {
                         alt="Profile"
                         className="rounded-circle mb-1"
                         width="24"
-                        height="20"
+                        height="22"
                       />
                     )}
                     <span className="">
@@ -120,8 +120,8 @@ const MyNavbar = () => {
                       src={singleUserInfo.image}
                       alt="imamgine"
                       className="rounded-circle mr-2 mb-5"
-                      width="24"
-                      height="24"
+                      width="29"
+                      height="29"
                     />
                   )}
                   <div>
