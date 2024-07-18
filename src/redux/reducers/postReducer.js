@@ -20,7 +20,7 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         allPosts: state.allPosts.map((post) =>
-          post._id === action.payload.postId ? { ...post, ...action.payload.updatedText } : post
+          post._id === action.payload.postId ? { ...post, ...action.payload.text } : post
         ),
       };
     default:

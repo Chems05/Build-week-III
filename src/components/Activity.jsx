@@ -62,7 +62,7 @@ const Activity = () => {
           </span>
         </Col>
         <Col md={4} className="text-end">
-          <Button variant="outline-primary" className="rounded-pill me-2" size="sm">
+          <Button style={{ fontSize: "16px" }} className="light-blue-button rounded-pill me-2" size="sm">
             Crea un post
           </Button>
           <Pencil />
@@ -73,6 +73,7 @@ const Activity = () => {
         postsArray &&
         postsArray
           .filter((post) => post.user._id === singleUserInfo._id)
+          .reverse()
           .map((post) => (
             <Card key={post._id} className="mb-3 bg- text-dark border-transparent border-0">
               <Card.Body>
