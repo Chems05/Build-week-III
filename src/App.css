@@ -231,3 +231,12 @@ body {
     top: 12%;
   }
 }
+.scopriColor {
+  font-weight: 800;
+  color: #8342ce;
+  cursor: pointer;
+}
+.modalShow {
+  transform: translate(0);
+  transition: transform 334ms ease-out, opacity 334ms ease-out;
+}
