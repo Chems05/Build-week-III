@@ -16,9 +16,9 @@ const Informazioni = () => {
           <Card.Body>
             <Row>
               <Col xs={10}>
-                <Card.Title style={{ fontWeight: " bold" }} className="mb-3">
+                <h4 className="mb-3">
                   Informazioni
-                </Card.Title>
+                </h4>
               </Col>
               <Col
                 xs={2}
