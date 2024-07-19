@@ -68,103 +68,112 @@ const LinkedinNotizie = () => {
             </p>
           </Col>
         </Row>
+        <Row>
+          <Col className=" ps-3 hooverElementLinkedinNotizie">
+            <h6 style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="fw-semibold">
+              Semaforo giallo per il talento elettrico
+            </h6>
+            <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+              11 ore fa · 637 lettori
+            </p>
+          </Col>
 
-        <Col className=" ps-3 hooverElementLinkedinNotizie">
-          <h6 style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="fw-semibold">
-            Semaforo giallo per il talento elettrico
-          </h6>
-          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
-            11 ore fa · 637 lettori
-          </p>
-        </Col>
-        <Col className="ps-3 hooverElementLinkedinNotizie">
-          <h6 style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
-            Dal principio di scarsità al valore
-          </h6>
-          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
-            8 giorni fa · 6.782 lettori
-          </p>
-        </Col>
-        <Col className="ps-3 hooverElementLinkedinNotizie">
-          <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
-            Cambio al vertice di Telethon
-          </p>
-          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
-            13 ore fa · 4.145 lettori
-          </p>
-        </Col>
-        <Col className=" ps-3 hooverElementLinkedinNotizie">
-          <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
-            Dove Crescono e calano i salari
-          </p>
-          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
-            1 giorno fa · 510 lettori
-          </p>
-        </Col>
-        <Col className="ps-3 hooverElementLinkedinNotizie">
-          <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
-            Due italiane al top nella matematica
-          </p>
-          <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
-            1 giorno fa · 331 lettori
-          </p>
-        </Col>
-        {showFullArticole && (
-          <>
-            <Col className=" ps-3 hooverElementLinkedinNotizie">
-              <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
-                Fnac prova a prendersi Unieuro
-              </p>
-              <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
-                21 ore fa · 500 lettori
-              </p>
-            </Col>
-            <Col className="ps-3 hooverElementLinkedinNotizie">
-              <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
-                Ora che l`AI Act è legge
-              </p>
-              <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
-                26 ore fa · 5.000 lettori
-              </p>
-            </Col>
-            <Col className="ps-3 hooverElementLinkedinNotizie">
-              <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
-                Ferragamo cresce nel mondo dei vini
-              </p>
-              <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
-                1 giorno fa · 862 lettori
-              </p>
-            </Col>
-            <Col className="ps-3 hooverElementLinkedinNotizie">
-              <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
-                Alla comunicazione servono processi chiari
-              </p>
-              <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
-                2 giorni fa · 2.000 lettori
-              </p>
-            </Col>
-          </>
-        )}
-        <Col className="col-12 ms-1">
-          <Button
-            fill="black"
-            style={{ height: "40px" }}
-            className="btnNoFocus btnVediAltro text-dark"
-            onClick={toggleShowFullArticole}
-            onMouseDown={(e) => e.preventDefault()}
-          >
-            {showFullArticole ? (
-              <p style={{ fontSize: "14px" }}>
-                Meno dettagli <IoIosArrowUp className="iconArrow h-25" />
-              </p>
-            ) : (
-              <p style={{ fontSize: "14px" }}>
-                Vedi altro <IoIosArrowDown className="iconArrow" />
-              </p>
-            )}
-          </Button>
-        </Col>
-
+          <Col className=" ps-3 hooverElementLinkedinNotizie">
+            <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+              Dove Crescono e calano i salari
+            </p>
+            <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+              1 giorno fa · 510 lettori
+            </p>
+          </Col>
+          <Col className="ps-3 hooverElementLinkedinNotizie">
+            <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+              Due italiane al top nella matematica
+            </p>
+            <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+              1 giorno fa · 331 lettori
+            </p>
+          </Col>
+          <Col className="ps-3 hooverElementLinkedinNotizie">
+            <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+              Dal principio di scarsità al valore
+            </p>
+            <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+              8 giorni fa · 6.782 lettori
+            </p>
+          </Col>
+          <Col className="ps-3 hooverElementLinkedinNotizie">
+            <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+              Due italiane al top nella matematica
+            </p>
+            <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+              1 giorno fa · 331 lettori
+            </p>
+          </Col>
+          <Col className="ps-3 hooverElementLinkedinNotizie">
+            <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+              Cambio al vertice di Telethon
+            </p>
+            <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+              13 ore fa · 4.145 lettori
+            </p>
+          </Col>
+          {showFullArticole && (
+            <>
+              <Col className=" ps-3 hooverElementLinkedinNotizie">
+                <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+                  Fnac prova a prendersi Unieuro
+                </p>
+                <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+                  21 ore fa · 500 lettori
+                </p>
+              </Col>
+              <Col className="ps-3 hooverElementLinkedinNotizie">
+                <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+                  Ora che l`AI Act è legge
+                </p>
+                <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+                  26 ore fa · 5.000 lettori
+                </p>
+              </Col>
+              <Col className="ps-3 hooverElementLinkedinNotizie">
+                <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+                  Ferragamo cresce nel mondo dei vini
+                </p>
+                <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+                  1 giorno fa · 862 lettori
+                </p>
+              </Col>
+              <Col className="ps-3 hooverElementLinkedinNotizie">
+                <p style={{ whiteSpace: "nowrap", fontSize: "14px" }} className="m-0 fw-semibold">
+                  Alla comunicazione servono processi chiari
+                </p>
+                <p style={{ color: "#A4A4A4", fontSize: "13px", whiteSpace: "nowrap" }} className="text-body-secondary">
+                  2 giorni fa · 2.000 lettori
+                </p>
+              </Col>
+            </>
+          )}
+          <Col className="col-12 ms-1">
+            <Button
+              fill="black"
+              style={{ height: "40px" }}
+              className="btnNoFocus btnVediAltro text-dark"
+              onClick={toggleShowFullArticole}
+              onMouseDown={(e) => e.preventDefault()}
+            >
+              {showFullArticole ? (
+                <p style={{ fontSize: "14px" }}>
+                  Meno dettagli <IoIosArrowUp className="iconArrow h-25" />
+                </p>
+              ) : (
+                <p style={{ fontSize: "14px" }}>
+                  Vedi altro <IoIosArrowDown className="iconArrow" />
+                </p>
+              )}
+            </Button>
+          </Col>
+        </Row>
         <Row>
           <Col className="ms-2 mt-4 col-12">
             <h6 className="fw-semibold text-body-secondary">
@@ -187,10 +196,11 @@ const LinkedinNotizie = () => {
         </Row>
       </Row>
       <Row className="mt-2">
-        <Col className="text-center bg-white rounded m-0 p-0">
+        <Col className="text-center bg-white rounded m-0 p-0 mt-2">
           <img
             src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png"
-            className="w-100 h-100 rounded "
+            className="
+            xs-w-75 h-100 md-w-100 h-100 rounded "
             alt="adv"
           />
         </Col>
@@ -199,5 +209,4 @@ const LinkedinNotizie = () => {
     </Container>
   );
 };
-
 export default LinkedinNotizie;
