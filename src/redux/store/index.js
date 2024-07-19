@@ -4,6 +4,8 @@ import experiencesReducer from "../reducers/experiencesReducer";
 import imageReducer from "../reducers/imageReducer";
 import postReducer from "../reducers/postReducer";
 import searchReducer from "../reducers/searchReducer";
+import commentsReducer from "../reducers/commentsReducer";
+
 
 const rootReducer = combineReducers({
   users: userReducer,
@@ -11,6 +13,7 @@ const rootReducer = combineReducers({
   image: imageReducer,
   posts: postReducer,
   search: searchReducer,
+  comments: commentsReducer,
 });
 
 const store = configureStore({

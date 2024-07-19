@@ -260,7 +260,7 @@ const MyNavbar = () => {
                   style={{ width: "180px ", fontSize: "12px" }}
                   className="btn bottone border-primary bg-white text-primary mt-2  "
                 >
-                  <Link to="/Profile" className="bg-white">
+                  <Link style={{textDecoration:'none'}} to="/Profile"  className="bg-white text-secondary">
                     Visualizza profilo
                   </Link>
                 </Button>
