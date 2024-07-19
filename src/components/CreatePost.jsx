@@ -67,28 +67,29 @@ const CreatePost = () => {
             />
           )}
         </Col>
+
         <Col className="ps-0" md={10}>
           <div
             className="black-button rounded-pill d-flex align-items-center border-secondary"
             style={{ height: "3em" }}
             onClick={handleShow}
           >
-           <small style={{color:'#474747'}}> Crea un post </small>
+            <small style={{ color: "#474747" }}> Crea un post </small>
           </div>
         </Col>
       </Row>
       <Row className="d-flex justify-content-around">
         <Col md={4} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
           <ImageAlt className="me-1" style={{ color: "#378FE9" }} />
-          <span style={{fontSize:'13px',color:'#474747'}}>Contenuti multimediali</span>
+          <span style={{ fontSize: "13px", color: "#474747" }}>Contenuti multimediali</span>
         </Col>
         <Col md={2} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
-          <Calendar3  className="me-1" style={{ color: "#C37D16" }} />
-          <span style={{fontSize:'13px',color:'#474747'}}>Evento</span>
+          <Calendar3 className="me-1" style={{ color: "#C37D16" }} />
+          <span style={{ fontSize: "13px", color: "#474747" }}>Evento</span>
         </Col>
         <Col md={4} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
           <CardText className="me-1" style={{ color: "#E06847" }} />
-          <span style={{fontSize:'13px',color:'#474747'}}>Scrivi un articolo</span>
+          <span style={{ fontSize: "13px", color: "#474747" }}>Scrivi un articolo</span>
         </Col>
       </Row>
 

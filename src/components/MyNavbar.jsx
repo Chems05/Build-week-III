@@ -134,20 +134,12 @@ const MyNavbar = () => {
         <NavDropdown
           title={
             <div className="d-flex align-items-center mt-2 dropdown2">
-              <div className="d-flex flex-column align-items-center">
-                {singleUserInfo && (
-                  <img
-                    src={singleUserInfo.image}
-                    alt="Profile"
-                    className="rounded-circle mb-1"
-                    width="24"
-                    height="22"
-                  />
-                )}
-                <span className="d-none d-md-block">
-                  Tu <BiCaretDown />
-                </span>
-              </div>
+              {singleUserInfo && (
+                <img src={singleUserInfo.image} alt="Profile" className="rounded-circle mb-1" width="24" height="22" />
+              )}
+              <span className="d-none d-md-block">
+                Tu <BiCaretDown />
+              </span>
             </div>
           }
           id="nav-dropdown-tu"
@@ -155,7 +147,7 @@ const MyNavbar = () => {
           className="small-dropdown small-dropdown-"
         >
           <NavDropdown.Item href="#business1">
-            <div className="d-flex align-items-center">
+            <div className="d-flex  position-relative">
               {singleUserInfo && (
                 <img
                   src={singleUserInfo.image}
@@ -179,17 +171,20 @@ const MyNavbar = () => {
                 )}
 
                 <Button
-                  style={{ width: "180px ", fontSize: "12px" }}
-                  className="btn bottone border-primary bg-white text-primary mt-2  "
+                  style={{ width: "180px ", fontSize: "12px", top: "50px", left: "7px" }}
+                  className="btn bottone  bg-white text-primary mt-2 position-absolute mb-2 btnMyNavbar"
                 >
-                  <Link to="/Profile" className="bg-white">
+                  <Link
+                    to="/Profile"
+                    className="bg-white link-offset-2 link-underline link-underline-opacity-0 fs-6 linktextprofile"
+                  >
                     Visualizza profilo
                   </Link>
                 </Button>
               </div>
             </div>
           </NavDropdown.Item>
-          <NavDropdown.Divider />
+          <NavDropdown.Divider className="mt-4" />
           <NavDropdown.Item href="#business2">
             <h5>Account</h5>
           </NavDropdown.Item>
