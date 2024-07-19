@@ -22,8 +22,8 @@ const HomePage = () => {
             <CreatePost />
             <Post />
           </Col>
-          <Col className="d-none d-md-block d-xl-none" md={4}></Col>
-          <Col xs={12} md={4} xl={3} className="mt-3 mt-md-0">
+          <Col className="d-none d-md-block d-xl-none" md={3}></Col>
+          <Col xs={12} md={8} xl={3} className="mt-3 mt-md-0">
             <LinkedinNotizie />
           </Col>
         </Row>

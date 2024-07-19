@@ -54,7 +54,7 @@ const LinkedinNotizie = () => {
           </div>
         )}
         <Row className="col-8 ps-3 ">
-          <Col className="d-flex justify-content-between">
+          <Col className="d-flex ">
             <h6 style={{ fontSize: "18px", whiteSpace: "nowrap" }} className="mt-3 fw-semibold">
               Linkedin Notizie
               <span>
@@ -185,14 +185,15 @@ const LinkedinNotizie = () => {
             </p>
           </Col>
         </Row>
-
-        <Row className="d-flex justify-content-between border border-dark-subtle rounded-3 mt-2">
+      </Row>
+      <Row className="mt-2">
+        <Col className="text-center bg-white rounded m-0 p-0">
           <img
             src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png"
-            className="m-0 p-0"
+            className="w-100 h-100 rounded "
             alt="adv"
           />
-        </Row>
+        </Col>
       </Row>
       <FooterJobPage />
     </Container>
