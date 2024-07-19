@@ -155,7 +155,7 @@ const LinkedinNotizie = () => {
           >
             {showFullArticole ? (
               <p style={{ fontSize: "14px" }}>
-                Meno dettagli <IoIosArrowUp className="iconArrow h-25" />
+                Meno dettagli <IoIosArrowUp className="iconArrow " />
               </p>
             ) : (
               <p style={{ fontSize: "14px" }}>

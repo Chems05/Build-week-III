@@ -332,7 +332,7 @@ const MyNavbar = () => {
           </div>
         </NavDropdown>
 
-        <Nav.Link className="ms-4 prova-premium mt-2 d-none d-xl-block">
+        <Nav.Link className="ms-3 prova-premium mt-2 d-none d-xl-block">
           Prova Premium per 0 <br /> EUR
         </Nav.Link>
       </Container>
