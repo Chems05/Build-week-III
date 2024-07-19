@@ -134,13 +134,21 @@ const MyNavbar = () => {
         <NavDropdown
           title={
             <div className="d-flex align-items-center mt-2 dropdown2">
+            <div className="d-flex flex-column align-items-center">
               {singleUserInfo && (
-                <img src={singleUserInfo.image} alt="Profile" className="rounded-circle mb-1" width="24" height="22" />
+                <img
+                  src={singleUserInfo.image}
+                  alt="Profile"
+                  className="rounded-circle mb-1"
+                  width="24"
+                  height="22"
+                />
               )}
               <span className="d-none d-md-block">
                 Tu <BiCaretDown />
               </span>
             </div>
+          </div>
           }
           id="nav-dropdown-tu"
           align="end"
