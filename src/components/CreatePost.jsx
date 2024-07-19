@@ -1,6 +1,22 @@
 import { useState } from "react";
-import { Col, Container, Form, Image, Modal, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
-import { Asterisk, Calendar3, CardText, Clock, EmojiSmile, ImageAlt, PlusLg } from "react-bootstrap-icons";
+import {
+  Col,
+  Container,
+  Form,
+  Image,
+  Modal,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+} from "react-bootstrap";
+import {
+  Asterisk,
+  Calendar3,
+  Clock,
+  EmojiSmile,
+  ImageAlt,
+  PlusLg,
+} from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewPost, getAllPosts } from "../redux/actions/postsActions";
 
@@ -78,15 +94,29 @@ const CreatePost = () => {
         </Col>
       </Row>
       <Row className="d-flex justify-content-around">
-        <Col md={4} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
+        <Col
+          md={4}
+          className="black-button rounded p-2 d-flex align-items-center"
+          style={{ border: "none" }}
+        >
           <ImageAlt className="me-1" style={{ color: "#378FE9" }} />
-          <span style={{ fontSize: "13px", color: "#474747" }}>Contenuti multimediali</span>
+          <span style={{ fontSize: "13px", color: "#474747" }}>
+            Contenuti multimediali
+          </span>
         </Col>
-        <Col md={2} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
+        <Col
+          md={2}
+          className="black-button rounded p-2 d-flex align-items-center"
+          style={{ border: "none" }}
+        >
           <Calendar3 className="me-1" style={{ color: "#C37D16" }} />
           <span style={{ fontSize: "13px", color: "#474747" }}>Evento</span>
         </Col>
-        <Col md={4} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
+        <Col
+          md={4}
+          className="black-button rounded p-2 d-flex align-items-center"
+          style={{ border: "none" }}
+        >
           <svg
             style={{ color: "#E06847", width: "1.5em" }}
             xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +129,9 @@ const CreatePost = () => {
           >
             <path d="M21 3v2H3V3zm-6 6h6V7h-6zm0 4h6v-2h-6zm0 4h6v-2h-6zM3 21h18v-2H3zM13 7H3v10h10z"></path>
           </svg>
-          <span style={{ fontSize: "13px", color: "#474747" }}>Scrivi un articolo</span>
+          <span style={{ fontSize: "13px", color: "#474747" }}>
+            Scrivi un articolo
+          </span>
         </Col>
       </Row>
 
@@ -110,7 +142,10 @@ const CreatePost = () => {
           <Modal.Header closeButton>
             <Modal.Title>
               <Row>
-                <Col style={{ border: "none" }} className="d-flex black-button rounded p-2">
+                <Col
+                  style={{ border: "none" }}
+                  className="d-flex black-button rounded p-2"
+                >
                   <Image
                     src={singleUserInfo.image}
                     style={{
@@ -132,7 +167,10 @@ const CreatePost = () => {
           </Modal.Header>
           <Modal.Body>
             <Form>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+              <Form.Group
+                className="mb-3"
+                controlId="exampleForm.ControlTextarea1"
+              >
                 <Form.Control
                   style={{ border: "none", boxShadow: "none", resize: "none" }}
                   placeholder="Di cosa vorresti parlare"
@@ -151,17 +189,45 @@ const CreatePost = () => {
               <EmojiSmile style={{ color: "#404040" }} />
             </div>
             <div className="d-flex align-items-center ">
-              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipImage}>
-                <ImageAlt className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltipImage}
+              >
+                <ImageAlt
+                  className="me-3"
+                  style={{ color: "#666666", cursor: "pointer" }}
+                />
               </OverlayTrigger>
-              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipCalendar}>
-                <Calendar3 className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltipCalendar}
+              >
+                <Calendar3
+                  className="me-3"
+                  style={{ color: "#666666", cursor: "pointer" }}
+                />
               </OverlayTrigger>
-              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipStar}>
-                <Asterisk className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltipStar}
+              >
+                <Asterisk
+                  className="me-3"
+                  style={{ color: "#666666", cursor: "pointer" }}
+                />
               </OverlayTrigger>
-              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipPlus}>
-                <PlusLg className="me-3" style={{ color: "#666666", cursor: "pointer" }} />
+              <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltipPlus}
+              >
+                <PlusLg
+                  className="me-3"
+                  style={{ color: "#666666", cursor: "pointer" }}
+                />
               </OverlayTrigger>
             </div>
           </Modal.Body>
@@ -170,7 +236,11 @@ const CreatePost = () => {
               className=" d-inline-flex align-items-center justify-content-center black-button rounded-circle"
               style={{ width: "42px", height: "42px", border: "none" }}
             >
-              <OverlayTrigger placement="top" delay={{ show: 250, hide: 400 }} overlay={renderTooltipClock}>
+              <OverlayTrigger
+                placement="top"
+                delay={{ show: 250, hide: 400 }}
+                overlay={renderTooltipClock}
+              >
                 <Clock style={{ color: "#404040" }} />
               </OverlayTrigger>
             </div>
