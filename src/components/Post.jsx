@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Image, Row, Button, Form } from "react-bootstrap";
-import { ArrowRepeat, ChatRightText, HandThumbsUp, Send, Pencil, Trash, EmojiSmile,  ImageFill } from "react-bootstrap-icons";
+import { ArrowRepeat, ChatRightText, HandThumbsUp, Send, Pencil, Trash, EmojiSmile, ImageFill } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 
 const Post = () => {
@@ -103,25 +103,23 @@ const Post = () => {
   };
 
   const handleCommentDelete = async (commentId) => {
-    if (window.confirm("Are you sure you want to delete this comment?")) {
-      try {
-        const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${commentId}`, {
-          method: "DELETE",
-          headers: {
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjlhMTFlYjhmMDYyYTAwMTVlZTc1YjEiLCJpYXQiOjE3MjEzNzMxNjMsImV4cCI6MTcyMjU4Mjc2M30.fTgWPhWTSCXxvKLeWsr33vT7G-E6NwDRrrB92IGOdCk",
-          },
-        });
-        if (response.ok) {
-          setComments((prevComments) => ({
-            ...prevComments,
-            [selectedPostId]: prevComments[selectedPostId].filter((c) => c._id !== commentId),
-          }));
-        } else {
-          console.error("Error deleting comment:", response.statusText);
-        }
-      } catch (error) {
-        console.log("Error deleting comment:", error);
+    try {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${commentId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjlhMTFlYjhmMDYyYTAwMTVlZTc1YjEiLCJpYXQiOjE3MjEzNzMxNjMsImV4cCI6MTcyMjU4Mjc2M30.fTgWPhWTSCXxvKLeWsr33vT7G-E6NwDRrrB92IGOdCk",
+        },
+      });
+      if (response.ok) {
+        setComments((prevComments) => ({
+          ...prevComments,
+          [selectedPostId]: prevComments[selectedPostId].filter((c) => c._id !== commentId),
+        }));
+      } else {
+        console.error("Error deleting comment:", response.statusText);
       }
+    } catch (error) {
+      console.log("Error deleting comment:", error);
     }
   };
 
@@ -132,6 +130,7 @@ const Post = () => {
       fetchComments(selectedPostId);
     }
   }, [selectedPostId]);
+
   const toggleComments = (postId) => {
     setShowComments((prevShowComments) => ({
       ...prevShowComments,
@@ -141,7 +140,7 @@ const Post = () => {
 
   return (
     <>
-        {postsArray
+      {postsArray
         .slice(-20)
         .reverse()
         .map((post) => (
@@ -174,6 +173,17 @@ const Post = () => {
                 </Row>
               </Card.Text>
               <Card.Text>{post.text}</Card.Text>
+              
+              {/* Display the post image if available */}
+              {post.image && (
+                <img
+                  src={post.image}
+                  alt="Post Image"
+                  style={{ width: "100%", height: "300px", objectFit: "cover" }}
+                  className="mb-2"
+                />
+              )}
+
               <hr className="mb-1" />
               <Row className="d-flex justify-content-around">
                 <Col
@@ -273,7 +283,7 @@ const Post = () => {
                       <Card key={comment._id} className="mt-2">
                         <Card.Body>
                           <Card.Text className="d-flex justify-content-between align-items-center">
-                            <span>{comment.comment}</span>
+                            <span>{comment.comment} </span>
                             <div>
                               <Button variant="" onClick={() => handleCommentEdit(comment._id)}>
                                 <Pencil />
