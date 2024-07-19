@@ -4,6 +4,7 @@ import CreatePost from "../components/CreatePost";
 import MyNavbar from "../components/MyNavbar";
 import Post from "../components/Post";
 import LinkedinNotizie from "../components/LinkedinNotizie";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -23,6 +24,7 @@ const HomePage = () => {
             <LinkedinNotizie />
           </Col>
         </Row>
+        <Footer />
       </Container>
     </>
   );

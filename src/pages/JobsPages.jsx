@@ -3,6 +3,7 @@ import MyNavbar from "../components/MyNavbar";
 import LeftJobs from "../components/LeftJobs";
 import MiddleJobs from "../components/MiddleJobs";
 import FooterJobPage from "../components/FooterJobPage";
+import Footer from "../components/Footer";
 
 const JobsPage = () => {
   return (
@@ -20,6 +21,7 @@ const JobsPage = () => {
             <FooterJobPage />
           </Col>
         </Row>
+        <Footer />
       </Container>
     </>
   );
