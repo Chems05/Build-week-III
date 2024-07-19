@@ -3,19 +3,15 @@ export const EDIT_COMMENT = "EDIT_COMMENT";
 export const DELETE_COMMENT = "DELETE_COMMENT";
 export const SET_COMMENTS = "SET_COMMENTS";
 
-const tokens = {
-  giuseppe: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk5MWI3Mjg3ZmZjYjAwMTU3NGNiNzkiLCJpYXQiOjE3MjEzMTAwNjYsImV4cCI6MTcyMjUxOTY2Nn0.aHoj16XGEUnXPdfaYmFylo4R04WSoEiRgVM-GB0kMdU",
-  gianluca: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk0ZDlhMjE5NmQ3YjAwMTVkNmI1MjgiLCJpYXQiOjE3MjEwMzEwNzQsImV4cCI6MTcyMjI0MDY3NH0.mMwvBmTiZudIbjpyQMoPDUFqRKemJEWS1jVMsU6gSOs",
-  chems: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Njk5MWNjODg3ZmZjYjAwMTU3NGNiN2EiLCJpYXQiOjE3MjEzMTA0MDgsImV4cCI6MTcyMjUyMDAwOH0.rqvx0RdnErmfOGtOMVp3ckczUKXtGBuZyYEsa8Qdi90"
-};
+
 
 // Fetch comments for a specific post
-export const fetchComments = (postId) => {
+export const fetchComments = () => {
   return async (dispatch) => {
     try {
-      const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${postId}`, {
+      const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/`, {
         headers: {
-          Authorization: tokens.giuseppe,
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjlhMTFlYjhmMDYyYTAwMTVlZTc1YjEiLCJpYXQiOjE3MjEzNzMxNjMsImV4cCI6MTcyMjU4Mjc2M30.fTgWPhWTSCXxvKLeWsr33vT7G-E6NwDRrrB92IGOdCk",
         },
       });
       if (response.ok) {
@@ -35,7 +31,7 @@ export const addComment = (comment) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: tokens.giuseppe,
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjlhMTFlYjhmMDYyYTAwMTVlZTc1YjEiLCJpYXQiOjE3MjEzNzMxNjMsImV4cCI6MTcyMjU4Mjc2M30.fTgWPhWTSCXxvKLeWsr33vT7G-E6NwDRrrB92IGOdCk",
         },
         body: JSON.stringify(comment),
       });
@@ -56,7 +52,7 @@ export const editComment = (commentId, updatedComment) => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: tokens.giuseppe,
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjlhMTFlYjhmMDYyYTAwMTVlZTc1YjEiLCJpYXQiOjE3MjEzNzMxNjMsImV4cCI6MTcyMjU4Mjc2M30.fTgWPhWTSCXxvKLeWsr33vT7G-E6NwDRrrB92IGOdCk",
         },
         body: JSON.stringify(updatedComment),
       });
@@ -76,7 +72,7 @@ export const deleteComment = (commentId) => {
       const response = await fetch(`https://striveschool-api.herokuapp.com/api/comments/${commentId}`, {
         method: "DELETE",
         headers: {
-          Authorization: tokens.giuseppe,
+          Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjlhMTFlYjhmMDYyYTAwMTVlZTc1YjEiLCJpYXQiOjE3MjEzNzMxNjMsImV4cCI6MTcyMjU4Mjc2M30.fTgWPhWTSCXxvKLeWsr33vT7G-E6NwDRrrB92IGOdCk",
         },
       });
       if (response.ok) {
