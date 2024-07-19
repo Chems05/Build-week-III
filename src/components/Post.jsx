@@ -18,10 +18,11 @@ const Post = () => {
           Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjlhMTFlYjhmMDYyYTAwMTVlZTc1YjEiLCJpYXQiOjE3MjEzNzMxNjMsImV4cCI6MTcyMjU4Mjc2M30.fTgWPhWTSCXxvKLeWsr33vT7G-E6NwDRrrB92IGOdCk",
         },
       });
-
+  
       if (response.ok) {
         const data = await response.json();
-        const sortedComments = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        const filteredComments = data.filter(comment => comment.elementId === postId);
+        const sortedComments = filteredComments.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setComments((prevComments) => ({
           ...prevComments,
           [postId]: sortedComments.slice(0, 5),
@@ -64,7 +65,7 @@ const Post = () => {
             responseData
           ].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).slice(0, 5),
         }));
-        setCommentText(""); 
+        setCommentText("");
       } else {
         console.error("Error adding comment:", responseData);
       }
@@ -123,7 +124,7 @@ const Post = () => {
     }
   };
 
-  const predefinedComments = ["Vero!", "Ottimo spunto!", "Interesting view", "Concordo!","Bravo!" ];
+  const predefinedComments = ["Vero!", "Ottimo spunto!", "Interesting view", "Concordo!", "Bravo!"];
 
   useEffect(() => {
     if (selectedPostId) {
@@ -173,7 +174,7 @@ const Post = () => {
                 </Row>
               </Card.Text>
               <Card.Text>{post.text}</Card.Text>
-              
+
               {/* Display the post image if available */}
               {post.image && (
                 <img
@@ -202,7 +203,7 @@ const Post = () => {
                   <ChatRightText className="me-1" />
                   <span style={{ fontSize: '15px' }} className="mt-1" onClick={() => {
                     setSelectedPostId(post._id);
-                    toggleComments(post._id); 
+                    toggleComments(post._id);
                   }}>Commenta</span>
                 </Col>
                 <Col
@@ -248,7 +249,7 @@ const Post = () => {
                           width: "40px",
                           height: "40px",
                           borderRadius: "50%",
-                          marginRight: "10px", 
+                          marginRight: "10px",
                         }}
                       />
                       <div style={{ position: "relative", flexGrow: 1 }}>
@@ -258,11 +259,11 @@ const Post = () => {
                           value={commentText}
                           className="rounded-pill"
                           onChange={(e) => setCommentText(e.target.value)}
-                          style={{ paddingRight: "50px" }} 
+                          style={{ paddingRight: "50px" }}
                         />
                         <div style={{
                           position: "absolute",
-                          right: "10px", 
+                          right: "10px",
                           top: "50%",
                           transform: "translateY(-50%)",
                           display: "flex",
@@ -271,7 +272,7 @@ const Post = () => {
                           <Button variant="" className="me-2 p-0" style={{ fontSize: "18px" }}>
                             <EmojiSmile />
                           </Button>
-                          <Button variant="" className="p-0 border-0 bg-tranpsarent text-secondary" style={{ fontSize: "18px" }}>
+                          <Button variant="" className="p-0 border-0 bg-transparent text-secondary" style={{ fontSize: "18px" }}>
                             <ImageFill />
                           </Button>
                         </div>
@@ -283,7 +284,7 @@ const Post = () => {
                       <Card key={comment._id} className="mt-2">
                         <Card.Body>
                           <Card.Text className="d-flex justify-content-between align-items-center">
-                            <span>{comment.comment} </span>
+                            <span>{comment.comment}</span>
                             <div>
                               <Button variant="" onClick={() => handleCommentEdit(comment._id)}>
                                 <Pencil />
