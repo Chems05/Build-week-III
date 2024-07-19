@@ -73,22 +73,33 @@ const CreatePost = () => {
             style={{ height: "3em" }}
             onClick={handleShow}
           >
-           <small style={{color:'#474747'}}> Crea un post </small>
+            <small style={{ color: "#474747" }}> Crea un post </small>
           </div>
         </Col>
       </Row>
       <Row className="d-flex justify-content-around">
         <Col md={4} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
           <ImageAlt className="me-1" style={{ color: "#378FE9" }} />
-          <span style={{fontSize:'13px',color:'#474747'}}>Contenuti multimediali</span>
+          <span style={{ fontSize: "13px", color: "#474747" }}>Contenuti multimediali</span>
         </Col>
         <Col md={2} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
-          <Calendar3  className="me-1" style={{ color: "#C37D16" }} />
-          <span style={{fontSize:'13px',color:'#474747'}}>Evento</span>
+          <Calendar3 className="me-1" style={{ color: "#C37D16" }} />
+          <span style={{ fontSize: "13px", color: "#474747" }}>Evento</span>
         </Col>
         <Col md={4} className="black-button rounded p-2 d-flex align-items-center" style={{ border: "none" }}>
-          <CardText className="me-1" style={{ color: "#E06847" }} />
-          <span style={{fontSize:'13px',color:'#474747'}}>Scrivi un articolo</span>
+          <svg
+            style={{ color: "#E06847", width: "1.5em" }}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            id="content-align-left-medium"
+            aria-hidden="true"
+            role="none"
+            data-supported-dps="24x24"
+            fill="currentColor"
+          >
+            <path d="M21 3v2H3V3zm-6 6h6V7h-6zm0 4h6v-2h-6zm0 4h6v-2h-6zM3 21h18v-2H3zM13 7H3v10h10z"></path>
+          </svg>
+          <span style={{ fontSize: "13px", color: "#474747" }}>Scrivi un articolo</span>
         </Col>
       </Row>
 
